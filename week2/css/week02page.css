@@ -1,0 +1,27 @@
+ul li {
+    padding-top: 30px;
+}
+
+ul li:nth-child(1) {
+    list-style-type: none;
+}
+
+ul li:nth-child(1), ul li:nth-child(2) {
+    padding-top: 0;
+}
+
+ul li:nth-child(3) p:nth-child(4), ul li:nth-child(3) p:nth-child(5), ul li:nth-child(3) p:nth-child(6), ul li:nth-child(3) p:nth-child(13), ul li:nth-child(3) p:nth-child(14), ul li:nth-child(3) p:nth-child(17), ul li:nth-child(3) p:nth-child(19) {
+    padding-left: 30px;
+}
+
+ul li:nth-child(3) p:nth-child(15), ul li:nth-child(3) p:nth-child(16), ul li:nth-child(3) p:nth-child(18) {
+    padding-left: 60px;
+}
+
+ul li:nth-child(4) p:nth-child(4), ul li:nth-child(4) p:nth-child(5), ul li:nth-child(4) p:nth-child(6), ul li:nth-child(4) p:nth-child(9), ul li:nth-child(4) p:nth-child(10), ul li:nth-child(4) p:nth-child(11), ul li:nth-child(4) p:nth-child(14), ul li:nth-child(4) p:nth-child(15), ul li:nth-child(4) p:nth-child(16), ul li:nth-child(4) p:nth-child(17), ul li:nth-child(4) p:nth-child(18), ul li:nth-child(4) p:nth-child(20), ul li:nth-child(4) p:nth-child(21), ul li:nth-child(4) p:nth-child(28), ul li:nth-child(4) p:nth-child(29), ul li:nth-child(4) p:nth-child(31) {
+    padding-left: 30px;
+}
+
+ul li:nth-child(4) p:nth-child(12), li:nth-child(4) p:nth-child(13), ul li:nth-child(4) p:nth-child(19), ul li:nth-child(4) p:nth-child(22), ul li:nth-child(4) p:nth-child(23), ul li:nth-child(4) p:nth-child(24), ul li:nth-child(4) p:nth-child(25), ul li:nth-child(4) p:nth-child(26), ul li:nth-child(4) p:nth-child(27), ul li:nth-child(4) p:nth-child(30) {
+    padding-left: 60px;
+}
