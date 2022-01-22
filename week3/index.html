@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Portfolio - Week 03 Page</title>
+    <meta name="author" content="Rostislav Nikitin">
+    <link rel="stylesheet" href="css/week03page.css">
+  </head>
+  <body>
+    <h1>WDD 330 Portfolio</h1>
+    <h2>Week03</h2>
+    <h3>Readings:</h3>
+    <h3>JavaScript: Novice to Ninja 2nd Edition</h3>
+    <h4>Chapter 5: Objects</h4>
+    <p>Notes:</p>
+    <p>An object in JavaScript is a set of properties, and each property consists of a name and a value associated with that name. The value of a property can be any JavaScript value. If it's a function, it's known as a method of an object.
+      An object literal is an object that is created directly in the language by wrapping all its properties and methods in curly braces {}. The creation of an object literal begins with the definition and initialization of the variable to which the object literal is assigned.
+      The properties and methods of an object can be accessed by using dot notation or square brackets.
+    </p>
+    <p>New properties and methods can be added to objects at any time in a program by simply assigning a value to the new property. An object's properties and methods can be changed or removed because objects are mutable. Objects placed inside another object are called nested objects. 
+      The values in nested objects can be accessed by referencing each property name in order using either dot or bracket notation.</p>
+    <p>Objects can be used as parameters to functions, which allows arguments to be entered in any order, or omitted.</p>
+    <p>When an object method needs to access information stored in an object to do its job, it uses the “this” keyword to access the object. The value of this is the object “before dot”, the one used to call the method. Example:</p>
+    <div class="thisMethodExample">
+      <p>let user = {</p>
+      <p>name: "John",</p>
+      <p>age: 30,</p>
+      <p>sayHi() {</p>
+      <p>// "this" is the "current object"</p>
+      <p>alert(this.name);</p>
+      <p>}</p>
+      <p>};</p>
+      <p>user.sayHi(); // John</p>
+    </div>
+    <p>Here during the execution of user.sayHi(), the value of this will be user.</p>
+    <p class="jsonDefinition">JavaScript Object Notation, or JSON, is a portable data format that uses JavaScript object literals to exchange information. JSON data is written as name/value pairs, just like JavaScript object properties. There are, however, a couple of key differences:</p>
+    <ol class="jsonDifferences">
+      <li>
+        Property names must be double-quoted
+      </li>
+      <li>
+        Permitted values are double-quoted strings, numbers, true, false, null, arrays and objects
+      </li>
+      <li>
+        Functions are not permitted values
+      </li>
+    </ol>
+    <p>Example of JSON string representation:</p>
+    <p class="jsonStringExample">const batman = '{"name": "Batman","real name": "Bruce Wayne","height": 74, "weight": 210, "hero": true, "villain": false, "allies": ["Robin","Batgirl","Superman"]}'</p>
+    <p>The parse() method takes a string of data in JSON format and returns a JavaScript object:</p>
+    <p>JSON.parse(batman);</p>
+    <p><< { name: 'Batman',</p>
+    <p>'real name': 'Bruce Wayne',</p>
+    <p>height: 74,</p>
+    <p>weight: 210,</p>
+    <p>hero: true,</p>
+    <p>villain: false,</p>
+    <p>allies: [ 'Robin', 'Batgirl', 'Superman' ] }</p>
+    <p class="stringifyMethodExample">The stringify() method does the opposite, taking a JavaScript object and returning a string of JSON data, as can be seen in the example:</p>
+    <p>JSON.stringify(wonderWoman);</p>
+    <p><< '{"name":"Wonder Woman","real name":"Diana Prince","height":72,"weight":165,"hero":true,"villain":false,"allies":["Wonder Girl","Donna Troy","Superman"]}'</p>
+    <p class="mathObjectDefinition">The Math object is a built-in object that has several properties representing mathematical constants, as well as methods that carry out a number of common mathematical operations.
+      The Math object can be used to perform mathematical calculations.
+    </p>
+    <p>The Date object can be used to create date objects. Date objects contain information about dates and times. Each object represents a single moment in time.</p>
+    <p>The properties of date objects are unable to be viewed or changed directly. Instead, they have a number of methods known as getter methods, which return information about the date object, such as the month and year. Once the date object has been created, it will have access to all getter methods.</p>
+    <p>Most of the getter methods have equivalent setter methods. These are methods that can be used to change the value of the date held in a Date object. Each of the methods takes an argument representing the value to which the date is updated. The methods return the timestamp of the updated date object.</p>
+    <p class="regexObjectDefinition">The Regex object can be used to create regular expressions.</p>
+    
+    <h4>Chapter 6: The Document Object Model</h4>
+    <p>Notes:</p>
+    <p>The Document Object Model, or DOM for short, represents an HTML document as a network of connected nodes that form a tree-like structure. The DOM treats everything on a web page as a node, where each node is an object of the document. HTML tags, the text inside these tags, even the attributes of a tag are all nodes. 
+      The DOM also stores any whitespace that is in the HTML document as text nodes. The HTML tag is the root node, and every other part of the document is a child node of this. When a web page is loaded, the browser creates a Document Object Model of the page. As an object-oriented representation of the web page, it can be modified with a scripting language such as JavaScript to access and modify different parts of a web page using a special built-in object called document.</p>
+    <p>The DOM provides several methods that allow to access any element on a page. These methods will return a node object or a node list, which is an array-like object. These objects can then be assigned to a variable and be inspected or modified. An example of accessing the body element of a web page and assigning it to the variable body:</p>
+    <p>const body = document.body;</p>
+    <p>Now it shows a reference to the body element, allowing to check its type:</p>
+    <p>typeof body;</p>
+    <p><< "object";</p>
+    <p>This is a special Node object with a number of properties and methods that can be used to find information about, or modify, the body element.</p>
+    <p>For example, the nodeType property can be used to find out what type of node it is:</p>
+    <p>body.nodeType;</p>
+    <p><< 1</p>
+    <p>All nodes have a numerical code to signify what type they are. These are summmarized in the table below:</p>
+    <table>
+      <tr>
+        <th>Code</th>
+        <th>Type</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>element</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>attribute</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>text</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>comment</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>body</td>
+      </tr>
+    </table>
+    <p>There are other types not covered in the table, but these aren't used in HTML documents. As can be seen from the table, a code of 1 confirms that body is an element node.</p>
+    <p>The nodeName property can also be used to find the name of the element:</p>
+    <p>body.nodeName;</p>
+    <p><< "BODY"</p>
+    <p class="gettingElementsDefinition">The document.getElementById(), document.getElementsByClassName(), document.getElementsByTagName() and document.querySelector() can be used to access elements on a page.</p>
+    <p>The document.getElementById() method returns a reference to the element with a unique specified id attribute that is given as an argument. An example of referencing to the &#8249;h1&#8250; heading element with the id of 'title' in an html page by writing this in the console:</p>
+    <p>const h1 = document.getElementById('title');</p>
+    <p class="getElementsByTagNameMethodDefinition">The getElementsByTagName() method returns a live node list of all the elements with the tag name that is provided as an argument. An example of getting all the list items (HTML tag of &#8249;li&#8250;) in the document:</p>
+    <p>const listItems = document.getElementsByTagName('li');</p>
+    <p class="getElementsByClassNameMethodDefinition">The getElementsByClassName() method returns a live node list of all elements that have the class name that is supplied as an argument. An example of returning a collection of all elements with the class of 'hero':</p>
+    <p>const heroes = document.getElementsByClassName('hero');</p>
+    <p class="documentQuerySelectorMethodDefinition">The document.querySelector() method allows to use CSS notation to find the first element in the document that matches a CSS selector provided as an argument.</p>
+    <p>The document.querySelectorAll() method also uses CSS notation but returns a node list of all the elements in the document that match the CSS query selector. If no elements match, it will return an empty node list.</p>
+    <p>The parentNode(), previousSibling(), nextSibling(), childNodes() and children() methods can be used to navigate around the DOM tree.</p>
+    <p class="getterSetterMethodsDefinition">All HTML elements have a large number of possible attributes such as 'class', 'id', src, and 'href'. The DOM has numerous getter and setter methods that can be used to view, add, remove or modify the value of any of these attributes.</p>
+    <p>The getAttribute() method returns the value of the attribute provided as an argument. Example:</p>
+    <p>wonderWoman.getAttribute('class');</p>
+    <p><< "hero"</p>
+    <p class="setAttributeMethodDefinition">The setAttribute() method can change the value of an element's attributes. It takes two arguments: the attribute that the programmer wishes to change, and the new value of that attribute. An example of changing the the class of the element in the wonderWoman variable to 'villain':</p>
+    <p>wonderWoman.setAttribute('class', 'villain');</p>
+    <p><< undefined</p>
+    <p>wonderWoman.getAttribute('class');</p>
+    <p><< "villain"</p>
+    <p class="createElementMethodDefinition">The createElement() method creates the HTML element specified by tagName. It takes a tag name as a parameter and returns that element. An example of creating a new list item as a DOM fragment in memory:</p>
+    <p>const flash = document.createElement('li');</p>
+    <p class="createTextNodeMethodDefinition">The createTextNode() method creates a text node with the specified text. It takes a parameter, which is a string containing the text that goes in the node. Example:</p>
+    <p>const flashText = document.createTextNode('Flash');</p>
+    <p>To link the created list element node to the created text node, it is necessary to append the text node to the list element node using the appendChild() method that will append a node (given as an argument) as the last child of a particular parent node. In this case a newly created text node will become a child node of the list element node.
+      This means that it's the flash object that calls the method, with flashText as its argument:</p>
+    <p>flash.appendChild(flashText);</p>
+    <p>The result gives a &#8249;li&#8250; element that contains the text 'Flash'.</p>
+    <p class="replacingRemovingElementsDefinition">Elements can be replaced using the replaceChild() method, and removed using the removeChild() method.</p>
+    <p>The innerHTML property returns all the child elements of an element as a string of HTML. If an element contains lots of other elements, all the raw HTML is returned. Example:</p>
+    <div class="inneHTMLPropertyExample">
+      <p>heroes.innerHTML</p>
+      <p><<"</p>
+      <p>&#8249;li class=\"hero\"&#8250;Superman&#8249;/li&#8250;</p>
+      <p>&#8249;li class=\"vigilante hero\" id=\"bats\"&#8250;Batman&#8249;/li&#8250;</p>
+      <p>"</p>
+    </div>
+
+    <h4 class="chapter7">Chapter 7: Events</h4>
+    <p>Notes:</p>
+    <p>Events occur when a user interacts with a web page, such as clicking a link, pressing a key, or moving the mouse.</p>
+    <p>An event listener is a procedure or function in a computer program that waits for an event to occur. It is like setting a notification to alert the user when something happens. Instead of the program having to constantly check to see if an event has occurred, the event listener will let it know when the event happens, and the program can then respond appropriately. This allows the program to continue with other tasks while it waits for the event to happen.</p>
+    <p>An event listener is attached to an element, then invokes a callback function when the event occurs. In the example below, an event listener has been added to the document's body element:</p>
+    <p>document.body.addEventListener("click", doSomething);</p>
+    <p>It will call the function doSomething() when any part of the page is clicked on. Until that happens, the program will continue to run the rest of the code. The addEventListener() method is called on a node object, the node to which the event listener is being applied. In the example above, the code will attach an event listener to the document’s body.</p>
+    <p>There are many types of event, including mouse events, keyboard events, and touch events.</p>
+    <p>The removeEventListener() method removes an event listener that has been attached with the addEventListener() method. Example:</p>
+    <p>Code in HTML:</p>
+    <p>&#8249;p id='once'&#8250;A One Time Thing...&#8249;/p&#8250;</p>
+    <p>JavaScript:</p>
+    <div class="removeEventListenerMethodExample">
+      <p>const onceParagraph = document.getElementById('once');</p>
+      <p>onceParagraph.addEventListener('click', remove);</p>
+      <p>function remove(event) {</p>
+      <p>console.log('Enjoy this while it lasts!');</p>
+      <p>onceParagraph.style.backgroundColor = 'pink';</p>
+      <p>onceParagraph.removeEventListener('click',remove);</p>
+      <p>}</p>
+    </div>
+    <p>This adds a click event listener to a paragraph element, but then removes it in the callback function named remove. This means it will only be called once (if the user tries to click on it again, nothing will happen).</p>
+    <p>The default behavior of elements can be prevented using the preventDefault() function.</p>
+    <p>Event propagation is the order that the events fire on each element. There are two forms of event propagation: bubbling and capturing. Bubbling is when the event fires on the element clicked on first, then bubbles up the document tree, firing an event on each parent element until it reaches the root node.
+      Capturing starts by firing an event on the root element, then propagates downwards, firing an event on each child element until it reaches the target element that was clicked on.</p>
+    <p>Event delegation is used to attach an event listener to a parent element in order to capture events that are triggered by its child elements.</p>
+      <ul>
+      <li class="week3Exercises">
+        Week 3 Exercises:
+      </li>
+      <li>
+        <a href="ch5/quiz_ninja_pt4.html" target="_blank">Quiz Ninja Project Part 4</a>
+        <p>In this version of the Quiz Ninja project, questions are stored as objects inside an array:</p>
+        <p>const quiz = [</p>
+        <p>{ name: "Superman",realName: "Clark Kent" },</p>
+        <p>{ name: "Wonder Woman",realName: "Diana Prince" },</p>
+        <p>{ name: "Batman",realName: "Bruce Wayne" },</p>
+        <p>];</p>
+        <p>Each element in the array contains information about the superheroes used in this version of the quiz. These objects replace the nested arrays used in the previous chapters, and have properties of name and realName that are used to form the questions and answers.</p>
+        <p>The next step is to namespace the functions created in the last chapter. This is done by placing them inside an object called game that will be the namespace. This means that any references to the functions need to be replaced with game.function() outside the object or this.function() inside the object:</p>
+        <p>const game = {</p>
+        <p>start(quiz) {</p>
+        <p>this.questions = [...quiz];</p>
+        <p>this.score = 0;</p>
+        <p>// main game loop</p>
+        <p>for(const question of this.questions) {</p>
+        <p>this.question = question;</p>
+        <p>this.ask();</p>
+        <p>}</p>
+        <p>// end of main game loop</p>
+        <p>this.gameOver();</p>
+        <p>},</p>
+        <p>ask() {</p>
+        <p>const question = `What is ${this.question.name}'s real name?`;</p>
+        <p>const response =  prompt(question);</p>
+        <p>this.check(response);</p>
+        <p>},</p>
+        <p>gameOver(){</p>
+        <p>alert(`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);</p>
+        <p>}</p>
+        <p>}</p>
+        <p>After this, the function that starts the game needs to be edited to include the namespace:</p>
+        <p>game.start(quiz);</p>
+        <p>After all, no functionality has been added to this version of the Quiz Ninja Project, but the code has become more organized by placing all of the functions inside an object.</p>
+      </li>
+      <li class="quizNinjaPt5">
+        <a href="ch6/quiz_ninja_pt5.html" target="_blank">Quiz Ninja Project Part 5</a>
+        <p>In this version of the Quiz Ninja project, four empty div elements were added by updating the html page of this quiz:</p>
+        <p>&#8249;section class='dojo'&#8250;</p>
+        <p>&#8249;div class='quiz-body'&#8250;</p>
+        <p>&#8249;header&#8250</p>
+        <p>&#8249;div id='score'&#8250;Score: &#8249;strong&#8250;0&#8249;/strong&#8250;&#8249;/div&#8250;</p>
+        <p>&#8249;h1&#8250;Quiz Ninja!&#8249;/h1&#8250;</p>
+        <p>&#8249;/header&#8250;</p>
+        <p>&#8249;div id='question'&#8250;&#8249;/div&#8250;</p>
+        <p>&#8249;div id='result'&#8250;&#8249;/div&#8250;</p>
+        <p>&#8249;div id='info'&#8250;&#8249;/div&#8250;</p>
+        <p>&#8249;/div&#8250;</p>
+        <p>&#8249;/section&#8250;</p>
+        <p>These div elements will be used to show the questions and provide feedback about whether the user has answered a question correctly or not. Also the div element  inside the &#8249;header&#8250; will be used to display the score as the game is being played.</p>
+        <p>The ID attributes of these elements will act as hooks that allow to easily gain access to that element using the document.getElementById() method. These will be namespaced inside an object called view, as they all relate to the view:</p>
+        <div class="viewObjectQuizNinjaPt5">
+          <p>// View Object</p>
+          <p>const view = {</p>
+          <p>score: document.querySelector('#score strong'),</p>
+          <p>question: document.getElementById('question'),</p>
+          <p>result: document.getElementById('result'),</p>
+          <p>info: document.getElementById('info'),</p>
+          <p>render(target,content,attributes) {</p>
+          <p>for(const key in attributes) {</p>
+          <p>target.setAttribute(key, attributes[key]);</p>
+          <p>}</p>
+          <p>target.innerHTML = content;</p>
+          <p>}</p>
+          <p>};</p>
+        </div>
+        <p>This uses the document.querySelector() method to access the desired elements and assign them to a variable. So, for example, the div with an id of question can be accessed in the Javascript code using view.question.</p>
+        <p>A helper function called render() has also been added that can be used to update the content of an element on the page. This function has three parameters: the first is the element that displays the content, the second is for the content it’s to be updated with, and the last is an object of any HTML attributes that can be added to the element.</p>
+        <p>The function loops through any attributes provided as the third argument, and uses the setAttribute() method to update them to the values provided. It then uses the innerHTML property to update the HTML with the content provided.</p>
+        <p>Some of the functions inside the game object have been updated to use update the HTML:</p>
+        <div class="updatedFunctionsInGameObject">
+          <p>ask() {</p>
+          <p>const question = `What is ${this.question.name}'s real name?`;</p>
+          <p>view.render(view.question,question);</p>
+          <p>const response =  prompt(question);</p>
+          <p>this.check(response);</p>
+          <p>},</p>
+          <p>check(response) {</p>
+          <p>const answer = this.question.realName;</p>
+          <p>if(response === answer){</p>
+          <p>view.render(view.result,'Correct!',{'class':'correct'});</p>
+          <p>alert('Correct!');</p>
+          <p>this.score++;</p>
+          <p>view.render(view.score,this.score);</p>
+          <p>} else {</p>
+          <p>view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});</p>
+          <p>alert(`Wrong! The correct answer was ${answer}`);</p>
+          <p>}</p>
+          <p>},</p>
+          <p>gameOver(){</p>
+          <p>view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);</p>
+          <p>}</p>
+        </div>
+        <p>In most cases it has placed a call to view.render() wherever there is an alert() or prompt() dialog that displays the same information in the HTML. The view.render() method was also used to update the score if a player gains any points.</p>
+        <p>The user of the quiz won't notice much difference during the quiz until right at the end when all the dialogs have finished displaying.</p>
+      </li>
+      <li class="quizNinjaPt6">
+        <a href="ch7/quiz_ninja_pt6.html" target="_blank">Quiz Ninja Project Part 6</a>
+        <p>In this version of the Quiz Ninja project, some events have been added to the quiz. A line of code with a button has been added to the HTML code of the quiz:</p>
+        <p>&#8249;button id='start'&#8250;Click to Start&#8249;/button&#8250;</p>
+        <p>The following line of property to the view object has been added in order to have a reference to the button:</p>
+        <p>start: document.getElementById('start'),</p>
+        <p>The next step was to attach a 'click' event listener to the button that will start the game when the button is clicked. The following line of code has been added to the end of the js file:</p>
+        <p>view.start.addEventListener('click', () => game.start(quiz), false);</p>
+        <p>A couple of utility functions have been added that will show and hide elements on a page. These also go in view object as they are only concerned with the view:</p>
+        <div class="utilityFunctionsInViewObject">
+          <p>show(element){</p>
+          <p>element.style.display = 'block';</p>
+          <p>},</p>
+          <p>hide(element){</p>
+          <p>element.style.display = 'none';</p>
+          <p>}</p>
+        </div>
+        <p>These work by simply changing the style.display property to none to hide an element, and block to display it.</p>
+        <p>These can be used to make the start button disappear while the game is in progress, then reappear once the game has finished. The following line of code has been added to the game.start() method:</p>
+        <p>view.hide(view.start);</p>
+        <p>Then the following line of code was added to the game.gameOver() method:</p>
+        <p>view.show(view.start);</p>
+        <p>As a result, this quiz was added a start button with its own event listener attached.</p>
+      </li>
+  </body>
+</html>

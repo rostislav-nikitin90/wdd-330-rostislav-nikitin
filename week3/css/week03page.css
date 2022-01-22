@@ -1,0 +1,80 @@
+body p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.thisMethodExample p:nth-child(2), .thisMethodExample p:nth-child(3), .thisMethodExample p:nth-child(4), .thisMethodExample p:nth-child(7) {
+    padding-left: 15px;
+}
+
+.thisMethodExample p:nth-child(5), .thisMethodExample p:nth-child(6) {
+    padding-left: 27px;
+}
+
+.jsonDefinition, .stringifyMethodExample, .mathObjectDefinition, .gettingElementsDefinition, .getElementsByTagNameMethodDefinition, .getElementsByClassNameMethodDefinition, .documentQuerySelectorMethodDefinition, .getterSetterMethodsDefinition, .setAttributeMethodDefinition, .createElementMethodDefinition, .createTextNodeMethodDefinition, .replacingRemovingElementsDefinition, .chapter7, .quizNinjaPt5, .quizNinjaPt6, .week3Exercises {
+    margin: 50px 0 0 0;
+}
+
+.jsonDifferences {
+    margin: 5px 0 16px 0;
+}
+
+.jsonStringExample, .regexObjectDefinition {
+    margin: 0 0 50px 0;
+}
+
+ul li:nth-child(1) {
+    list-style-type: none;
+}
+
+ul li:nth-child(2) p:nth-child(4), ul li:nth-child(2) p:nth-child(5), ul li:nth-child(2) p:nth-child(6), ul li:nth-child(2) p:nth-child(11), ul li:nth-child(2) p:nth-child(21), ul li:nth-child(2) p:nth-child(22), ul li:nth-child(2) p:nth-child(26), ul li:nth-child(2) p:nth-child(27), ul li:nth-child(2) p:nth-child(29) {
+    padding-left: 30px;
+}
+
+ul li:nth-child(2) p:nth-child(12), ul li:nth-child(2) p:nth-child(13), ul li:nth-child(2) p:nth-child(14), ul li:nth-child(2) p:nth-child(15), ul li:nth-child(2) p:nth-child(16), ul li:nth-child(2) p:nth-child(17), ul li:nth-child(2) p:nth-child(18), ul li:nth-child(2) p:nth-child(19), ul li:nth-child(2) p:nth-child(20), ul li:nth-child(2) p:nth-child(23), ul li:nth-child(2) p:nth-child(24), ul li:nth-child(2) p:nth-child(25), ul li:nth-child(2) p:nth-child(28) {
+    padding-left: 60px;
+}
+
+table, th, td {
+    border:1px solid black;
+}
+
+.inneHTMLPropertyExample p:nth-child(3), .inneHTMLPropertyExample p:nth-child(4), .inneHTMLPropertyExample p:nth-child(5), .inneHTMLPropertyExample p:nth-child(6) {
+    padding-left: 30px;
+}
+
+.quizNinjaPt5 p:nth-child(4), .quizNinjaPt5 p:nth-child(5), .quizNinjaPt5 p:nth-child(8), .quizNinjaPt5 p:nth-child(9), .quizNinjaPt5 p:nth-child(10), .quizNinjaPt5 p:nth-child(11), .quizNinjaPt5 p:nth-child(12) {
+    padding-left: 30px;
+}
+
+.quizNinjaPt5 p:nth-child(6), .quizNinjaPt5 p:nth-child(7) {
+    padding-left: 60px;
+}
+
+.viewObjectQuizNinjaPt5 p:nth-child(3), .viewObjectQuizNinjaPt5 p:nth-child(4), .viewObjectQuizNinjaPt5 p:nth-child(5), .viewObjectQuizNinjaPt5 p:nth-child(6), .viewObjectQuizNinjaPt5 p:nth-child(7), .viewObjectQuizNinjaPt5 p:nth-child(12) {
+    padding-left: 30px;
+}
+
+.viewObjectQuizNinjaPt5 p:nth-child(8), .viewObjectQuizNinjaPt5 p:nth-child(10), .viewObjectQuizNinjaPt5 p:nth-child(11) {
+    padding-left: 60px;
+}
+
+.viewObjectQuizNinjaPt5 p:nth-child(9) {
+    padding-left: 90px;
+}
+
+.updatedFunctionsInGameObject p:nth-child(2), .updatedFunctionsInGameObject p:nth-child(3), .updatedFunctionsInGameObject p:nth-child(4), .updatedFunctionsInGameObject p:nth-child(5), .updatedFunctionsInGameObject p:nth-child(8), .updatedFunctionsInGameObject p:nth-child(9), .updatedFunctionsInGameObject p:nth-child(10), .updatedFunctionsInGameObject p:nth-child(11), .updatedFunctionsInGameObject p:nth-child(12), .updatedFunctionsInGameObject p:nth-child(13), .updatedFunctionsInGameObject p:nth-child(14), .updatedFunctionsInGameObject p:nth-child(15),.updatedFunctionsInGameObject p:nth-child(16), .updatedFunctionsInGameObject p:nth-child(17), .updatedFunctionsInGameObject p:nth-child(20) {
+    padding-left: 30px;
+}
+
+.updatedFunctionsInGameObject p:nth-child(6), .updatedFunctionsInGameObject p:nth-child(7), .updatedFunctionsInGameObject p:nth-child(18) {
+    padding-left: 0;
+}
+
+.removeEventListenerMethodExample p:nth-child(4), .removeEventListenerMethodExample p:nth-child(5), .removeEventListenerMethodExample p:nth-child(6) {
+    padding-left: 30px;
+}
+
+.utilityFunctionsInViewObject p:nth-child(2), .utilityFunctionsInViewObject p:nth-child(5) {
+    padding-left: 30px;
+}
