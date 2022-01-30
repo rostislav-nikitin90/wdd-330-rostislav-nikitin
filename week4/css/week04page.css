@@ -1,0 +1,194 @@
+.inputElementExamples {
+  border-collapse: collapse;
+  width: fit-content;
+}
+
+.inputElementExamples td,
+.inputElementExamples th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.inputElementExamples tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.inputElementExamples th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+}
+
+.otherInputTypes {
+  margin: 15px 0 50px 0;
+}
+
+.week4Exercises {
+  list-style: none;
+  margin: 50px 0 0 0;
+}
+
+.submitEventExample,
+.formELementInQuiz {
+  margin: 0 0 50px 0;
+}
+
+.submitEventExample p:nth-child(4),
+.formELementInQuiz p:nth-child(2),
+.formELementInQuiz p:nth-child(3),
+.updatedGameStartMethodInQuiz p:nth-child(2),
+.updatedGameStartMethodInQuiz p:nth-child(3),
+.updatedGameStartMethodInQuiz p:nth-child(4),
+.updatedGameAskMethodInQuiz p:nth-child(2),
+.updatedGameAskMethodInQuiz p:nth-child(6),
+.updatedGameAskMethodInQuiz p:nth-child(7),
+.updatedGameAskMethodInQuiz p:nth-child(9),
+.updatedGameCheckMethodInQuiz p:nth-child(2),
+.updatedGameCheckMethodInQuiz p:nth-child(3),
+.updatedGameCheckMethodInQuiz p:nth-child(4),
+.updatedGameCheckMethodInQuiz p:nth-child(5),
+.updatedGameCheckMethodInQuiz p:nth-child(9),
+.updatedGameCheckMethodInQuiz p:nth-child(11),
+.updatedGameCheckMethodInQuiz p:nth-child(12),
+.resetFormMethodInQuiz p:nth-child(2),
+.resetFormMethodInQuiz p:nth-child(3),
+.callToResetFormMethodInQuiz p:nth-child(2),
+.callToResetFormMethodInQuiz p:nth-child(3),
+.callToResetFormMethodInQuiz p:nth-child(4),
+.callToResetFormMethodInQuiz p:nth-child(5),
+.callToResetFormMethodInQuiz p:nth-child(9),
+.callToResetFormMethodInQuiz p:nth-child(11),
+.callToResetFormMethodInQuiz p:nth-child(12),
+.callToResetFormMethodInQuiz p:nth-child(13),
+.constructionFunctionExample p:nth-child(2),
+.constructionFunctionExample p:nth-child(3),
+.constructionFunctionExample p:nth-child(5),
+.classDeclarationExample p:nth-child(2),
+.classDeclarationExample p:nth-child(4),
+.classDeclarationExample p:nth-child(5),
+.classDeclarationExample p:nth-child(7),
+.classExample p:nth-child(2),
+.classExample p:nth-child(5),
+.classExample p:nth-child(6),
+.classExample p:nth-child(8),
+.classExample p:nth-child(9),
+.classExample p:nth-child(11),
+.removingMethodsInQuiz p:nth-child(2),
+.removingMethodsInQuiz p:nth-child(3),
+.updatedAskFunctionInQuiz,
+.buttonsArray p:nth-child(2),
+.ModifiedGameCheckMethodInQuiz,
+.quizObjectInQuiz,
+.packageJson p:nth-child(2),
+.packageJson p:nth-child(3),
+.packageJson p:nth-child(4),
+.packageJson p:nth-child(5),
+.packageJson p:nth-child(6),
+.packageJson p:nth-child(8),
+.packageJson p:nth-child(9),
+.packageJson p:nth-child(13),
+.packageJson p:nth-child(14),
+.packageJson p:nth-child(15),
+.utilitiesJs p:nth-child(3),
+.utilitiesJs p:nth-child(5),
+.utilitiesJs p:nth-child(6),
+.utilitiesJs p:nth-child(9),
+.utilitiesJs p:nth-child(12),
+.utilitiesJs p:nth-child(15),
+.utilitiesJs p:nth-child(16),
+.constViewPt1,
+.curlyBracketsAndComma,
+.showElement p:nth-child(1),
+.showElement p:nth-child(3),
+.hideElement p:nth-child(1),
+.hideElement p:nth-child(3),
+.setup,
+.curlyBracketsAndComma2,
+.tearDown,
+.curlyBracketsAndComma3,
+.btnArray p:nth-child(1),
+.btnArray p:nth-child(3),
+.startQuiz,
+.curlyBracketsAndComma4,
+.countdown p:nth-child(1),
+.countdown p:nth-child(7),
+.askName,
+.curlyBracketsAndComma5,
+.checkEvent,
+.curlyBracketsAndComma6,
+.gameOverQuiz,
+.curlyBracketsAndComma7,
+.hiScoreQuiz,
+.curlyBracketsAndComma8,
+.viewGame,
+.importModules p:nth-child(6),
+.importModules p:nth-child(7) {
+  padding-left: 30px;
+}
+
+.chapter12, .ch12Exercise, .chapter15, .usingJQuery, .ch15Exercise {
+  margin: 50px 0 0 0;
+}
+
+.updatedGameAskMethodInQuiz p:nth-child(3),
+.updatedGameAskMethodInQuiz p:nth-child(4),
+.updatedGameAskMethodInQuiz p:nth-child(5),
+.updatedGameAskMethodInQuiz p:nth-child(8),
+.updatedGameCheckMethodInQuiz p:nth-child(6),
+.updatedGameCheckMethodInQuiz p:nth-child(7),
+.updatedGameCheckMethodInQuiz p:nth-child(8),
+.updatedGameCheckMethodInQuiz p:nth-child(10),
+.callToResetFormMethodInQuiz p:nth-child(6),
+.callToResetFormMethodInQuiz p:nth-child(7),
+.callToResetFormMethodInQuiz p:nth-child(8),
+.callToResetFormMethodInQuiz p:nth-child(10),
+.constructionFunctionExample p:nth-child(4),
+.classDeclarationExample p:nth-child(3),
+.classDeclarationExample p:nth-child(6),
+.classExample p:nth-child(3),
+.classExample p:nth-child(4),
+.classExample p:nth-child(7),
+.classExample p:nth-child(10),
+.packageJson p:nth-child(7),
+.packageJson p:nth-child(10),
+.packageJson p:nth-child(11),
+.packageJson p:nth-child(12),
+.utilitiesJs p:nth-child(4),
+.utilitiesJs p:nth-child(10),
+.utilitiesJs p:nth-child(11),
+.forConst p:nth-child(1),
+.forConst p:nth-child(3),
+.targetInnerHtml,
+.showElement p:nth-child(2),
+.hideElement p:nth-child(2),
+.thisShowHideRender,
+.thisHideShowRender,
+.btnArray p:nth-child(2),
+.consoleLogStart,
+.countdown p:nth-child(2),
+.countdown p:nth-child(3),
+.countdown p:nth-child(4),
+.countdown p:nth-child(6),
+.consoleLogAsk,
+.consoleLogCheckEvent,
+.consoleLogGameOver,
+.constHi {
+  padding-left: 60px;
+}
+
+.setupMethodInQuiz, .callToViewSetupMethod, .tearDownMethodInQuiz, .callToTearDownMethod {
+  margin: 0 0 0 30px;
+}
+
+.number6, .booleanTrue, .number20, .number13, .raphSayHiMethod, .mvcClarification li {
+  margin: 0 0 30px 0;
+}
+
+.sayHiMethod, .raphSayHiMethod, .raphWeapon, .raphAttackMethod {
+  margin: 30px 0 0 0;
+}
+
+.forConst p:nth-child(2),
+.countdown p:nth-child(5) {
+  padding-left: 90px;
+}
