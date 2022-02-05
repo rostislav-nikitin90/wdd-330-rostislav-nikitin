@@ -1,0 +1,101 @@
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.errorList,
+.finallyBlockExample {
+    margin: 0 0 50px 0;
+}
+
+.stackTraceExample p:nth-child(6),
+.stackTraceExample p:nth-child(7),
+.stackTraceExample p:nth-child(8),
+.stackTraceExample p:nth-child(9),
+.selfInvokingFunction p:nth-child(2),
+.selfInvokingFunction p:nth-child(3),
+.featureDetectionExample p:nth-child(2),
+.alertMethodExample1 p:nth-child(2),
+.alertMethodExample1 p:nth-child(5),
+.alertMethodExample1 p:nth-child(7),
+.alertMethodExample1 p:nth-child(8),
+.alertMethodExample1 p:nth-child(10),
+.alertMethodExample2 p:nth-child(2),
+.alertMethodExample2 p:nth-child(5),
+.alertMethodExample2 p:nth-child(7),
+.alertMethodExample2 p:nth-child(8),
+.alertMethodExample2 p:nth-child(10),
+.consoleLogExample p:nth-child(2),
+.consoleLogExample p:nth-child(12),
+.throwStatementExample p:nth-child(2),
+.throwStatementExample p:nth-child(3),
+.throwStatementExample p:nth-child(5),
+.throwStatementExample p:nth-child(6),
+.exceptionHandlingExample p:nth-child(2),
+.exceptionHandlingExample p:nth-child(3),
+.exceptionHandlingExample p:nth-child(5),
+.exceptionHandlingExample p:nth-child(7),
+.finallyBlockExample p:nth-child(2),
+.finallyBlockExample p:nth-child(3),
+.finallyBlockExample p:nth-child(4),
+.finallyBlockExample p:nth-child(6),
+.finallyBlockExample p:nth-child(8),
+.finallyBlockExample p:nth-child(10),
+.squareRootTest p:nth-child(2),
+.squareRootTest p:nth-child(3),
+.squareRootTest p:nth-child(5),
+.squareRootTest p:nth-child(6) {
+    padding-left: 30px;
+}
+
+.stackTraceExample p:nth-child(5),
+.undeclaredVariableInStrictMode,
+.invokingStrictModeExample,
+.sqRoot-1,
+.finallyBlockDefinition {
+    padding-top: 30px;
+}
+
+.alertMethodExample1 p:nth-child(3),
+.alertMethodExample1 p:nth-child(4),
+.alertMethodExample1 p:nth-child(6),
+.alertMethodExample1 p:nth-child(9),
+.alertMethodExample2 p:nth-child(3),
+.alertMethodExample2 p:nth-child(4),
+.alertMethodExample2 p:nth-child(6),
+.alertMethodExample2 p:nth-child(9),
+.consolelogExample p:nth-child(3),
+.consolelogExample p:nth-child(4),
+.consolelogExample p:nth-child(5),
+.consolelogExample p:nth-child(6),
+.consolelogExample p:nth-child(7),
+.consolelogExample p:nth-child(8),
+.consolelogExample p:nth-child(9),
+.consolelogExample p:nth-child(10),
+.consolelogExample p:nth-child(11),
+.exceptionHandlingExample p:nth-child(4),
+.exceptionHandlingExample p:nth-child(6),
+.finallyBlockExample p:nth-child(5),
+.finallyBlockExample p:nth-child(7),
+.finallyBlockExample p:nth-child(9) {
+    padding-left: 60px;
+}
+
+.basicFormOfDebugging, 
+.consoleObjectDefinition,
+.errorObjectDefinition,
+.throwStatementDefinition,
+.exceptionHandlingDefinition,
+.testingFrameworksDefinition {
+    margin: 50px 0 0 0;
+}
+
+.week5Exercises {
+    list-style: none;
+    margin: 50px 0 0 0;
+}
+
+.throwNewRangeError {
+    margin-left: 60px;
+}
