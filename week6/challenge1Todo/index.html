@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Challenge One: Todo</title>
+	<meta name="author" content="Rostislav Nikitin">
+	<meta name="description"
+		content="Application build activity that is updated automatically on the screen when users enter their tasks and add them to the task list, view them, mark them as completed or remove them from the list, or filter them by completed/incomplete.">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<h1>ToDo App</h1>
+	<main>
+		<div class="todoApp">
+			<form class="todoForm">
+				<input id="inputBox" type="text" placeholder="Task's description" />
+				<button type="submit" class="addBtn">Add task</button>
+			</form>
+			<div class="listContainer">
+				<h2>LIST OF TASKS</h2>
+				<ul class="taskList">
+				</ul>
+				<button type="button" class="showAllTasks">All</button>
+				<button type="button" class="showUncompletedTasks">Active</button>
+				<button type="button" class="showCompletedTasks">Completed</button>
+			</div>
+		</div>
+	</main>
+	<script src="js/main.js" type="module"></script>
+</body>
+
+</html>
