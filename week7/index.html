@@ -1,0 +1,484 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Portfolio - Week 07 Page</title>
+    <meta name="author" content="Rostislav Nikitin">
+    <link rel="stylesheet" href="css/week07page.css">
+  </head>
+  <body>
+    <h1>WDD 330 Portfolio</h1>
+    <h2>Week07</h2>
+    <h3>Readings:</h3>
+    <h3>JavaScript: Novice to Ninja 2nd Edition</h3>
+    <h4>Chapter 11: Further Functions</h4>
+    <p>Notes:</p>
+    <p>JavaScript functions are first-class objects, which means they can be passed around in the same way as every other value. They can have their own properties and methods, as well as accepting other functions as parameters and being returned by other functions. 
+      This makes them a very flexible tool to work with in JavaScript, and there are a variety of techniques and patterns that can be used to make code cleaner.
+    </p>
+    <p>Functions have built-in properties such as length, but can have custom properties added. The length property returns the number of parameters the function has.
+      For example, the square function:
+    </p>
+    <div class="squareFunctionExample">
+      <p>function square(x) {</p>
+      <p>return x*x;</p>
+      <p>}</p>
+    </div>
+    <p>If we query the length property, we can see that it accepts one parameter:</p>
+    <p>square.length</p>
+    <p><< 1</p>
+    <p class="callAndApplyMethodsDefinition">All functions have call() and apply() methods that can invoke a function with the value of this bound to an object that is provided as an argument.
+      The only difference is call() method takes the arguments separated by comma while apply() method takes the array of arguments.
+    </p>
+    <p>In the following example, the sayHello() function refers to an unspecific object called this that has a property called name:</p>
+    <div class="sayHelloFunctionExample">
+      <p>function sayHello(){</p>
+      <p>return `Hello, my name is ${ this.name }`;</p>
+      <p>}</p>
+    </div>
+    <p>The programmer can create some objects that have a name property, then use the call() method to invoke the sayHello() function, providing each object as an argument. 
+      This will then take the value of this in the function:
+    </p>
+    <div class="usingCallMethodExample">
+      <p>const clark = { name: 'Clark' };</p>
+      <p>const bruce = { name: 'Bruce' };</p>
+      <p>sayHello.call(clark);</p>
+      <p><< 'Hello, my name is Clarke'</p>
+      <p>sayHello.call(bruce);</p>
+      <p><< 'Hello, my name is Bruce'</p>
+    </div>
+    <p>If the function that's called requires any parameters, these need to be provided as arguments after the first argument, which is always the value of this. 
+      For example, the sayHello() function can be updated to give a more generalized greeting that's provided as an argument:
+    </p>
+    <div class="updatedSayHelloFunctionExample">
+      <p>function sayHello(greeting='Hello'){</p>
+      <p>return `${ greeting }, my name is ${ this.name }`;</p>
+      <p>}</p>
+      <p>sayHello.call(clark, 'How do you do');</p>
+      <p><< 'How do you do, my name is Clark'</p>
+      <p>sayHello.call(bruce);</p>
+      <p><< 'Hello, my name is Bruce'</p>
+    </div>
+    <p>If a function doesn't refer to an object as this in its body, it can still be called using the call() method, but it is necessary to provide null as its first argument. 
+      For example, the square() function could be called using the call() method, like so:
+    </p>
+    <div class="callMethodWithNullExample">
+      <p>square.call(null, 4)</p>
+      <p><< 16</p>
+    </div>
+    <p>The apply() method works in the same way, except the arguments of the function are provided as an array, even if there is only one argument:
+    </p>
+    <div>
+      <p>square.apply(null, [4])</p>
+      <p><< 16</p>
+    </div>
+    <p class="iifeDefinition">Immediately Invoked Function Expressions or IIFEs are functions that are enclosed in parentheses and immediately followed by double parentheses so they're invoked. 
+      They are useful for namespacing variables and setting default values. Example:
+    </p>
+    <div class="iifeExample">
+      <p>(function(){</p>
+      <p>const temp = 'World';</p>
+      <p>console.log(`Hello ${temp}`);</p>
+      <p>})();</p>
+      <p><< 'Hello World'</p>
+    </div>
+    <p>IIFEs are a useful way of performing a task while keeping any variables wrapped up within the scope of the function. This means the global namespace is not polluted with lots of variable names.
+    </p>
+    <p>There is no way to remove a variable from a scope once it's been declared. If a variable is only required temporarily, it may cause confusion if it's still available later in the code. 
+      Even worse, the name of the variable may clash with another piece of code (an external JavaScript library, for example) resulting in errors. Placing any code that uses the temporary variable inside an IIFE will ensure it's only available while the IIFE is invoked, then it will disappear. 
+      The example that follows uses an IIFE to swap the value of two global variables, a and b. This process requires the use of a temporary variable, called temp, which only exists while the IIFE is invoked:
+    </p>
+    <div class="temporaryVariableExample">
+      <p>let a = 1;</p>
+      <p>let b = 2;</p>
+      <p>(()=>{</p>
+      <p>const temp = a;</p>
+      <p>a = b;</p>
+      <p>b = temp;</p>
+      <p>})();</p>
+      <p>a;</p>
+      <p><< 2</p>
+      <p>b;</p>
+      <p><< 1</p>
+      <p>console.log(temp);</p>
+      <p><< Error: "temp is not defined"</p>
+    </div>
+    <p>This shows the variable temp does not exist after the function has been invoked.
+    </p>
+    <p class="initializationCodeDefinition">An IIFE can be used to set up any initialization code that there'll be no need for again. Because the code is only run once, there's no need to create any reusable, named functions, and all the variables will also be temporary. 
+      An IIFE will be invoked once, and can set up any variables, objects and event handlers when the page loads. The following example logs a welcome message to the console, then eliminates all the temporary variables used in putting the message together:
+    </p>
+    <div class="initializationCodeExample">
+      <p>(function() {</p>
+      <p>const name = 'Peter Parker'; // This might be obtained from a cookie in reality</p>
+      <p>const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday', 'Friday','Saturday'];</p>
+      <p>const date = new Date(),today = days[date.getDay()];</p>
+      <p>console.log(`Welcome back ${name}. Today is ${today}`);</p>
+      <p>})();</p>
+      <p><< 'Welcome back Peter Parker. Today is Tuesday'</p>
+    </div>
+
+    <p>Much of this can be achieved in ES6 by simply placing the code inside a block. This is because variables have block scope when const or let are used, whereas in previous versions of JavaScript, only functions maintained the scope of variables. 
+      The example above would work just as well using the following code:
+    </p>
+    <div class="placingCodeInsideaBlockExample">
+      <p>{</p>
+      <p>const name = 'Peter Parker'; // This might be obtained from a cookie in reality</p>
+      <p>const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday', 'Friday','Saturday'];</p>
+      <p>const date = new Date(),today = days[date.getDay()];</p>
+      <p>console.log(`Welcome back ${name}. Today is ${today}`);</p>
+      <p>}</p>
+      <p><< 'Welcome back Peter Parker. Today is Tuesday'</p>
+    </div>
+    <p class="strictModeAndIife">The recommended way to use strict mode is to put all of your code inside an IIFE so you don't have to apply strict mode to all JavaScript in the file:
+    </p>
+    <div class="iifeWithStrictModeExample">
+      <p>(function() {</p>
+      <p>'use strict';</p>
+      <p>// All your code would go inside this function</p>
+      <p>})();</p>
+    </div>
+    <p>This ensures that only your code inside the IIFE is forced to use strict mode.
+    </p>
+    <p class="self-containedCodeBlocks">An IIFE can be used to enclose a block of code inside its own private scope so it doesn't interfere with any other part of the program. Using IIFEs in this way means code can be added or removed separately. 
+      The example shows two blocks, A and B, that are able to run code independently of each other:
+    </p>
+    <div class="self-containedCodeBlocksExample">
+      <p>(function() {</p>
+      <p>// block A</p>
+      <p>const name = 'Block A';</p>
+      <p>console.log(`Hello from ${name}`);</p>
+      <p>}());</p>
+      <p>(function() {</p>
+      <p>// block B</p>
+      <p>const name = 'Block B';</p>
+      <p>console.log(`Hello from ${name}`);</p>
+      <p>}());</p>
+      <p><<&nbsp;&nbsp;&nbsp;Hello from Block A</p>
+      <p>Hello from Block B</p>
+    </div>
+    <p>Both blocks of code include a variable called name, but the modules don't interfere with each other. This is a useful approach for separating parts of a program into discrete sections, especially for testing purposes.
+    </p>
+    <p class="self-DefiningAndSelf-RewritingFunctions">The dynamic nature of JavaScript means that a function is able to not only call itself, but define itself, and even redefine itself. 
+      This is done by assigning an anonymous function to a variable that has the same name as the function:
+    </p>
+    <div class="self-DefiningAndSelf-RewritingFunctionsExample">
+      <p>function party(){</p>
+      <p>console.log('Wow this is amazing!');</p>
+      <p>party = function(){</p>
+      <p>console.log('Been there, got the T-Shirt');</p>
+      <p>}</p>
+      <p>}</p>
+    </div>
+    <p>This logs a message in the console, then redefines itself to log a different message in the console. When the function has been called once, it will be as if it was defined like this:
+    </p>
+    <div class="functionPartyExample">
+      <p>function party() {</p>
+      <p>console.log('Been there, got the T-Shirt');</p>
+      <p>}</p>
+    </div>
+    <p>Every time the function is called after the first time, it will log the message 'Been there, got the T-Shirt':
+    </p>
+    <div class="functionCalledAfterTheFirstTimeExample">
+      <p>party();</p>
+      <p><< 'Wow this is amazing!'</p>
+      <p>party();</p>
+      <p><< 'Been there, got the T-Shirt'</p>
+      <p>party();</p>
+      <p><< 'Been there, got the T-Shirt'</p>
+    </div>
+    <p class="recursiveFunctionDefinition">A recursive function is one that will keep invoking itself until a certain condition is met. It's a useful tool to use when iterative processes are involved. 
+      A common example is a function that calculates the factorial of a number:
+    </p>
+    <div class="recursiveFunctionExample">
+      <p>function factorial(n) {</p>
+      <p>if (n === 0) {</p>
+      <p>return 1;</p>
+      <p>} else {</p>
+      <p>return n * factorial(n - 1);</p>
+      <p>}</p>
+      <p>}</p>
+    </div>
+    <p>This function will return 1 if 0 is provided as an argument (0 factorial is 1), otherwise it will multiply the argument by the result of invoking itself with an argument of one less. 
+      The function will continue to invoke itself until finally the argument is 0 and 1 is returned. This will result in a multiplication of 1, 2, 3 and all the numbers up to the original argument.
+    </p>
+    <p class="callbackDefinition">A callback is a function that is passed as an argument to another function and then invoked inside the function it was passed to.
+    </p>
+    <p>Callbacks are frequently used in asynchronous programming as part of the event loop. This means that a program can continue to run in a single thread while waiting for another task to be completed.
+    </p>
+    <p>Promises can be used instead of callbacks to deal with multiple asynchronous actions in sequence. They also provide a nicer mechanism for handling errors. A promise represents the future result of an asynchronous operation. 
+      Promises don't do anything that can't already be achieved using callbacks, but they help simplify the process, and avoid the convoluted code that can result from using multiple callbacks.
+    </p>
+    <p>When a promise is created, it calls an asynchronous operation and is then said to be pending. It remains in this state while the operation is taking place. At this stage, the promise is said to be unsettled. 
+      Once the operation has completed, the promise is said to have been settled. A settled promise can result in two different outcomes:
+    </p>
+    <ul>
+      <li>Resolved ― the asynchronous operation was completed successfully.</li>
+      <li>Rejected ― the asynchronous operation didn't work as expected, wasn't successfully completed or resulted in an error.</li>
+    </ul>
+    <p>Both these outcomes will return any relevant data, and the programmer can take the appropriate action based on the outcome of the promise.
+    </p>
+    <p>A promise is created using a constructor function. This takes a function called an executor as an argument. The executor initializes the promise and starts the asynchronous operation. 
+      It also accepts two functions as arguments: the resolve() function is called if the operation is successful, and the reject() function is called if the operation fails. The general layout of a promise can be seen in the code below:
+    </p>
+    <div class="promiseExample">
+      <p>const promise = new Promise( (resolve, reject) => {</p>
+      <p>// initialization code goes here</p>
+      <p>if (success) {</p>
+      <p>resolve(value);</p>
+      <p>} else {</p>
+      <p>reject(error);</p>
+      <p>}</p>
+      <p>});</p>
+    </div>
+    <p class="promiseExampleDefinition">An example of a promise that uses the dice object created back in chapter 5:</p>
+    <div class="diceObjectExample">
+      <p>const dice = {</p>
+      <p>sides: 6,</p>
+      <p>roll() {</p>
+      <p>return Math.floor(this.sides * Math.random()) + 1;</p>
+      <p>}</p>
+      <p>}</p>
+    </div>
+    <p>The created promise that uses the dice.roll() method as the asynchronous operation and considers rolling a 1 as a failure, and any other number as a success:
+    </p>
+    <div class="promiseWithDiceRollMethod">
+      <p>const promise = new Promise( (resolve,reject) => {</p>
+      <p>const n = dice.roll();</p>
+      <p>setTimeout(() => {</p>
+      <p>(n > 1) ? resolve(n) : reject(n);</p>
+      <p>}, n*1000);</p>
+      <p>});</p>
+    </div>
+    <p>This creates a variable called promise that holds a reference to the promise. The promise calls the roll() method and stores the return value in a variable called n. Next, an if-else block is used to specify the conditions for success (rolling any number higher than 1) and failure (rolling a 1). 
+      The setTimeout() method from Chapter 9 is used to add a short delay based on the number rolled. This is to mimic the time taken for an asynchronous operation to complete.
+    </p>
+    <p>Both the resolve() and reject() functions return the value of the n variable. This can be used when dealing with the outcome of the promise once it's been settled.
+    </p>
+    <p>Once a promise has been settled, the then() method can be used to deal with the outcome. This method accepts two arguments. The first is a fulfilment function that's called when the promise is resolved. Any data returned from the resolve() function will be passed along to this function. 
+      The second argument is a rejection function that's called if the promise is rejected. Similar to the fulfilment function, the rejection function receives any data returned from the reject() function.
+    </p>
+    <p>In the dice example, both functions will receive the value of the number rolled. Let's have a look at how a programmer could deal with that:
+    </p>
+    <p>promise.then( result => console.log(`Yes! I rolled a ${result}`), result => console.log(`Drat! ... I rolled a ${result}`) );</p>
+    <p>The first argument is simply a function that logs a celebratory message to the console, stating the number rolled (this is passed to the then() method as the variable result). The second argument logs an annoyed message and, again, states the number rolled.
+    </p>
+    <p>Alternatively, the catch() method can be used to specify what to do if the operation fails instead:
+    </p>
+    <p>promise.catch( result => console.log(`Drat! ... I rolled a ${result}`));</p>
+    <p>The then() and catch() methods can be chained together to form a succinct description of how to deal with the outcome of the promise:
+    </p>
+    <div class="thenAndCatchedMethods">
+      <p>promise.then( result => console.log(`I rolled a ${result}`) )</p>
+      <p>.catch( result => console.log(`Drat! ... I rolled a ${result}`) );</p>
+    </div>
+    <p class="higher-orderFunctionsDefinition">Functions that return other functions are known as higher-order functions. 
+      A higher-order function is a function that accepts functions as parameters and/or returns a function.
+    </p>
+    <p class="closureDefinition">A closure is a reference to a variable that was created inside the scope of another function, but is then kept alive and used in another part of the program.
+      One of the key principles in creating closures is that an 'inner' function, which is declared inside another function, has full access to all of the variables declared inside the scope of the function in which it's declared (the 'outer' function). 
+      This can be seen in the example below:
+    </p>
+    <div class="closureExample">
+      <p>function outer() {</p>
+      <p>const outside = 'Outside!';</p>
+      <p>function inner() {</p>
+      <p>const inside = 'Inside!';</p>
+      <p>console.log(outside);</p>
+      <p>console.log(inside);</p>
+      <p>}</p>
+      <p>console.log(outside);</p>
+      <p>inner();</p>
+      <p>}</p>
+    </div>
+    <p>The outer() function only has access to the variable outside, which was declared in its scope. The inner() function, however, has access to the variable inside, declared in its scope, but also the variable outside, declared outside its scope, but from within the outer() function. 
+      It can be seen when the outside() function is invoked:
+    </p>
+    <p>outer()</p>
+    <p><< Outside!</p>
+    <p>Inside!</p>
+    <p>Outside!</p>
+    <p>This means that whenever a function is defined inside another function, the inner function will have access to any variables that are declared in the outer function's scope.
+    </p>
+    <p class="generatorDefinition">Generators are special functions used to produce iterators that maintain the state of a value. To define a generator function, an asterisk symbol (*) is placed after the function keyword. 
+      A generator function will return an iterator object that provides a next() method, which returns the next value in a sequence that is defined in the generator function.
+    </p>
+    <p class="functionalProgrammingDefinition">Functional programming involves breaking processes down into steps that can be applied as a series of functions.
+    </p>
+    <p class="pureFunctionDefinition">Pure functions are functions that don't rely on the state of the code they are called from, have no side-effects, and always give the same result when given the same arguments (referential transparency).
+    </p>
+    <p class="curryingDefinition">Currying or partial application is the process of applying one argument at a time to a function. A new function is returned until all the arguments have been used.
+    </p>
+
+    <h4 class="chapter13">Chapter 13: Ajax</h4>
+    <p>Notes:</p>
+    <p>Ajax is a technique that allows web pages to communicate asynchronously with a server, and it dynamically updates web pages without reloading. 
+      This enables data to be sent and received in the background, as well as portions of a page to be updated in response to user events, while the rest of the program continues to run.
+    </p>
+    <p>The use of Ajax revolutionized how websites worked, and ushered in a new age of web applications. Web pages were no longer static, but dynamic applications.
+    </p>
+    <p>The term 'Ajax' was coined by Jesse James Garrett in 2005 in the article “Ajax: A New Approach to Web Applications,” where he referred to techniques being used by Google in its recent web applications. 
+      Ajax was a neat acronym that referred to the different parts of the process being used: Asynchronous JavaScript and XML:
+    </p>
+    <p>Asynchronous</p>
+    <p>When a request for data is sent, the program doesn't have to stop and wait for the response. It can carry on running, waiting for an event to fire when a response is received. 
+      By using callbacks to manage this, programs are able to run in an efficient way, avoiding lag as data is transferred back and forth.
+    </p>
+    <p>JavaScript</p>
+    <p>JavaScript was always considered a 'front-end' language, not used to communicate with the server. Ajax enabled JavaScript to send requests and receive responses from a server, allowing content to be updated in real time.
+    </p>
+    <p>XML</p>
+    <p>When the term Ajax was originally coined, XML documents were often used to return data. Many different types of data can be sent, but by far the most commonly used in Ajax nowadays is JSON, which is more lightweight and easier to parse than XML. 
+      (Although it has never really taken off, the term Ajaj is sometimes used to describe the technique.) JSON also has the advantage of being natively supported in JavaScript, so the programmer can deal with JavaScript objects rather than having to parse XML files using DOM methods.
+    </p>
+    <p>Ajax can be used for communicating with external APIs.
+    </p>
+    <p>Ajax requests can be made using the Fetch API. The Fetch API is currently a living standard for requesting and sending data asynchronously across a network. 
+      The Fetch API uses promises to avoid callback hell, and also streamlines a number of concepts that had become cumbersome when using the XMLHttpRequest object.
+    </p>
+    <p>The Fetch API provides a global fetch() method that only has one mandatory argument, which is the URL of the resource the programmer wants to fetch. A very basic example would look something like the following piece of code:</p>
+    <div>
+      <p>fetch('https://example.com/data')</p>
+      <p>.then( // code that handles the response )</p>
+      <p>.catch( // code that runs if the server returns an error )</p>
+    </div>
+    <p>The fetch() method returns a promise that resolves to the response returned from the URL that was provided as an argument. In the example above, the promise will be resolved when a response is received from the URL 'https:example.com/data'. 
+      Because it's a promise, the programmer can also use a catch statement at the end to deal with any errors that may occur.
+    </p>
+    <p class="responseInterfaceDefinition">The Response interface allows to control the response received from a request or to create your own response objects. The Response interface deals with the object that's returned when the promise is fulfilled. 
+      Response objects have a number of properties and methods that allow us to process the response effectively.
+    </p>
+    <p>For example, each response object has an ok property that checks to see if the response is successful. This is based on the HTTP status code, which can be accessed using the status property. This will usually be 200 if the response was successful, 201 if a resource was created, or 204 when the request is successful but no content is returned. 
+      The ok property will return true if the status property is between 200 and 299. The programmer needs to manually check if this happens because the promise will only be rejected in the case of a network error, rather than something like a '404 page not found error', which is still considered a successful request in terms of the promise.
+    </p>
+    <p>This means that if block can be used to check if the request was successful, and throw an error otherwise:
+    </p>
+    <div class="responseInterfaceExample">
+      <p>const url = 'https:example.com/data';</p>
+      <p>fetch(url)</p>
+      <p>.then((response) => {</p>
+      <p>if(response.ok) {</p>
+      <p>return response;</p>
+      <p>}</p>
+      <p>throw Error(response.statusText);</p>
+      <p>})</p>
+      <p>.then( response => // do something with response )</p>
+      <p>.catch( error => console.log('There was an error!') )</p>
+    </div>
+    <p>The error thrown refers to the statusText property of the response object and specifies the status message that corresponds to the code returned, for example it might be 'Forbidden' for a status code of 403.
+    </p>
+    <p>Some other properties of the Response object are:
+    </p>
+    <ul>
+      <li>headers - A Headers object (see later section) containing any headers associated with the response</li>
+      <li>url - A string containing the URL of response</li>
+      <li>redirected - A boolean value that specifies if the response is the result of a redirect</li>
+      <li>type - A string value of 'basic', 'cors', 'error' or 'opaque'. A value of 'basic' is used for a response from the same domain. A value of 'cors' means the data was received from a valid cross-origin request from a different domain. 
+        A value of 'opaque' is used for a response received from 'no-cors' request from another domain, which means access to the data will be severely restricted. A value of 'error' is used when a network error occurs.
+      </li>
+    </ul>
+    <p class="creatingResponseObjectDefinition">Although most of the time the programmer will be dealing with a response object that is returned from a request the programmer makes, he can also create his own response objects using a constructor function:
+    </p>
+    <div>
+      <p>const response = new Response( 'Hello!', {</p>
+      <div class="createdResponseObjectExample">
+        <p>ok: true,</p>
+        <p>status: 200,</p>
+        <p>statusText: 'OK',</p>
+        <p>type: 'cors',</p>
+        <p>url: '/api'</p>
+      </div>
+      <p>});</p>
+    </div>
+    <p>The first argument is the data that is to be returned (for example a text stream, file or JSON data). The second argument is an object that can be used to provide values for any of the properties listed above.
+    </p>
+    <p>These can be useful to use if the programmer is creating an API that needs to send a response, or if the programmer needs to send a dummy response for testing purposes.
+    </p>
+    <p class="requestInterfaceDefinition">The Request interface allows to create a request object that contains information about the request being made, such as the URL and headers.
+    </p>
+    <p class="headersInterface">The Headers interface allows to create HTTP headers that can be added to a request or response object.
+    </p>
+    <p class="getAndPostRequests">Requests can retrieve data using a GET request, or send data using a POST request.
+    </p>
+    <p class="formDataInterface">The FormData interface makes it easier to send data from forms.
+    </p>
+
+    <ul>
+      <li class="week7Exercises">
+        Week 7 Exercises:
+      </li>
+      <li>
+        <a href="ch11/quiz_ninja_pt11.html" target="_blank">Quiz Ninja Project Part 11</a>
+        <p>This Quiz Ninja Project makes the questions in the quiz appear at random, rather than just asking them in the order in which they appear in the array, using and including the random() function and the shuffle() function. 
+          Because the pop() method always removes the last element in an array, this will mean the question selected will always be selected at random.
+        </p>
+        <p>The first task is to add the random() function near the top of js file:</p>
+        <div class="randomFunction">
+          <p>function random(a,b=1) {</p>
+          <p>// if only 1 argument is provided, we need to swap the values of a and b</p>
+          <p>if (b === 1) {</p>
+          <p>[a,b] = [b,a];</p>
+          <p>}</p>
+          <p>return Math.floor((b-a+1) * Math.random()) + a;</p>
+          <p>}</p>
+        </div>
+        <p class="shuffleFunctionDefinition">The next step is to create a shuffle() function by adding the following function declaration underneath the random() function. This will take an array and change the position of each element:
+        </p>
+        <div class="shuffleFunction">
+          <p>function shuffle(array) {</p>
+          <p>for (let i = array.length; i; i--) {</p>
+          <p>let j = random(i)-1;</p>
+          <p>[array[i - 1], array[j]] = [array[j], array[i - 1]];</p>
+          <p>}</p>
+          <p>}</p>
+        </div>
+        <p>This function uses a for loop and iterates backwards through the array, selecting a random element to swap each element with. This ensures that the array gets completely shuffled.
+        </p>
+        <p>Now, with these functions, the programmer can use them to select a question at random. But it is necessary to update the game.ask() method with an extra line that invokes the shuffle() function on the game.questions array before using the pop() method to select a question. 
+          This can be achieved by updating the game.ask() function to the following:
+        </p>
+        <div class="updatedGameAskMethod">
+          <p>ask(name){</p>
+          <div class="askMethod">
+            <p>console.log('ask() invoked');</p>
+            <p>if(this.questions.length > 2) {</p>
+            <p>shuffle(this.questions);</p>
+            <p>this.question = this.questions.pop();</p>
+            <p>const options = [this.questions[0].realName, this.questions[1].realName, this.question.realName];</p>
+            <p>shuffle(options);</p>
+            <p>const question = `What is ${this.question.name}'s real name?`;</p>
+            <p>view.render(view.question,question);</p>
+            <p>view.render(view.response,view.buttons(options));</p>
+          </div>
+          <p>}</p>
+        </div>
+        <p>As a result, the random() and shuffle() functions have made it a bit more interesting to play now that the question appears in a random order.
+        </p>
+      </li>
+      <li class="chapter13">
+        <a href="ch13/quiz_ninja_pt12.html" target="_blank">Quiz Ninja Project Part 12</a>
+        <p>This version of the Quiz Ninja Project uses Ajax to fetch the questions from a server, instead of storing them in an object inside a JavaScript file.
+        </p>
+        <p>First of all it is necessary to remove the array of objects stored in the quiz variable at the start of the js file, and transfer the information into a separate file. 
+          This information has been saved in the JSON format on SitePoint's S3 account, and can be found at the following URL (it also contains lots more questions than the previous three used so far): https://spbooks.github.io/jsninja2/questions.json</p>
+        <p>The Fetch API is used to access this JSON data. The following code must be added to the top of the file:
+        </p>
+        <div class="fetchApi">
+          <p>const url = 'https://spbooks.github.io/jsninja2/questions.json';</p>
+          <p>fetch(url)</p>
+          <p>.then(res => res.json())</p>
+          <p>.then(quiz => {</p>
+          <p>view.start.addEventListener('click', () => game.start(quiz.questions), false);</p>
+          <p>view.response.addEventListener('click', (event) => game.check(event), false);</p>
+          <p>});</p>
+        </div>
+        <p>First of all a variable called url is created to store a reference to the URL. Then the Fetch API is used, which returns a promise. If this is successful, then the json() method is used, which returns the data as a JavaScript object. 
+          If this is successful, then the two event handlers are registered that were initially at the end of the file (these need removing from the end of the file). This means the 'start' button won't work until the data has finished loading.
+        </p>
+        <p>Everything else in the file stays the same. Keeping the quiz data in a separate file and loading it using Ajax is beneficial as it keeps the question data separate from the actual application logic. 
+          It means it's much easier to edit all in one place. It also means that the programmer can potentially create lots of different JSON quiz files that could be linked to, enabling a variety of different quizzes to be played.
+        </p>
+      </li>
+    </ul>
+  </body>
+</html>
