@@ -1,0 +1,74 @@
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.translateXYFunctionExample,
+.transformVendorPrefix,
+.translateXFunctionExample,
+.translateYFunctionExample,
+.scaleMethodExample1,
+.scaleMethodExample2,
+.multipleTransformationsExample,
+.rotateMethodExample,
+.skewXAndSkewY,
+.transition-propertyExample,
+.transition-durationPropertyExample,
+.transition-timing-functionPropertyValues,
+.transition-delayExample,
+.transitionPropertyExample,
+.animation-namePropertyExample,
+.animation-durationMoreInfo,
+.animation-timing-functionExample,
+.animation-iteration-countExample,
+.animation-directionPropertyValues,
+.animation-delayExample,
+.animation-fill-modePropertyValues,
+.getContextMethodExample,
+.definingFillColorExample,
+.image2,
+.image4,
+.raphaëlLibraryDefinition {
+    padding-bottom: 30px; 
+}
+
+.scaleMethodExample2 p:nth-child(2),
+.rotateMethodExample p:nth-child(2),
+.multiplePropertyTransitionExample p:nth-child(2),
+.keyFramesRuleExample p:nth-child(2),
+.keyFramesRuleExample p:nth-child(5),
+.moveRightAnimationCode,
+.appearDisappearAnimationCode,
+.bgMoveAnimationCode,
+.canvasExample1 p:nth-child(2),
+.cssBorderForCanvas p:nth-child(2),
+.cssBorderForCanvas p:nth-child(3),
+.addingImageExample p:nth-child(3),
+.drawImageToCanvasFunctionExample p:nth-child(2),
+.drawImageToCanvasFunctionExample p:nth-child(3),
+.drawImageToCanvasFunctionExample p:nth-child(4),
+.circleInSvgExample p:nth-child(2),
+.drawGradientFunctionCode,
+.svgCodeExample1 p:nth-child(2),
+.svgCodeExample2 p:nth-child(2) {
+    padding-left: 30px;
+}
+
+.svgCodeExample2 p:nth-child(3) {
+    padding-left: 60px;
+}
+
+.svgCodeExample2 p:nth-child(4) {
+    padding-left: 90px;
+}
+
+.chapter12,
+.week8Exercises,
+.svgDefinition {
+    padding-top: 50px;
+}
+
+.week8Exercises {
+    list-style: none;
+}
