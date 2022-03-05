@@ -1,0 +1,130 @@
+.globalVariableExample,
+.globalVariableExample p:nth-child(2),
+.globalVariableExample p:nth-child(4),
+.ifXExample,
+.ifWindowXExample,
+.methodsOfWindowObjectExample,
+.methodsOfWindowObjectExample p:nth-child(2),
+.methodsOfNumberObject,
+.methodsOfNumberObject p:nth-child(2),
+.windowAlertMethodExample,
+.windowConfirmMethodExample,
+.windowPromptMethodExample,
+.windowNavigatorObjectExample,
+.windowLocationHrefProperty,
+.readWritePropertyExample,
+.windowHistoryGoMethodExample,
+.windowScreenHeightAndWidthProperties,
+.windowScreenHeightAndWidthProperties p:nth-child(2),
+.creatingCookiesExample,
+.assigningCookiesExample,
+.assigningCookiesExample p:nth-child(2),
+.changingCookieValues,
+.readingCookies,
+.secureCookies,
+.cumbersomeCookies,
+.windowSetTimeoutMethod,
+.windowSetIntervalMethod,
+.idUsed,
+.UpdatedgameStartMethod,
+.dataAttributeNamesExample,
+.storingInfoExample,
+.localStorageNameExample,
+.localStorageNameExample p:nth-child(1),
+.addEventListenerStorageEvent,
+.yourAreHereFunctionExample,
+.postMessageMethodExample,
+.addEventListenerMessageEvent,
+.terminateMethodExample,
+.notificationApiDefinition,
+.audioTagExample,
+.videoTagExample,
+.playMethodExample,
+.pauseMethodExample,
+.volumePropertyExample,
+.mutedPropertyExample,
+.currentTimePropertyExample,
+.playbackPropertyExample,
+.loopPropertyExample,
+.durationPropertyExample,
+.addEventListenerLoadedMetadata,
+.addEventListenerPause,
+.updatedheader2 {
+    padding-bottom: 30px;
+}
+
+.browserInfo,
+.windowLocationMethods,
+.windowHistoryPropertyDefinition,
+.windowScreenObjectDefinition,
+.cookiesDefinition,
+.cumbersomeCookies,
+.quizNinjaPt14,
+.storingInfoExample,
+.clearMethodDefinition,
+.clearMethod,
+.savedHeroObjectAsJsonString,
+.geolocationApiDefinition,
+.clearWatchMethodDefinition,
+.webWorkerApiDefinition,
+.websocketsDefinition,
+.notificationApiDefinition,
+.propertiesAndMethodsOfAudioVideoElements,
+.canvasElementDefinition,
+.updatedTearDownMethod {
+    padding-top: 30px;
+}
+
+.chapter14,
+.week9Exercises {
+    padding-top: 50px;
+}
+
+.week9Exercises {
+    list-style: none;
+}
+
+.updatedHeader p:nth-child(2),
+.updatedHeader p:nth-child(3),
+.updatedHeader p:nth-child(4),
+.countdownMethod p:nth-child(2),
+.countdownMethod p:nth-child(3),
+.countdownMethod p:nth-child(4),
+.countdownMethod p:nth-child(6),
+.updatedGameOverFunction p:nth-child(2),
+.updatedGameOverFunction p:nth-child(3),
+.updatedGameOverFunction p:nth-child(4),
+.dataAtrributeExample p:nth-child(2),
+.yourAreHereFunctionExample p:nth-child(2),
+.addEventListenerMessageEvent p:nth-child(2),
+.updatedheader2 p:nth-child(2),
+.updatedheader2 p:nth-child(9),
+.updatedheader2 p:nth-child(10),
+.updatedheader2 p:nth-child(11),
+.updatedheader2 p:nth-child(12),
+.updatedheader2 p:nth-child(13),
+.updatedheader2 p:nth-child(14),
+.hiScoreMethod p:nth-child(8),
+.updatedSetupMethod2,
+.updatedTearDownMethod2 {
+    padding-left: 30px;
+}
+
+.countdownMethod p:nth-child(5),
+.updatedheader2 p:nth-child(3),
+.updatedheader2 p:nth-child(8),
+.hiScoreMethod p:nth-child(2),
+.hiScoreMethod p:nth-child(3),
+.hiScoreMethod p:nth-child(6),
+.hiScoreMethod p:nth-child(7) {
+    padding-left: 60px;
+}
+
+.updatedheader2 p:nth-child(4),
+.updatedheader2 p:nth-child(5),
+.updatedheader2 p:nth-child(6),
+.updatedheader2 p:nth-child(7),
+.hiScoreMethod p:nth-child(4),
+.hiScoreMethod p:nth-child(5) {
+    padding-left: 90px;
+}

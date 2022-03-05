@@ -1,0 +1,580 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Portfolio - Week 09 Page</title>
+    <meta name="author" content="Rostislav Nikitin">
+    <link rel="stylesheet" href="css/week09page.css">
+  </head>
+  <body>
+    <h1>WDD 330 Portfolio</h1>
+    <h2>Week09</h2>
+    <h3>Readings:</h3>
+    <h3>JavaScript: Novice to Ninja 2nd Edition</h3>
+    <h4>Chapter 9: The Window Object</h4>
+    <p>Notes:</p>
+    <p>The window object is the global object in a browser. Any variables that are created in the global scope are actually properties of this object, and any functions are methods of it.
+    </p>
+    <p>The Browser Object Model (or BOM for short) is a collection of properties and methods that contain information about the browser and computer screen. There is no official standard for the BOM, although there are a number of properties and methods that are supported by all the major browsers, making a sort of de facto standard. 
+      These properties and methods are made available through the window object. Every browser window, tab, popup, frame, and iframe has a window object.
+    </p>
+    <p>Global variables, which are actual properties of the global object, are created without using the const, let, or var keywords, and can be accessed in all parts of the program. 
+      In a browser environment, the global object is the window object. This means that any global variable is created as a property of the window object, as can be seen in the example below:
+    </p>
+    <div class="globalVariableExample">
+      <p>x = 6;  // global variable created</p>
+      <p><< 6</p>
+      <p>window.x // same variable can be accessed as a property of the window object</p>
+      <p><< 6</p>
+      <p>// both variables are exactly the same</p>
+      <p>window.x === x;</p>
+      <p><< true</p>
+    </div>
+    <p>In general, the programmer should refer to global variables without using the window object; it's less typing and your code will be more portable between environments. 
+      An exception is if you need to check whether a global variable has been defined. For example, the following code will throw a ReferenceError if x has not been defined:
+    </p>
+    <div class="ifXExample">
+      <p>if (x) {</p>
+      <p>// do something</p>
+      <p>}</p>
+    </div>
+    <p>However, if the variable is accessed as a property of the window object, then the code will still work, as window.x will simply return false, meaning the block of code will not be evaluated:
+    </p>
+    <div class="ifWindowXExample">
+      <p>if (window.x) {</p>
+      <p>// do something</p>
+      <p>}</p>
+    </div>
+    <p>Some functions, such as parseInt() and isNaN(), are actually methods of the global object, which in a browser environment makes them methods of the window object:</p>
+    <div class="methodsOfWindowObjectExample">
+      <p>window.parseInt(4.2);</p>
+      <p><< 4</p>
+      <p>window.isNaN(4.2);</p>
+      <p><< false</p>
+    </div>
+    <p>Like variables, it's customary to omit accessing them through the window object.
+    </p>
+    <p>ES6 made parseInt() and isNaN() methods of the Number object, so they can be both be called using the following code:</p>
+    <div class="methodsOfNumberObject">
+      <p>Number.parseInt(4.2);</p>
+      <p><< 4</p>
+      <p>Number.isNaN(4.2);</p>
+      <p><< false</p>
+    </div>
+    <p>alert, confirm(), and prompt() are all methods of the window object, and open dialogs that halt the execution of the program.
+    </p>
+    <p>The window.alert() method will pause the execution of the program and display a message in a dialog box. The message is provided as an argument to the method, and undefined is always returned:
+    </p>
+    <div class="windowAlertMethodExample">
+      <p>window.alert('Hello');</p>
+      <p><< undefined</p>
+    </div>
+    <p>The window.confirm() method will stop the execution of the program and display a confirmation dialog that shows the message provided as an argument, and giving the options of OK or Cancel. 
+      It returns the boolean values of true if the user clicks OK, and false if the user clicks Cancel:
+    </p>
+    <div class="windowConfirmMethodExample">
+      <p>window.confirm('Do you wish to continue?');</p>
+      <p><< undefined</p>
+    </div>
+    <p>The window.prompt() method will stop the execution of the program. It displays a dialog that shows a message provided as an argument, as well as an input field that allows the user to enter text. This text is then returned as a string when the user clicks OK. If the user clicks Cancel, null is returned:
+    </p>
+    <div class="windowPromptMethodExample">
+      <p>window.prompt('Please enter your name:');</p>
+    </div>
+    <p>These methods should be used with caution, because it's worth reiterating that these methods will stop the execution of a program in its tracks. This means that everything will stop processing at the point the method is called, until the user clicks OK or Cancel. 
+      This can cause problems if the program needs to process something else at the same time or the program is waiting for a callback function.
+    </p>
+    <p class="browserInfo">The window object has a number of properties and methods that provide information about the user's browser.
+    </p>
+    <p>The window object has a navigator property that returns a reference to the navigator object. The Navigator object contains information about the browser being used. Its userAgent property will return information about the browser and operating system being used. 
+      For example, if a programmer runs the following line of code, it shows that he is using Safari version 10 on Mac OS:
+    </p>
+    <div class="windowNavigatorObjectExample">
+      <p>window.navigator.userAgent</p>
+      <p><< "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, like Gecko) Version/10.0.3 Safari/602.4.8"</p>
+    </div>
+    <p>The window.location property is an object that contains information about the URL of the current page. It contains a number of properties that provide information about different fragments of the URL.
+    </p>
+    <p>The href property returns the full URL as a string:</p>
+    <div class="windowLocationHrefProperty">
+      <p>window.location.href</p>
+      <p><< "https://www.sitepoint.com/premium/books/javascript-novice-to-ninja"</p>
+    </div>
+    <p>This property (as well as most of the others in this section) is a read/write property, which means it can also be changed by assignment. If this is done, the page will be reloaded using the new property. 
+      For example, entering the following line into the browser console will redirect the page to the SitePoint JavaScript channel:
+    </p>
+    <div class="readWritePropertyExample">
+      <p>window.location.href = 'https://www.sitepoint.com/javascript/'</p>
+      <p><< "https://www.sitepoint.com/javascript/"</p>
+    </div>
+    <p>The other window.location properties are:</p>
+    <ul>
+      <li>protocol property - returns a string describing the protocol used (such as http, https, pop2, ftp etc.)</li>
+      <li>host property - returns a string describing the domain of the current URL and the port number (this is often omitted if the default port 80 is used)</li>
+      <li>hostname property - returns a string describing the domain of the current URL</li>
+      <li>port property - returns a string describing the port number, although it will return an empty string if the port is not explicitly stated in the URL</li>
+      <li>pathname property - returns a string of the path that follows the domain</li>
+      <li>search property - returns a string that starts with a “?” followed by the query string parameters or it returns an empty string if there are no query string parameters</li>
+      <li>hash property - returns a string that starts with a “#” followed by the fragment identifier or it returns an empty string if there is no fragment identifier</li>
+      <li>origin property - is read-only and returns a string that shows the protocol and domain where the current page originated from</li>
+    </ul>
+    <p class="windowLocationMethods">The window.location object also has the following methods:
+    </p>
+    <ul>
+      <li>reload() method - can be used to force a reload of the current page and if it's given a parameter of true, it will force the browser to reload the page from the server, instead of using a cached page</li>
+      <li>assign() method - can be used to load another resource from a URL provided as a parameter</li>
+      <li>replace() method - is almost the same as the assign() method, except the current page will not be stored in the session history, so the user will be unable to navigate back to it using the back button</li>
+      <li>toString() method - returns a string containing the whole URL</li>
+    </ul>
+    <p class="windowHistoryPropertyDefinition">The window.history property can be used to access information about any previously visited pages in the current browser session. Avoid confusing this with the new HTML5 History API. (See http://www.sitepoint.com/javascript-history-pushstate/ post for details.)
+    </p>
+    <p>The window.history.length property shows how many pages have been visited before arriving at the current page.</p>
+    <p>The window.history.go() method can be used to go to a specific page, where 0 is the current page:</p>
+    <div class="windowHistoryGoMethodExample">
+      <p>window.history.go(1); // goes forward 1 page</p>
+      <p>window.history.go(0); // reloads the current page</p>
+      <p>window.history.go(-1); // goes back 1 page</p>
+    </div>
+    <p>There are also the window.history.forward() and window.history.back() methods that can be used to navigate forwards and backwards by one page respectively, just like using the browser's forward and back buttons.
+    </p>
+    <p class="windowScreenObjectDefinition">The window.screen object contains information about the screen the browser is displayed on. For example, the programmer can find out the height and width of the screen in pixels using the height and width properties respectively:
+    </p>
+    <div class="windowScreenHeightAndWidthProperties">
+      <p>window.screen.height</p>
+      <p><< 1024</p>
+      <p>window.screen.width</p>
+      <p><< 1280</p>
+    </div>
+    <p>document.write() is an archaic method of writing text to the document and should be avoided. The write() method simply writes a string of text to the page. If a page has already loaded, it will completely replace the current document.
+    </p>
+    <p class="cookiesDefinition">Cookies can be used to store small pieces of information between requests using the document.cookie property. Cookies are small files that are saved locally on a user's computer.
+      They were invented by Netscape as a way of getting round HTTP being a stateless protocol. This means that a browser does not remember anything from one request to another. So every time a user visits a page, nothing about any previous visits is remembered. 
+      Cookies can be used to sidestep this problem by storing information that can then be retrieved between requests. When a browser requests a web page from a server, cookies belonging to the page are added to the request. This way the server gets the necessary data to "remember" information about users. 
+      A restriction of cookies is that they can only be read by a web page from the same domain that set them. Cookies can be used for personalizing a user's browsing experience, storing user preferences, keeping track of user choices (such as a shopping cart), authentication and tracking users.
+    </p>
+    <p>To create a cookie, the programmer assigns it to JavaScript's “cookie jar”, using the document.cookie property, like so:
+    </p>
+    <div class="creatingCookiesExample">
+      <p>document.cookie = 'name=Superman';</p>
+      <p><< "name=Superman"</p>
+    </div>
+    <p>The document.cookie property acts like a special type of string. Assigning another cookie to it won't overwrite the entire property, it will just append it to the end of the string. So the programmer can add more cookies by assigning them to document.cookie:
+    </p>
+    <div class="assigningCookiesExample">
+      <p>document.cookie = 'hero=true';</p>
+      <p><< "hero=true"</p>
+      <p>document.cookie = 'city=Metropolis';</p>
+      <p><< "city=Metropolis"</p>
+    </div>
+    <p>A cookie's value can be changed by reassigning it to document.cookie using the same name but a different value. The following code will update the value of two of the cookies that were set in the previous section:
+    </p>
+    <div class="changingCookieValues">
+      <p>document.cookie = 'name=Batman'</p>
+      <p><< "name=Batman"</p>
+      <p>document.cookie = 'city=Gotham'</p>
+      <p><< "city=Gotham"</p>
+    </div>
+    <p>To see the current contents of the cookie jar, simply enter document.cookie:
+    </p>
+    <div class="readingCookies">
+      <p>document.cookie:</p>
+      <p><< "name=Batman; hero=true; city=Gotham"</p>
+    </div>
+    <p>Adding the string ; secure to the end of a cookie will ensure it's only transmitted over a secure HTTPS network:
+    </p>
+    <div class="secureCookies">
+      <p>document.cookie = 'name=Batman; secure';</p>
+    </div>
+    <p>To remove a cookie, the programmer needs to set it to expire at a time in the past:
+    </p>
+    <p>document.cookie = 'name=Batman; expires=Thu, 01 Jan 1970 00:00:01 GMT';</p>
+    <p>If a cookie is a session cookie, it will expire when the tab or window is closed.</p>
+    <p class="cumbersomeCookies">JavaScript's cookie handling is quite basic and can also be quite cumbersome. Many developers use a library such as Cookies.js or jsCookie. 
+      The programmer could even have a go at developing your own set of functions to make dealing with cookies easier.
+    </p>
+    <p class="windowSetTimeoutMethod">The window.setTimeout() method can be used to invoke a function after a set amount of time. It can be canceled using the clearTimeout() method.
+    </p>
+    <p class="windowSetIntervalMethod">The window.setInterval() method can be used to repeatedly invoke a function. It can be stopped using the clearInterval() method.
+    </p>
+    <p>The window.requestAnimationFrame() method can be used to produce smooth and optimized animation by utilizing the browser's built-in graphics capabilities. It can be canceled using the cancelAnimationFrame() method.
+    </p>
+
+    <h4 class="chapter14">Chapter 14: HTML5 APIs</h4>
+    <p>Notes:</p>
+    <p>HTML5.1 is the latest incarnation of the Hypertext Markup Language. It covers a variety of technologies, including several APIs that are accessible using JavaScript.
+    </p>
+    <p>data- attributes help to embed custom data into a web page that can then be used to enhance the user experience with JavaScript. 
+    </p>
+    <p>The names of these attributes can be decided by the developer, but they must use the following format:
+    </p>
+    <ul>
+      <li>Start with data-.</li>
+      <li>Contain only lowercase letters, numbers, hyphens, dots, colons or underscores.</li>
+      <li>Include an optional string value.</li>
+    </ul>
+    <p>Examples could be:</p>
+    <div class="dataAttributeNamesExample">
+      <p>data-powers = 'flight superSpeed'</p>
+      <p>data-rating = '5' </p>
+      <p>data-dropdown </p>
+      <p>data-user = 'DAZ'</p>
+      <p>data-max-length = '32'</p>
+    </div>
+    <p>The information contained in the attributes can be used to identify particular elements. For example, all the elements with an attribute of data-dropdown could be identified as dropdown menu. The values of the attributes can also be used to filter different elements. 
+      For example, we could find all the elements that have a data-rating value of 3 or more.
+    </p>
+    <p>Each element has a dataset property that can be used to access any data- attributes it contains. Here's an example of some markup:
+    </p>
+    <div class="dataAtrributeExample">
+      <p>&#8249;div id='hero' data-powers='flight superSpeed'&#8250;</p>
+      <p>Superman</p>
+      <p>&#8249;/div&#8250;</p>
+    </div>
+    <p>The data-powers attribute can be accessed using the following code:</p>
+    <div class="accesingDataPowersAttribute">
+      <p>const superman = document.getElementById('hero');</p>
+      <p>const powers = superman.dataset.powers;</p>
+      <p><< 'flight superSpeed'</p>
+    </div>
+    <p>Notice that the data- prefix is dropped. To access the attribute, powers is used as if it's a property of the dataset object. If a data- attribute's name contains hyphens, they are replaced with camel-case notation, so data-max-length would be accessed using dataset.maxLength.
+    </p>
+    <p>The HTML5 specification contains a number of APIs that help to gain access to hardware, such as cameras, batteries, geolocation, and the graphics card. Hardware evolves quickly, and APIs are frequently introduced to give developers access, and control new features that appear in the latest devices.
+    </p>
+    <p>The Web Storage API provides a key-value store on the client's computer that is similar to using cookies but has fewer restrictions, more storage capacity, and is generally easier to use. This makes it perfect for storing information about users, as well as storing application-specific information that can then be used during future sessions.
+    </p>
+    <p>The Web Storage API has some crucial differences with cookies:
+    </p>
+    <ul>
+      <li>Information stored is not shared with the server on every request.</li>
+      <li>Information is available in multiple windows of the browser (but only if the domain is the same).</li>
+      <li>Storage capacity limit is much larger than the 4KB limit for cookies (There is no actual limit in the specification, but most browsers have a limit set at 5GB per domain.).</li>
+      <li>Any data stored does not automatically expire as it does with cookies. This potentially makes cookies a better choice for something like showing a popup once a day.</li>
+    </ul>
+    <p>If a browser supports the Web Storage API, the window object will have a property called localStorage, which is a native object with a number of properties and methods used to store data. The information is saved in the form of key-value pairs, and the values can only be strings. 
+      There is also a sessionStorage object that works in the same way, although the data is only saved for the current session.
+    </p>
+    <p>Here is a basic example of storing information. To save a value locally, use:</p>
+    <p>localStorage.setItem('name', 'Walter White');</p>
+    <div class="storingInfoExample">
+      <p>To illustrate that it's being saved locally, try completely closing your browser, reopening it, and entering the following code in the console:
+      </p>
+      <p>localStorage.getItem('name');</p>
+      <p><< "Walter White"</p>
+    </div>
+    <p>Rather than using the getItem() and setItem() methods, assignment can be used instead. In the next example, the programmer simply references localStorage.name as if it was a variable to change its value:
+    </p>
+    <div class="localStorageNameExample">
+      <p>localStorage.name = 'Heisenberg';</p>
+      <p>console.log(localStorage.name);</p>
+      <p><< "Heisenberg";</p>
+    </div>
+    <p>The removeItem method is used to remove an entry from local storage:</p>
+    <p>localStorage.removeItem('name');</p>
+    <p>Alternatively, this can be done using the delete operator:</p>
+    <p>delete localStorage.name;</p>
+    <p class="clearMethodDefinition">The clear() method is used to completely remove everything stored in local storage:
+    </p>
+    <p class="clearMethod">localStorage.clear();</p>
+    <p>Every time a value is saved to local storage, a storage event is fired. Note that this event is only fired on any other windows or tabs from the same domain, and only if the value of the item being saved changes. 
+      The event object sent by the event listener to the callback has a number of properties that provide information about the updated item:
+    </p>
+    <ul>
+      <li>key tells us the key of the item that changed</li>
+      <li>newValue tells us the new value to which it has been changed</li>
+      <li>oldValue tells us the previous value before it was changed</li>
+      <li>storageArea tells us if it is stored in local or session storage.</li>
+    </ul>
+    <p>The code following will add an event listener that logs information about any changes to the Web Storage (note that this example won't work locally as it needs to be running on a server):    
+    </p>
+    <div class="addEventListenerStorageEvent">
+      <p>addEventListener('storage', (event) => {</p>
+      <p>console.log(`The ${event.key} was updated from ${event.oldValue} to ${event.newValue} and saved</p>
+      <p>${event.storageArea}`) }, false);</p>
+    </div>
+    <p>The fact that only strings can be saved might seem like a restriction at first, but by using JSON, the programmer can store any JavaScript object in local storage. 
+      For example, he could save the hero object that was created using a form in Chapter 8 by adding the following line of code to the end of the makeHero() function:
+    </p>
+    <p>localStorage.setItem('superman', JSON.stringify(hero);</p>
+    <p class="savedHeroObjectAsJsonString">This will save the hero object as a JSON string using the string 'superman' as the key. To retrieve the superhero as a JavaScript object:
+    </p>
+    <p>superman = JSON.parse(localStorage.getItem('superman'));</p>
+    <p class="geolocationApiDefinition">The Geolocation API allows to access the geographic coordinates of the user's device, as long as the user gives permission.
+      This means it can be used to find the user's exact location, then link to nearby places or measure the speed at which the user is moving. 
+      This information can then be used to filter data based on the user's location or speed and direction of travel. 
+      An example of this might be a search function that returns results based on your location.
+    </p>
+    <p>If geolocation is available, it will be a property of the navigator object. 
+      This property has a method called getCurrentPosition() that will return a position object to a specified callback function, called youAreHere() in the example:
+    </p>
+    <p>navigator.geolocation.getCurrentPosition(youAreHere);</p>
+    <p>The position object passed to the youAreHere() function has a coords property with a latitude and longitude property, which together give the coordinates of the device. 
+      These coordinates can then be used in conjunction with other applications or web services (such as a mapping service) to obtain the user's exact location. 
+      In this example, it simply shows an alert dialog that displays the user's coordinates:
+    </p>
+    <div class="yourAreHereFunctionExample">
+      <p>function youAreHere(position) {</p>
+      <p>console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`);</p>
+      <p>}</p>
+    </div>
+    <p>The position object has several other properties that can be used to find out information about the location and movement of the device:</p>
+    <ul>
+      <li>position.speed property returns the ground speed of the device in meters per second.</li>
+      <li>position.altitude property returns an estimate of the device's altitude in meters above the WGS84 ellipsoid, which is a standard measurement for the center of the Earth.</li>
+      <li>position.heading property returns the direction the device is moving in. This is measured as a bearing in degrees, clockwise from North.</li>
+      <li>position.timestamp property returns the time that the position information was recorded.</li>
+    </ul>
+    <p>The position object also has properties that calculate the accuracy of the measurements. These can be useful, as sometimes you only need to know the town or city users are in, while at other times you may need their exact position. 
+      position.accuracy property returns the accuracy of the latitude and longitude properties in meters. The lower the returned value, the more accurate the measurements are, as is the case for the position.altitudeAccuracy property, which returns the accuracy of the altitude property in meters.
+    </p>
+    <p>In addition, the geolocation object has a watchPosition() method that will call a callback function every time the position of the device is updated. This method returns an ID that can be used to reference the position being watched:
+    </p>
+    <p>const id = navigator.geolocation.watchPosition(youAreHere);</p>
+    <p class="clearWatchMethodDefinition">The clearWatch() method can be used to stop the callback being called, using the ID of the watch as an argument:
+    </p>
+    <p>navigator.geolocation.clearWatch(id);</p>
+    <p class="webWorkerApiDefinition">The Web Worker API can be used to perform computationally intensive tasks in the background, which helps to avoid websites becoming unresponsive. Web workers allow processes to be run in the background, adding support for concurrency in JavaScript. 
+      The idea is that any processes that could take a long time are carried out in the background, so a website will continue to function without fear of the dreaded 'script has become unresponsive' message that occurs when a script runs for too long.
+    </p>
+    <p>To get started, the Worker() constructor function is used to create a new worker:
+    </p>
+    <p>const worker = new Worker('task.js');</p>
+    <p>This function takes the name of another JavaScript file as an argument. In the example, this is a file called 'task.js'. If this file exists, it will be downloaded asynchronously. 
+      The worker will only start once the file has finished downloading completely. If the file doesn't exist, an error is thrown.
+    </p>
+    <p>The variable that's assigned to the constructor function (worker in our example) can now be used to refer to the worker in the main program. In the worker script ('task.js'), the keyword self is used to refer to the worker.
+    </p>
+    <p>Web workers use the concept of messages to communicate back and forth between the main script and worker script. The postMessage() method can be used to send a message and start the worker working. 
+      The argument to this method can send any data to the web worker. To post a message to the worker, the following code is used inside the main script:
+    </p>
+    <p class="postMessageMethodExample">worker.postMessage('Hello');</p>
+    <p>To post a message from the worker, the following is used in the worker script:
+    </p>
+    <p>self.postMessage('Finished');</p>
+    <p>When a message is posted, a message event is fired, so they can be dealt with using an event listener. The data sent with the message as an argument is stored in the data property of the event object that's passed to the callback function. 
+      The following example would log any data returned from the worker to the console:
+    </p>
+    <div class="addEventListenerMessageEvent">
+      <p>worker.addEventListener('message', (event) => {</p>
+      <p>console.log(event.data);</p>
+      <p>}, false);</p>
+    </div>
+    <p>When a worker has completed its task, it can be stopped using the terminate() method from within the main script:
+    </p>
+    <p class="terminateMethodExample">worker.terminate();</p>
+    <p>Or using the close() method from inside the worker script:  
+    </p>
+    <p>self.close();</p>
+    <p class="websocketsDefinition">Websockets are a new protocol for communicating over the internet, and allow real-time, two-way communication.
+      This means that a connection is kept open and responses are 'pushed' to the client as soon as they are received.
+    </p>
+    <p class="notificationApiDefinition">The Notification API allows the programmer to show messages using the system's notifications. This is usually a popup in the corner of the screen, but it changes depending on the operating system. 
+      An advantage of using the system notification is that they will still be displayed even if the web page that calls them isn't the current tab.
+    </p>
+    <p>The &#8249;audio&#8250; and &#8249;video&#8250; elements can be employed to embed audio tracks and video clips in a web page. They also have a Media API that can help control the playback using JavaScript.
+    </p>
+    <p>An audio clip can be inserted into a page with the &#8249;audio&#8250; tag, using the src attribute to point to the audio file:
+    </p>
+    <div class="audioTagExample">
+      <p>&#8249;audio src='/song.mp3' controls&#8250;</p>
+      <p>Your browser does not support the audio element.</p>
+      <p>&#8249;/audio&#8250;</p>
+    </div>
+    <p>A video clip can be inserted with the &#8249;video&#8250; tag, using the src attribute to point to the movie file:
+    </p>
+    <div class="videoTagExample">
+      <p>&#8249;video src='http://movie.mp4' controls&#8250;</p>
+      <p>Your browser does not support the video element.</p>
+      <p>&#8249;/video&#8250;</p>
+    </div>
+    <p>Any content inside the <audio> or <video> tags will only display if the browser does not support them; hence, it can be used to display a message to users of older browsers without support for these features. 
+      The controls attribute can be added (without any value) and will display the browser's native controls, such as play, pause, and volume control.
+    </p>
+    <p>The audio or video element can be referenced by a variable using one of the DOM methods:
+    </p>
+    <p>const video = document.getElementsByTagName('video')[0];</p>
+    <p class="propertiesAndMethodsOfAudioVideoElements">Audio and video elements have a number of properties and methods to control the playback of the clip.  
+    </p>
+    <p>The play() method will start the clip playing from its current position:
+    </p>
+    <p class="playMethodExample">video.play();</p>
+    <p>The pause() method will pause the clip at its current position:
+    </p>
+    <p class="pauseMethodExample">video.pause();</p>
+    <p>The volume property is a number that can be used to set the audio volume:
+    </p>
+    <p class="volumePropertyExample">video.volume = 0.9;</p>
+    <p>The muted property is a boolean value that can be used to mute the audio:
+    </p>
+    <p class="mutedPropertyExample">video.muted = true;</p>
+    <p>The currentTime property is a number value that can be used to jump to another part of the clip:
+    </p>
+    <p class="currentTimePropertyExample">video.currentTime += 10; // jumps forward 10 seconds
+    </p>
+    <p>The playbackRate property is used to fast-forward or rewind the clip by changing its value. A value of 1 is playback at normal speed:
+    </p>
+    <p class="playbackPropertyExample">video.playbackRate = 8; // fast-forward at 8 times as fast
+    </p>
+    <p>The loop property is a boolean value that can be set to true to make the clip repeat in a loop:
+    </p>
+    <p class="loopPropertyExample">video.loop = true;</p>
+    <p>The duration property can be used to see how long the clip lasts:
+    </p>
+    <div class="durationPropertyExample">
+      <p>video.duration;</p>
+      <p><< 52.209</p>
+    </div>
+    <p>Some of the properties are only available once the browser has received all the metadata associated with the video. 
+      This means that, in order to ensure a value is returned, you should use an event listener that fires once the metadata has loaded, like the one shown below:
+    </p>
+    <p class="addEventListenerLoadedMetadata">video.addEventListener('loadedmetadata', () => { console.log(video.duration); });</p>
+    <p>Audio and video clips also have a number of events that will fire when they occur, including:
+    </p>
+    <ul>
+      <li>The play event, which fires when the clip starts and when it resumes after a pause.</li>
+      <li>The pause event, which fires when the clip is paused.</li>
+      <li>The volumechange event, which fires when the volume is changed.</li>
+      <li>The loadedmetadata event, which we saw in the note above, and which fires when all the video's metadata has loaded.</li>
+    </ul>
+    <p>These events allow the programmer to respond to any interactions the user has with the video. 
+      For example, the following event listener can be added to check whether the user has paused the video:
+    </p>
+    <div class="addEventListenerPause">
+      <p>video.addEventListener('pause', () => {</p>
+      <p>console.log('The video has been paused'); }, false)</p>
+    </div>
+    <p>The audio and video elements bring native support for multimedia into the browser, and the API gives developers full control of the playback of audio tracks and video clips.
+    </p>
+    <p class="canvasElementDefinition">The canvas element can be used to dynamically draw geometric shapes, text, and images on a web page in real-time using JavaScript.</p>
+    <p>A shim or polyfill is a piece of code that adds support of missing features to older browsers. These are libraries of code that allow the programmer to use the APIs as usual. They then fill in the necessary code that's not provided natively by the user's browser. 
+      The terms shim and polyfill are often used interchangeably. The main difference between them is that a shim is a piece of code that adds some missing functionality to a browser, although the implementation method may differ slightly from the standard API. 
+      A polyfill is a shim that achieves the same functionality, while also using the API commands that would be used if the feature was supported natively.
+    </p>
+    <p>This means that your code can use the APIs as normal and it should work as expected in older browsers. The advantage here is that the same set of standard API commands can be used ― you don't need to write additional code to deal with different levels of support. 
+      And when users update their browsers, the transition will be seamless, as their experience will remain the same. Once you are confident that enough users have up-to-date browsers, you can remove the polyfill code without having to update any actual JavaScript code.
+    </p>
+
+    <ul>
+      <li class="week9Exercises">
+        Week 9 Exercises:
+      </li>
+      <li>
+        <a href="ch9/quiz_ninja_pt13.html" target="_blank">Quiz Ninja Project Part 13</a>
+        <p>This version of the Quiz Ninja Project will use a timer to give the quiz a "beat the clock" element. This can be done using the window object's setInterval() method to add a time limit. 
+          First of all, it is necessary to add an element to the HTML for the timer by updating the &#8249;header&#8250; inside the index.html file to include an extra &#8249;div&#8250; element with an id of 'timer':
+        </p>
+        <div class="updatedHeader">
+          <p>&#8249;header&#8250;</p>
+          <p>&#8249;h1&#8250;Quiz Ninja!&#8249;/h1&#8250;</p>
+          <p>&#8249;div id='timer'&#8250;Time: &#8249;strong&#8250;20&#8249;/strong&#8250;&#8249;/div&#8250;</p>
+          <p>&#8249;div id='score'&#8250;Score: &#8249;strong&#8250;0&#8249;/strong&#8250;&#8249;/div&#8250;</p>
+          <p>&#8249;/header&#8250;</p>
+        </div>
+        <p>This ID will be used to add a reference to this element as a property of the view object in the js file:
+        </p>
+        <div class="idUsed">
+          <p>timer: document.querySelector('#timer strong')</p>
+        </div>
+        <p>Next, it is necessary to add the following code to the game.start() method:
+        </p>
+        <div class="UpdatedgameStartMethod">
+          <p>this.secondsRemaining = 20;</p>
+          <p>this.timer = setInterval( this.countdown , 1000 );</p>
+        </div>
+        <p>This initializes a property of the game object called secondsRemaining to 20. It is used to measure, in seconds, how the game will last. The next line sets up an interval that calls a method called countdown() every second (1,000 milliseconds). 
+          This method needs adding to the game object:
+        </p>
+        <div class="countdownMethod">
+          <p>countdown() {</p>
+          <p>game.secondsRemaining--;</p>
+          <p>view.render(view.timer,game.secondsRemaining);</p>
+          <p>if(game.secondsRemaining < 0) {</p>
+          <p>game.gameOver();</p>
+          <p>}</p>
+          <p>}</p>
+        </div>
+        <p>This function decreases the secondsRemaining variable that was initialized earlier by 1 using the -- operator, then calls the view.render() method so the number of seconds remaining is displayed in the header. 
+          Last of all, the programmer checks to see if the time has fallen below zero and, if it has, he calls the gameOver() function as time has run out!
+        </p>
+        <p>Finally, it is necessary to add a line at the end of the game.gameOver() method that will remove the interval when the game has finished, otherwise it will continue to keep counting down past zero! 
+          To stop this from happening, it is necessary to place the following line of code anywhere inside the gameOver() function:
+        </p>
+        <div class="updatedGameOverFunction">
+          <p>gameOver(){</p>
+          <p>view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);</p>
+          <p>view.teardown();</p>
+          <p>clearInterval(this.timer);</p>
+          <p>}</p>
+        </div>
+        <p>As a result, now every time the user starts the quiz game, a timer is started during the quiz game, which creates additional pressure for the player to beat the time.
+        </p>  
+      </li>
+      <li class="quizNinjaPt14">
+        <a href="ch14/quiz_ninja_pt14.html" target="_blank">Quiz Ninja Project Part 14</a>
+        <p>This version of the Quiz Ninja Project will use the Web Storage API to store the high score of the game. This will be stored locally even after the browser has been closed, so players can keep a record of their best attempt and try to beat it.  
+          To do this, it is necessary first to add an extra &#8249;div&#8250; element to the header to show the high score by changing the &#8249;header&#8250; element in the html file to the following:</p>
+        <div class="updatedheader2">
+          <p>&#8249;section class='dojo'&#8250;</p>
+          <p>&#8249;div class='quiz-body'&#8250;</p>
+          <p>&#8249;header&#8250;</p>
+          <p>&#8249;div id='timer'&#8250;Time: &#8249;strong&#8250;20&#8249;/strong&#8250;&#8249;/div&#8250;</p>
+          <p>&#8249;div id='score'&#8250;Score: &#8249;strong&#8250;0&#8249;/strong&#8250;&#8249;/div&#8250;</p>
+          <p>&#8249;div id='hiScore'&#8250;High Score: &#8249;strong&#8250;0&#8249;/strong&#8250;&#8249;/div&#8250;</p>
+          <p>&#8249;h1&#8250;Quiz Ninja!&#8249;/h1&#8250;</p>
+          <p>&#8249;/header&#8250;</p>
+          <p>&#8249;div id='question'&#8250;&#8249;/div&#8250;</p>
+          <p>&#8249;div id='response'&#8250;&#8249;/div&#8250;</p>
+          <p>&#8249;div id='result'&#8250;&#8249;/div&#8250;</p>
+          <p>&#8249;div id='info'&#8250;&#8249;/div&#8250;</p>
+          <p>&#8249;button id='start'&#8250;Click to Start&#8249;/button&#8250;</p>
+          <p>&#8249;/div&#8250;</p>
+          <p>&#8249;/section&#8250;</p>
+        </div>
+        <p>Now it is necessary to add a method to the game object updates, and return the high score by adding the following to the end of the game object:
+        </p>
+        <div class="hiScoreMethod">
+          <p>hiScore(){</p>
+          <p>const hi = localStorage.getItem('highScore') || 0;</p>
+          <p>if(this.score > hi || hi === 0) {</p>
+          <p>localStorage.setItem('highScore',this.score);</p>
+          <p>view.render(view.info,'** NEW HIGH SCORE! **');</p>
+          <p>}</p>
+          <p>return localStorage.getItem('highScore');</p>
+          <p>}</p>
+          <p>}</p>
+        </div>
+        <p>This method sets a local variable called hi to the value that's stored inside the object under the key highScore. If a high score is yet to be set already, it will be null, so the programmer will initialize it to 0 in this case using lazy evaluation. 
+          Next, he checks to see if value of this.score (which will be the player's final score) is bigger than the current high score that we just retrieved. If it is, the programmer shows a message to congratulate the player, and also update the value stored in localStorage using the setItem() method.
+        </p>
+        <p>It is also necessary to update the setup() method and teardown() method on the view object:
+        </p>
+        <div class="updatedSetupMethod">
+          <p>setup(){</p>
+          <div class="updatedSetupMethod2">
+            <p>this.show(this.question);</p>
+            <p>this.show(this.response);</p>
+            <p>this.show(this.result);</p>
+            <p>this.hide(this.start);</p>
+            <p>this.render(this.score,game.score);</p>
+            <p>this.render(this.result,'');</p>
+            <p>this.render(this.info,'');</p>
+            <p>this.render(this.hiScore, game.hiScore());</p>
+          </div>
+          <p>}</p>
+        </div>
+        <div class="updatedTearDownMethod">
+          <p>teardown(){</p>
+          <div class="updatedTearDownMethod2">
+            <p>this.hide(this.question);</p>
+            <p>this.hide(this.response);</p>
+            <p>this.show(this.start);</p>
+            <p>this.render(this.hiScore, game.hiScore());</p>
+          </div>
+          <p>}</p>
+        </div>
+        <p>As a result, the quiz will now keep the player's high score in the game even after the browser is closed. This gives the player the opportunity to try to beat their high score in the game every time.
+        </p>
+        
+      </li>
+    </ul>
+  </body>
+</html>
