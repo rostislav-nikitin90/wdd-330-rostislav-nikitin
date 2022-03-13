@@ -1,0 +1,212 @@
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 30%);
+}
+
+.client-sideValidationTypes,
+.built-inFormValidationDefinition,
+.validElementDefinition,
+.simpleFormExampleDefinition,
+.addingRequiredAttribute,
+.submittingFormWithoutValue,
+.patternAttribute,
+.constrainingLengthOfEntries,
+.ConstValidAPIMethods,
+.validatingFormsWithoutABuilt-inApi,
+.fetchRequestExample,
+.addingCredentialsIncluded,
+.addingCredentialsSame-origin,
+.headersDefinition,
+.featureDetection {
+    padding-top: 30px;
+}
+
+.simpleFormExample,
+.simpleFormStylingExample,
+.regexpsExamples,
+.formWithPatternAttributeExample,
+.formWithMinMaxLengthAndMinMaxAttributes,
+.simpleFormExample2,
+.validatingFormsUsingJavaScript,
+.validatingFormsUsingJavaScript p:nth-child(1),
+.validatingFormsWithoutABuilt-inApi,
+.fetchRequestExample,
+.fetchingMethodAcceptingInitObject,
+.addingCredentialsSame-originCode,
+.addingCredentialsOmitCode,
+.uploadingJsonDataCode,
+.uploadingJsonDataCode p:nth-child(1),
+.uploadingFileCode,
+.uploadingFileCode p:nth-child(2),
+.uploadingFileCode p:nth-child(4),
+.uploadingMultipleFilesCode p:nth-child(2),
+.uploadingMultipleFilesCode p:nth-child(6),
+.uploadingMultipleFilesCode,
+.processingATextFileLineByLine,
+.processingATextFileLineByLineCodePt1,
+.processingATextFileLineByLineCodePt1 p:nth-child(5),
+.checkingThatTheFetchWasSuccessful,
+.supplyingYourOwnRequestObject,
+.headersObjectExample,
+.passingObjectLiteralToConstructor,
+.queriedAndRetrievedContents,
+.queriedAndRetrievedContents p:nth-child(4),
+.queriedAndRetrievedContents p:nth-child(6),
+.throwingTypeError,
+.checkingifContentTypeIsCorrect,
+.note,
+.createdViaJavaScript,
+.createdViaJavaScript p:nth-child(1),
+.requestBodiesCode {
+    padding-bottom: 30px;
+} 
+
+.simpleFormCode,
+.simpleFormStylingExample p:nth-child(2),
+.simpleFormStylingExample p:nth-child(5),
+.simpleFormStylingExample p:nth-child(8),
+.formWithMinMaxLengthAndMinMaxAttributes p:nth-child(2),
+.formWithMinMaxLengthAndMinMaxAttributes p:nth-child(5),
+.formWithMinMaxLengthAndMinMaxAttributes p:nth-child(6),
+.formWithMinMaxLengthAndMinMaxAttributes p:nth-child(9),
+.formWithMinMaxLengthAndMinMaxAttributes p:nth-child(10),
+.formWithMinMaxLengthAndMinMaxAttributes p:nth-child(12),
+.simpleFormCode2,
+.validatingFormsUsingJavaScript p:nth-child(3),
+.validatingFormsUsingJavaScript p:nth-child(6),
+.validatingFormsUsingJavaScript p:nth-child(8),
+.fetchRequestExample p:nth-child(3),
+.fetchRequestExample p:nth-child(4),
+.fetchingMethodAcceptingInitObject p:nth-child(3),
+.fetchingMethodAcceptingInitObject p:nth-child(4),
+.fetchingMethodAcceptingInitObject p:nth-child(16),
+.fetchingMethodAcceptingInitObject p:nth-child(17),
+.fetchingMethodAcceptingInitObject p:nth-child(20),
+.fetchingMethodAcceptingInitObject p:nth-child(22),
+.addingCredentialsIncludedCode p:nth-child(2),
+.addingCredentialsSame-originCode p:nth-child(3),
+.addingCredentialsOmitCode p:nth-child(2),
+.uploadingJsonDataCode p:nth-child(3),
+.uploadingJsonDataCode p:nth-child(4),
+.uploadingJsonDataCode p:nth-child(6),
+.uploadingJsonDataCode p:nth-child(7),
+.uploadingJsonDataCode p:nth-child(11),
+.uploadingJsonDataCode p:nth-child(14),
+.uploadingFileCode p:nth-child(6),
+.uploadingFileCode p:nth-child(7),
+.uploadingFileCode p:nth-child(11),
+.uploadingFileCode p:nth-child(14),
+.uploadingMultipleFilesCode p:nth-child(5),
+.uploadingMultipleFilesCode p:nth-child(8),
+.uploadingMultipleFilesCode p:nth-child(9),
+.uploadingMultipleFilesCode p:nth-child(13),
+.uploadingMultipleFilesCode p:nth-child(16),
+.processingATextFileLineByLineCodePt1,
+.processingATextFileLineByLineCodePt2,
+.processingATextFileLineByLineCodePt2 p:nth-child(2),
+.processingATextFileLineByLineCodePt2 p:nth-child(3),
+.processingATextFileLineByLineCodePt2 p:nth-child(12),
+.processingATextFileLineByLineCodePt2 p:nth-child(13),
+.processingATextFileLineByLineCodePt2 p:nth-child(14),
+.processingATextFileLineByLineCodePt2 p:nth-child(17),
+.processingATextFileLineByLineCodePt2 p:nth-child(18),
+.processingATextFileLineByLineCodePt3 p:nth-child(2),
+.processingATextFileLineByLineCodePt3 p:nth-child(4),
+.checkingThatTheFetchWasSuccessful p:nth-child(2),
+.checkingThatTheFetchWasSuccessful p:nth-child(7),
+.checkingThatTheFetchWasSuccessful p:nth-child(8),
+.checkingThatTheFetchWasSuccessful p:nth-child(10),
+.checkingThatTheFetchWasSuccessful p:nth-child(11),
+.checkingThatTheFetchWasSuccessful p:nth-child(13),
+.supplyingYourOwnRequestObject div,
+.passingObjectLiteralToConstructor p:nth-child(2),
+.passingObjectLiteralToConstructor p:nth-child(3),
+.passingObjectLiteralToConstructor p:nth-child(4),
+.throwingTypeError p:nth-child(3),
+.throwingTypeError p:nth-child(5),
+.checkingifContentTypeIsCorrect p:nth-child(2),
+.checkingifContentTypeIsCorrect p:nth-child(8),
+.checkingifContentTypeIsCorrect p:nth-child(9),
+.checkingifContentTypeIsCorrect p:nth-child(11),
+.checkingifContentTypeIsCorrect p:nth-child(12),
+.createdViaJavaScript p:nth-child(3),
+.createdViaJavaScript p:nth-child(4),
+.createdViaJavaScript p:nth-child(8),
+.requestBodiesCode p:nth-child(3),
+.requestBodiesCode p:nth-child(4),
+.featureDetectionCode p:nth-child(2),
+.featureDetectionCode p:nth-child(4) {
+    padding-left: 30px;
+}
+
+.formWithMinMaxLengthAndMinMaxAttributes p:nth-child(3),
+.formWithMinMaxLengthAndMinMaxAttributes p:nth-child(4),
+.formWithMinMaxLengthAndMinMaxAttributes p:nth-child(7),
+.formWithMinMaxLengthAndMinMaxAttributes p:nth-child(8),
+.formWithMinMaxLengthAndMinMaxAttributes p:nth-child(11),
+.validatingFormsUsingJavaScript p:nth-child(4),
+.validatingFormsUsingJavaScript p:nth-child(5),
+.validatingFormsUsingJavaScript p:nth-child(7),
+.fetchingMethodAcceptingInitObject p:nth-child(5),
+.fetchingMethodAcceptingInitObject p:nth-child(6),
+.fetchingMethodAcceptingInitObject p:nth-child(7),
+.fetchingMethodAcceptingInitObject p:nth-child(8),
+.fetchingMethodAcceptingInitObject p:nth-child(9),
+.fetchingMethodAcceptingInitObject p:nth-child(12),
+.fetchingMethodAcceptingInitObject p:nth-child(13),
+.fetchingMethodAcceptingInitObject p:nth-child(14),
+.fetchingMethodAcceptingInitObject p:nth-child(15),
+.fetchingMethodAcceptingInitObject p:nth-child(21),
+.uploadingJsonDataCode p:nth-child(5),
+.processingATextFileLineByLineCodePt2 p:nth-child(4),
+.processingATextFileLineByLineCodePt2 p:nth-child(6),
+.processingATextFileLineByLineCodePt2 p:nth-child(7),
+.processingATextFileLineByLineCodePt2 p:nth-child(8),
+.processingATextFileLineByLineCodePt2 p:nth-child(9),
+.processingATextFileLineByLineCodePt2 p:nth-child(10),
+.processingATextFileLineByLineCodePt2 p:nth-child(11),
+.processingATextFileLineByLineCodePt3 p:nth-child(3),
+.checkingThatTheFetchWasSuccessful p:nth-child(3),
+.checkingThatTheFetchWasSuccessful p:nth-child(5),
+.checkingThatTheFetchWasSuccessful p:nth-child(6),
+.checkingThatTheFetchWasSuccessful p:nth-child(9),
+.checkingThatTheFetchWasSuccessful p:nth-child(12),
+.supplyingYourOwnRequestObjectCodeLastPt p:nth-child(3),
+.checkingifContentTypeIsCorrect p:nth-child(3),
+.checkingifContentTypeIsCorrect p:nth-child(4),
+.checkingifContentTypeIsCorrect p:nth-child(6),
+.checkingifContentTypeIsCorrect p:nth-child(7),
+.checkingifContentTypeIsCorrect p:nth-child(10),
+.createdViaJavaScript p:nth-child(5),
+.createdViaJavaScript p:nth-child(7) {
+    padding-left: 60px;
+}
+
+.fetchingMethodAcceptingInitObject p:nth-child(10),
+.fetchingMethodAcceptingInitObject p:nth-child(11),
+.processingATextFileLineByLineCodePt2 p:nth-child(5),
+.checkingThatTheFetchWasSuccessful p:nth-child(4),
+.checkingifContentTypeIsCorrect p:nth-child(5),
+.createdViaJavaScript p:nth-child(6) {
+    padding-left: 90px;
+}
+
+.mdnArticleUsingFetch {
+    padding-top: 50px;
+}
+
+input:invalid {
+    border: 2px dashed red;
+}
+
+input:invalid:required {
+    background-image: linear-gradient(to right, pink, lightgreen);
+}
+
+input:valid {
+    border: 2px solid black;
+}
+  
+  
