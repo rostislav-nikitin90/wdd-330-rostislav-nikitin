@@ -99,7 +99,7 @@ footer {
     border-radius: 0 0 3px 3px;
 }
 
-.footerButtonContainerW06 {
+.footerButtonContainerW11-14 {
     grid-column: 1/2;
     grid-row: 2/3;
     margin: 0 0 30px 0;
@@ -130,8 +130,4 @@ footer div a:hover {
 footer div a:active {
     color: #edae49;
     border: 2px solid #edae49;
-}
-
-.week6Exercises {
-    margin: 50px 0 0 0;
 }

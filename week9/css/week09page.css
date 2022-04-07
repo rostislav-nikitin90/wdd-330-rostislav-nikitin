@@ -1,3 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Quicksand:wght@300;500;600&family=Work+Sans&display=swap');
+
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+body {
+    display:grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    background-color: #edae49;
+    margin: 5px;
+}
+
+header {
+    background-color: #00202f;
+    border-radius: 3px 3px 0 0;
+}
+
+main {
+    background-color: #edf2f4;
+    padding: 10px;
+}
+
+a:link {
+    color: #655353;
+    transition-duration: 0.4s;
+}
+
+a:visited {
+    color: #00202f;
+}
+
+a:hover {
+    color: #00202f;
+}
+
+a:active {
+    color: #edae49;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', 'Open Sans', sans-serif;
+}
+
+ul, ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+p, li {
+    line-height: 1.5;
+    color: #655353;
+}
+
+p, li, a {
+    font-family: 'Work Sans', 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 40px;
+    color: #edf2f4;
+    margin: 0;
+    padding: 10px;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 28px;
+    color: #00202f;
+    margin: 0;
+    padding: 15px 0 0 0px;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 22px;
+    color: #655353;
+    margin: 5px 0 15px 0;
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 18px;
+    color: #655353;
+    margin: 15px 0 5px 0;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 20% auto 20%;
+    background-color: #00202f;
+    border-radius: 0 0 3px 3px;
+}
+
+.footerButtonContainerW09 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin: 0 0 30px 0;
+    padding: 10px;
+}
+
+footer div a:link {
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    color: #edf2f4;
+    background-color: #655353;
+    padding: 5px;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+footer div a:visited {
+    color: #edf2f4;
+    background-color: #655353;
+}
+
+footer div a:hover {
+    color: #655353;
+    background-color: #edf2f4;
+}
+
+footer div a:active {
+    color: #edae49;
+    border: 2px solid #edae49;
+}
+
+
+
+
 .globalVariableExample,
 .globalVariableExample p:nth-child(2),
 .globalVariableExample p:nth-child(4),
@@ -80,10 +217,6 @@
     padding-top: 50px;
 }
 
-.week9Exercises {
-    list-style: none;
-}
-
 .updatedHeader p:nth-child(2),
 .updatedHeader p:nth-child(3),
 .updatedHeader p:nth-child(4),
@@ -107,7 +240,7 @@
 .hiScoreMethod p:nth-child(8),
 .updatedSetupMethod2,
 .updatedTearDownMethod2 {
-    padding-left: 30px;
+    padding-left: 5px;
 }
 
 .countdownMethod p:nth-child(5),
@@ -117,7 +250,7 @@
 .hiScoreMethod p:nth-child(3),
 .hiScoreMethod p:nth-child(6),
 .hiScoreMethod p:nth-child(7) {
-    padding-left: 60px;
+    padding-left: 15px;
 }
 
 .updatedheader2 p:nth-child(4),
@@ -126,5 +259,40 @@
 .updatedheader2 p:nth-child(7),
 .hiScoreMethod p:nth-child(4),
 .hiScoreMethod p:nth-child(5) {
-    padding-left: 90px;
+    padding-left: 30px;
+}
+
+main > div > p, .weekExercises > li > div > p, .updatedSetupMethod2 > p, .updatedTearDownMethod2 > p, .windowHisLeng, .windowHisGo, .windowHisForwBack, .windowSetTimeoutMethod, .windowSetIntervalMethod, .windowRequestAnimationFrame, .localStorageSetItem, .localStorageRemoveItem, .localStorageGetItem, .navGeoLocation3, .postMessageMethodExample, .selfPostMessage, .constVideo, .addEventListenerLoadedMetadata {
+    font-size: 10px;
+}
+
+.hiScoreMethod p:nth-child(2), .hiScoreMethod p:nth-child(4), .hiScoreMethod p:nth-child(7), .countdownMethod p:nth-child(2), .countdownMethod p:nth-child(3), .countdownMethod p:nth-child(4)  {
+    font-size: 9px;
+}
+
+.navGeoLocation {
+    font-size: 8.5px;
+}
+
+.navGeoLocation2 {
+    font-size: 8px;
+}
+
+/* This is the CSS styling for the tablet and desktop versions */
+@media only screen and (min-width: 768px) {
+    main > div > p, .weekExercises > li > div > p, .updatedSetupMethod2 > p, .updatedTearDownMethod2 > p, .windowHisLeng, .windowHisGo, .windowHisForwBack, .windowSetTimeoutMethod, .windowSetIntervalMethod, .windowRequestAnimationFrame, .localStorageSetItem, .localStorageRemoveItem, .localStorageGetItem, .navGeoLocation3, .postMessageMethodExample, .selfPostMessage, .constVideo, .addEventListenerLoadedMetadata {
+        font-size: 18px;
+    }
+    
+    .hiScoreMethod p:nth-child(2), .hiScoreMethod p:nth-child(4), .hiScoreMethod p:nth-child(7), .countdownMethod p:nth-child(2), .countdownMethod p:nth-child(3), .countdownMethod p:nth-child(4)  {
+        font-size: 18px;
+    }
+    
+    .navGeoLocation {
+        font-size: 18px;
+    }
+    
+    .navGeoLocation2 {
+        font-size: 18px;
+    }
 }

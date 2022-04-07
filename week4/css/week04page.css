@@ -1,3 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Quicksand:wght@300;500;600&family=Work+Sans&display=swap');
+
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+body {
+    display:grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    background-color: #edae49;
+    margin: 5px;
+}
+
+header {
+    background-color: #00202f;
+    border-radius: 3px 3px 0 0;
+}
+
+main {
+    background-color: #edf2f4;
+    padding: 10px;
+}
+
+a:link {
+    color: #655353;
+    transition-duration: 0.4s;
+}
+
+a:visited {
+    color: #00202f;
+}
+
+a:hover {
+    color: #00202f;
+}
+
+a:active {
+    color: #edae49;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', 'Open Sans', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+p, li {
+    line-height: 1.5;
+    color: #655353;
+}
+
+p, li, a {
+    font-family: 'Work Sans', 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 40px;
+    color: #edf2f4;
+    margin: 0;
+    padding: 10px;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 28px;
+    color: #00202f;
+    margin: 0;
+    padding: 15px 0 0 0px;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 22px;
+    color: #655353;
+    margin: 5px 0 15px 0;
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 18px;
+    color: #655353;
+    margin: 15px 0 5px 0;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 20% auto 20%;
+    background-color: #00202f;
+    border-radius: 0 0 3px 3px;
+}
+
+.footerButtonContainerW04 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin: 0 0 30px 0;
+    padding: 10px;
+}
+
+footer div a:link {
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    color: #edf2f4;
+    background-color: #655353;
+    padding: 5px;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+footer div a:visited {
+    color: #edf2f4;
+    background-color: #655353;
+}
+
+footer div a:hover {
+    color: #655353;
+    background-color: #edf2f4;
+}
+
+footer div a:active {
+    color: #edae49;
+    border: 2px solid #edae49;
+}
+
+
+
+
 .inputElementExamples {
   border-collapse: collapse;
   width: fit-content;
@@ -5,8 +142,11 @@
 
 .inputElementExamples td,
 .inputElementExamples th {
-  border: 1px solid #ddd;
-  padding: 8px;
+  font-family: 'EB Garamond', 'Times New Roman', serif;
+  font-size: 14px;
+  border: 1px solid #655353;
+  padding: 4px;
+  color: #655353;
 }
 
 .inputElementExamples tr:nth-child(even) {
@@ -123,7 +263,7 @@
 .viewGame,
 .importModules p:nth-child(6),
 .importModules p:nth-child(7) {
-  padding-left: 30px;
+  padding-left: 5px;
 }
 
 .chapter12, .ch12Exercise, .chapter15, .usingJQuery, .ch15Exercise {
@@ -169,26 +309,54 @@
 .countdown p:nth-child(3),
 .countdown p:nth-child(4),
 .countdown p:nth-child(6),
-.consoleLogAsk,
 .consoleLogCheckEvent,
 .consoleLogGameOver,
 .constHi {
-  padding-left: 60px;
+  padding-left: 15px;
+}
+
+.consoleLogAsk {
+  padding-left: 5px;
 }
 
 .setupMethodInQuiz, .callToViewSetupMethod, .tearDownMethodInQuiz, .callToTearDownMethod {
-  margin: 0 0 0 30px;
+  margin: 0 0 0 5px;
 }
 
 .number6, .booleanTrue, .number20, .number13, .raphSayHiMethod, .mvcClarification li {
-  margin: 0 0 30px 0;
+  margin: 0 0 5px 0;
 }
 
 .sayHiMethod, .raphSayHiMethod, .raphWeapon, .raphAttackMethod {
-  margin: 30px 0 0 0;
+  margin: 5px 0 0 0;
 }
 
 .forConst p:nth-child(2),
 .countdown p:nth-child(5) {
-  padding-left: 90px;
+  padding-left: 30px;
+}
+
+.submitEventExample > p, .constructionFunctionExample > p, .redDiceRollMethod, .classDeclarationExample > p, .blueDiceSides, .blueDiceRollMethod, .classExample > p, .constLeo, .sayHiMethod, .turtle.Prototype, .turtlePrototypeWeapon, .turtlePrototypeAttack, .constRaph, .raphSayHiMethod, .raphWeapon, .raphAttackMethod, .paraClassList, .constNewPara, .newParaTextContent, .paraAppendChild, .formELementInQuiz > p, .querySelectorResponse, .updatedGameStartMethodInQuiz > p, .updatedGameAskMethodInQuiz > p, .updatedGameCheckMethodInQuiz > p, .setupMethodInQuiz > p, .resetFormMethodInQuiz > p, .callToResetFormMethodInQuiz > p, .callToViewSetupMethod > p, .tearDownMethodInQuiz > p, .callToTearDownMethod > p, .removingMethodsInQuiz > p, .updatedAskFunctionInQuiz > p, .buttonsArray > p, .viewResponseAddEventListener, .ModifiedGameCheckMethodInQuiz > p, .eventPreventDefault, .quizObjectInQuiz > p, .packageJson > p, .scriptSrc, .utilitiesJs > p, .constViewPt1 > p, .forConst > p, .targetInnerHtml, .showElement > p, .hideElement > p, .thisShowHideRender > p, .thisHideShowRender > p, .btnArray > p, .startQuiz, .consoleLogStart > p, .countdown > p, .consoleLogAsk > p, .checkEvent, .consoleLogCheckEvent > p, .gameOverQuiz, .consoleLogGameOver > p, .hiScoreQuiz, .constHi > p, .viewGame > p, .importModules > p, .viewResponse1, .viewResponseAnswerValue {
+  font-size: 10px;
+}
+
+.consoleLogAsk p:nth-child(9), .updatedAskFunctionInQuiz p:nth-child(9), .countdown p:nth-child(3), .usingJQueryLibrary {
+  font-size: 9px;
+}
+
+/* This is the CSS styling for the tablet and desktop versions */
+@media only screen and (min-width: 768px) {
+  .submitEventExample > p, .constructionFunctionExample > p, .redDiceRollMethod, .classDeclarationExample > p, .blueDiceSides, .blueDiceRollMethod, .classExample > p, .constLeo, .sayHiMethod, .turtle.Prototype, .turtlePrototypeWeapon, .turtlePrototypeAttack, .constRaph, .raphSayHiMethod, .raphWeapon, .raphAttackMethod, .paraClassList, .constNewPara, .newParaTextContent, .paraAppendChild, .formELementInQuiz > p, .querySelectorResponse, .updatedGameStartMethodInQuiz > p, .updatedGameAskMethodInQuiz > p, .updatedGameCheckMethodInQuiz > p, .setupMethodInQuiz > p, .resetFormMethodInQuiz > p, .callToResetFormMethodInQuiz > p, .callToViewSetupMethod > p, .tearDownMethodInQuiz > p, .callToTearDownMethod > p, .removingMethodsInQuiz > p, .updatedAskFunctionInQuiz > p, .buttonsArray > p, .viewResponseAddEventListener, .ModifiedGameCheckMethodInQuiz > p, .eventPreventDefault, .quizObjectInQuiz > p, .packageJson > p, .scriptSrc, .utilitiesJs > p, .constViewPt1 > p, .forConst > p, .targetInnerHtml, .showElement > p, .hideElement > p, .thisShowHideRender > p, .thisHideShowRender > p, .btnArray > p, .startQuiz, .consoleLogStart > p, .countdown > p, .consoleLogAsk > p, .checkEvent, .consoleLogCheckEvent > p, .gameOverQuiz, .consoleLogGameOver > p, .hiScoreQuiz, .constHi > p, .viewGame > p, .importModules > p, .viewResponse1, .viewResponseAnswerValue {
+    font-size: 18px;
+  }
+
+  .consoleLogAsk p:nth-child(9), .updatedAskFunctionInQuiz p:nth-child(9), .countdown p:nth-child(3), .usingJQueryLibrary {
+    font-size: 18px;
+  }
+
+  .inputElementExamples td,
+  .inputElementExamples th {
+    font-size: 18px;
+    padding: 8px;
+  }
 }

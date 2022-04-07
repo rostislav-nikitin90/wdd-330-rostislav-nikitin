@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Nunito&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+/* This is the CSS styling for the mobile version */
+img {
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 240px;
+    max-height: 240px;
+    object-fit: cover;
+    border-radius: 0 0 15px 15px;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, input, button, li {
+    font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #e92134;
+    text-align: center;
+    margin-top: 50px;
+    text-shadow: 0px 1px 2px rgba(150, 150, 150, 1);
+}
+
+.container2, .search {
+    animation-name: FadeIn;
+    animation-duration: 3s;
+    transition-timing-function: linear;
+}
+  
+@keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+  
+@-moz-keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+  
+@-webkit-keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+  
+@-o-keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+  
+@-ms-keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+.input {
+    font-size: 18px;
+    font-weight: 400;
+    color: #08415c;
+    min-width: 246px;
+    max-width: max-content;
+    min-height: 39px;
+    max-height: 39px;
+    padding: 1px 8px;
+    border: 2px solid #08415c;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition-duration: 0.4s;
+}
+
+.input:focus {
+    outline: none;
+    border: 2px solid #000000;
+    box-shadow: 0 2px 5px rgb(0,0,0,0.3);
+}
+
+.submitBtn {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 400;
+    color: #e92134;
+    background-color: #ffffff;
+    min-width: 92px;
+    max-width: 92px;
+    min-height: 39px;
+    max-height: 39px;
+    border: 2px solid #e92134;
+    border-radius: 15px;
+    transition-duration: 0.4s;
+}
+
+.submitBtn:hover {
+    cursor: pointer;
+    font-size: 21px;
+    color: #ffffff;
+    background-color: #e92134;
+    padding-bottom: 2px;
+    box-shadow: 0 2px 5px rgb(0,0,0,0.3);
+}
+
+.submitBtn:active {
+    color: #ffffff;
+    background-color: #e92134;
+    border: 5px solid #ffffff;
+}
+
+.container3 {
+    margin-top: 30px;
+}
+
+.news-list {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.newsBox1 {
+    padding: 10px;
+}
+
+.newsListItem {
+    margin-bottom: 60px;
+    background-color: #08415c;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgb(0,0,0,0.3);
+}
+
+.newsArticleLink:link {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.newsArticleLink:visited {
+    color: #e92134;
+    text-decoration: none;
+  }
+  
+.newsArticleLink:hover {
+    text-decoration: underline;
+  }
+  
+.newsArticleLink:active {
+    text-decoration: underline;
+}
+
+.newsBox2 {
+    overflow: hidden;
+    border-radius: 0 0 15px 15px;
+} 

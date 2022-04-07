@@ -8,110 +8,118 @@
     <link rel="stylesheet" href="css/week02page.css">
   </head>
   <body>
-    <h1>WDD 330 Portfolio</h1>
-    <h2>Week02</h2>
-    <h3>Readings:</h3>
-    <h3>JavaScript: Novice to Ninja 2nd Edition</h3>
-    <p>Chapter 2: Programming Basics</p>
-    <p>Notes:</p>
-    <p>Data types are the basic building blocks of all JavaScript programs. There are six primitive data types: strings (a text type used to denote text that must be enclosed in single or double quotes), symbols (a unique and immutable data type that can be used as an identifier for object properties), numbers (a numeric type used to represent both integers and fractional numbers), Booleans (a type used to indicate data that can take only 2 values: true and false), undefined and null (represents the absence of any object value). Arrays, functions and objects are non-primitive data types and all have a type of 'object'. JavaScript variables are containers for storing data values. Data temporarily stored in computer memory is stored inside variables. 
-      A variable has a name, type, value, and scope. Variables are declared using the const or let keywords and point to values stored in memory that are assigned to variables using the = operator. Logical operators can be used to check if compound statements are true or false. Values can be compared to see if they are equal, greater than or less than other values.</p>
-    <p>Chapter 3: Arrays, Logic, and Loops</p>
-    <p>Notes:</p>
-    <p>An array is an ordered list of values. Arrays are not primitive values but a special built-in object. Each item in an array can be treated like a variable, each of which is called an element with a unique index. The index denotes the location of this element in the array. Multidimensional arrays are arrays that contain other arrays. Arrays have lots of methods that can be used to manipulate items in the array. Sets are new in ES6 and are ordered lists of non-duplicate values. Maps are new in ES6 and are ordered lists of key-value pairs. The if and else statement is used to control the flow of code. Switch statement that begins with the JavaScript keyword switch can be used instead of multiple if and else statements and each choice is based on the same variable and uses equals (==). Comparison values are integer or string. A while loop and do ... while loop can be used to repeat a block of code while a condition is still true. A for loop works in a similar way to a while loop, but has a different syntax. A for-of loop can be used to iterate over an array. Sets and maps are enumerable, so can also be looped over using a for-of loop.</p>
-    <p>Chapter 4: Functions</p>
-    <p>Notes:</p>
-    <p>Functions are first-class objects that behave the same way as other values. The function includes: the keyword function, the function name and the parameter list. Function literals can be defined using the function declaration, or by creating a function expression by assigning an anonymous function to a variable. All functions return a value. If this is not explicitly stated, the function will return undefined. A parameter is a value that is written in the parentheses of a function declaration and can be used like a variable inside the function’s body. An argument is a value that is provided to a function when it is invoked. The arguments variable is an array-like object that allows access to each argument provided to the function using index notation. The rest operator can be used to access multiple arguments as an array. Default arguments can be supplied to a function by assigning them to the parameters. Arrow functions are a new shorthand notation that can used for writing anonymous functions in ES6. Function declarations can be invoked before they are defined because they are hoisted to the top of the scope, but function expressions cannot be invoked until after they are defined. A callback is a function that is provided as an argument to another function.</p>
-
-    <ul>
-      <li>
-        Week 2 Exercises:
-      </li>
-      <li>
-        <a href="ch2/quiz_ninja_pt1.html" target="_blank">Quiz Ninja Project Part 1</a>
-        <p>This exercise was to create a quiz that asks the page visitor a question about the real name of one of the superheroes using a prompt dialog that pops up that allows the visitor to enter their answer, but in this first version of the Quiz Ninja Project created, this prompt dialog only displays the answer the user entered, but does not show its correctness, which is added in the second part of the Quiz Ninja Project.</p>
-        <p>The following lines of JavaScript code were used for this:</p>
-        <p>const question = "What is Superman's real name?"</p>
-        <p>const answer = prompt(question);</p>
-        <p>alert(`You answered ${answer}`);</p>
-        <p>The const keyword is used to declare a variable called question, to which only one value will be assigned, the string "What is Superman's real name?". The question is then asked, stored in the question variable, using the prompt dialog. A prompt dialog allows the user to type in a response, which is then stored in the variable it is assigned to, which is answer in this case. Finally, the alert dialog is used to display the user's answer, using string interpolation to insert the value of answer into the template literal that is displayed in an alert box.</p>
-      </li>
-      <li class="quizNinjaPart2">
-        <a href="ch3/quiz_ninja_pt2.html" target="_blank">Quiz Ninja Project Part 2</a>
-        <p>In order to create a real quiz containing several questions for a user who, by entering their correct answer to the question, receives points after answering all the questions in the quiz, the code first begins by adding the following lines:</p>
-        <p>const quiz = [</p>
-        <p>["What is Superman's real name?","Clark Kent"],</p>
-        <p>["What is Wonder Woman's real name?","Diana Prince"],</p>
-        <p>["What is Batman's real name?","Bruce Wayne"]</p>
-        <p>];</p>
-        <p>The code first starts by creating an array called quiz that contains all the questions and answers. Each element in quiz is a nested array that contains the question as its first element and the answer as its second element.</p>
-        <p>Next step is to create and initialize a variable called score to keep track of how many correct answers the player has given:</p>
-        <p>let score = 0 // initialize score</p>
-        <p>A for-of loop is then used to loop through the array, assigning the variables question and answer to each key and value in the map. The loop starts by asking the question using a prompt dialog that allows the user to enter an answer that is stored in a variable called response and then compare this to the actual answer stored as answer:</p>
-        <p>for(const [question,answer] of quiz) {</p>
-        <p>const response = prompt(question);</p>
-        <p>if(response === answer) {</p>
-        <p>alert('Correct!');</p>
-        <p>score++;</p>
-        <p>} else {</p>
-        <p>alert(`Wrong! The correct answer was ${answer}`);</p>
-        <p>}</p>
-        <p>}</p>
-        <p>An if ... else block is then used to check if the answer is right or wrong. If it's right, an alert dialog is shown saying it is correct and the score is incremented by 1, using score++. Otherwise, if the answer is wrong, an alert dialog informs the player and also lets them know the correct answer.</p>
-        <p>When the loop has finished iterating through each question in the array, it breaks out of the block and finishes by displaying another alert dialog to inform the user the game is over and telling them how many questions they answered correctly. This uses a template literal to display the score:</p>
-        <p>// At the end of the game, report the player's score</p>
-        <p>alert(`Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`);</p>
-        <p>The ternary operator is used at the end of this template literal to check if the score is not equal to 1. If this is true, the letter 's' is appended to the end of the word 'point' to make it plural.</p>
-      </li>
-      <li>
-        <a href="ch4/quiz_ninja_pt3.html" target="_blank">Quiz Ninja Project Part 3</a>
-        <p>In the latest version of the Quiz Ninja Project, code is an example of code refactoring (the process of improving the code’s structure and maintainability without changing its behavior) using functions to describe major parts of a program. The following lines of code were used, with some parts of the code replaced with functions:</p>
-        <p>const quiz = [</p>
-        <p>["What is Superman's real name?","Clark Kent"],</p>
-        <p>["What is Wonder Woman's real name?","Diana Prince"],</p>
-        <p>["What is Batman's real name?","Bruce Wayne"]</p>
-        <p>];</p>
-        <p>function start(quiz) {</p>
-        <p>let score = 0;</p>
-        <p>// main game loop</p>
-        <p>for(const [question,answer] of quiz) {</p>
-        <p>const response = ask(question);</p>
-        <p>check(response,answer);</p>
-        <p>}</p>
-        <p>// end of main game loop</p>
-        <p>gameOver();</p>
-        <p>// function declarations</p>
-        <p>function ask(question) {</p>
-        <p>return prompt(question);</p>
-        <p>}</p>
-        <p>function check(response,answer) {</p>
-        <p>if(response === answer) {</p>
-        <p>alert('Correct!');</p>
-        <p>score++;</p>
-        <p>} else {</p>
-        <p>alert(`Wrong! The correct answer was ${answer}`);</p>
-        <p>}</p>
-        <p>}</p>
-        <p>function gameOver() {</p>
-        <p>alert(`Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`);</p>
-        <p>}</p>
-        <p>}</p>
-        <p>start(quiz);</p>
-        <p>The first part of this code remains the same with a created map of questions and answers stored in the quiz variable.</p>
-        <p>The next step is to create a function called start(). This is the main game function that contains all the steps of playing the game. This function also contains a number of functions that help to describe how the game runs. It starts by initializing a variable called score to 0.</p>
-        <p>After this, it iterates over the quiz array and invokes the ask() function for each question. The code then, invokes the check() function to check if the user's response is correct. After it has looped through every question in the quiz array, the game is over, so the gameOver() function is invoked.</p>
-        <p>The ask(), check() and gameOver() functions are defined at the end of the body of the start() function and are placed inside the start() function as nested functions to give them access to any variables defined inside the start() function's scope. Because they are defined using function declarations, they are hoisted, so they can be defined after they are invoked.</p>
-        <p>The ask() function accepts a question parameter and it uses a prompt dialog and returns the text entered by the user, which is then saved in a variable called answer.</p>
-        <p>The check() function is written after the ask() function and has two parameters: response and answer. This function uses the same logic used in the previous version of Quiz Ninja Project to check if the answer entered by the user is the same as the answer stored in the map. If it is, then it increases the score by 1 and if it isn't, it shows an alert dialog to tell them what the answer should have been.</p>
-        <p>When all the questions have been asked, and all the answers have been checked, the loop terminates and the gameOver() function is invoked. This uses an alert dialog to give some feedback about how many questions were answered correctly, using the same code used earlier.</p>
-        <p>The line at the end of the code called start(quiz); invokes the start() function with the quiz variable passed to it as an argument to actually start the quiz.</p>
-        <h3>Question:</h3>
-        <ol>
-          <li>
-            Is the ternary operator often used by programmers in JavaScript code?
-          </li>
-        </ol>
-      </li>
-    </ul>
+    <header>
+      <h1>WDD 330 Portfolio</h1>
+    </header>
+    <main>
+      <h2>Week02</h2>
+      <h3>Readings:</h3>
+      <h3>JavaScript: Novice to Ninja 2nd Edition</h3>
+      <p>Chapter 2: Programming Basics</p>
+      <p>Notes:</p>
+      <p>Data types are the basic building blocks of all JavaScript programs. There are six primitive data types: strings (a text type used to denote text that must be enclosed in single or double quotes), symbols (a unique and immutable data type that can be used as an identifier for object properties), numbers (a numeric type used to represent both integers and fractional numbers), Booleans (a type used to indicate data that can take only 2 values: true and false), undefined and null (represents the absence of any object value). Arrays, functions and objects are non-primitive data types and all have a type of 'object'. JavaScript variables are containers for storing data values. Data temporarily stored in computer memory is stored inside variables. 
+        A variable has a name, type, value, and scope. Variables are declared using the const or let keywords and point to values stored in memory that are assigned to variables using the = operator. Logical operators can be used to check if compound statements are true or false. Values can be compared to see if they are equal, greater than or less than other values.</p>
+      <p class="chapter3">Chapter 3: Arrays, Logic, and Loops</p>
+      <p>Notes:</p>
+      <p>An array is an ordered list of values. Arrays are not primitive values but a special built-in object. Each item in an array can be treated like a variable, each of which is called an element with a unique index. The index denotes the location of this element in the array. Multidimensional arrays are arrays that contain other arrays. Arrays have lots of methods that can be used to manipulate items in the array. Sets are new in ES6 and are ordered lists of non-duplicate values. Maps are new in ES6 and are ordered lists of key-value pairs. The if and else statement is used to control the flow of code. Switch statement that begins with the JavaScript keyword switch can be used instead of multiple if and else statements and each choice is based on the same variable and uses equals (==). Comparison values are integer or string. A while loop and do ... while loop can be used to repeat a block of code while a condition is still true. A for loop works in a similar way to a while loop, but has a different syntax. A for-of loop can be used to iterate over an array. Sets and maps are enumerable, so can also be looped over using a for-of loop.</p>
+      <p class="chapter4">Chapter 4: Functions</p>
+      <p>Notes:</p>
+      <p>Functions are first-class objects that behave the same way as other values. The function includes: the keyword function, the function name and the parameter list. Function literals can be defined using the function declaration, or by creating a function expression by assigning an anonymous function to a variable. All functions return a value. If this is not explicitly stated, the function will return undefined. A parameter is a value that is written in the parentheses of a function declaration and can be used like a variable inside the function's body. An argument is a value that is provided to a function when it is invoked. The arguments variable is an array-like object that allows access to each argument provided to the function using index notation. The rest operator can be used to access multiple arguments as an array. Default arguments can be supplied to a function by assigning them to the parameters. Arrow functions are a new shorthand notation that can used for writing anonymous functions in ES6. Function declarations can be invoked before they are defined because they are hoisted to the top of the scope, but function expressions cannot be invoked until after they are defined. A callback is a function that is provided as an argument to another function.</p>
+      <ul>
+        <li>
+          Week 2 Exercises:
+        </li>
+        <li>
+          <a href="ch2/quiz_ninja_pt1.html" target="_blank">Quiz Ninja Project Part 1</a>
+          <p>This exercise was to create a quiz that asks the page visitor a question about the real name of one of the superheroes using a prompt dialog that pops up that allows the visitor to enter their answer, but in this first version of the Quiz Ninja Project created, this prompt dialog only displays the answer the user entered, but does not show its correctness, which is added in the second part of the Quiz Ninja Project.</p>
+          <p>The following lines of JavaScript code were used for this:</p>
+          <p>const question = "What is Superman's real name?"</p>
+          <p>const answer = prompt(question);</p>
+          <p>alert(`You answered ${answer}`);</p>
+          <p>The const keyword is used to declare a variable called question, to which only one value will be assigned, the string "What is Superman's real name?". The question is then asked, stored in the question variable, using the prompt dialog. A prompt dialog allows the user to type in a response, which is then stored in the variable it is assigned to, which is answer in this case. Finally, the alert dialog is used to display the user's answer, using string interpolation to insert the value of answer into the template literal that is displayed in an alert box.</p>
+        </li>
+        <li class="quizNinjaPart2">
+          <a href="ch3/quiz_ninja_pt2.html" target="_blank">Quiz Ninja Project Part 2</a>
+          <p>In order to create a real quiz containing several questions for a user who, by entering their correct answer to the question, receives points after answering all the questions in the quiz, the code first begins by adding the following lines:</p>
+          <p>const quiz = [</p>
+          <p>["What is Superman's real name?","Clark Kent"],</p>
+          <p>["What is Wonder Woman's real name?","Diana Prince"],</p>
+          <p>["What is Batman's real name?","Bruce Wayne"]</p>
+          <p>];</p>
+          <p>The code first starts by creating an array called quiz that contains all the questions and answers. Each element in quiz is a nested array that contains the question as its first element and the answer as its second element.</p>
+          <p>Next step is to create and initialize a variable called score to keep track of how many correct answers the player has given:</p>
+          <p>let score = 0 // initialize score</p>
+          <p>A for-of loop is then used to loop through the array, assigning the variables question and answer to each key and value in the map. The loop starts by asking the question using a prompt dialog that allows the user to enter an answer that is stored in a variable called response and then compare this to the actual answer stored as answer:</p>
+          <p>for(const [question,answer] of quiz) {</p>
+          <p>const response = prompt(question);</p>
+          <p>if(response === answer) {</p>
+          <p>alert('Correct!');</p>
+          <p>score++;</p>
+          <p>} else {</p>
+          <p>alert(`Wrong! The correct answer was ${answer}`);</p>
+          <p>}</p>
+          <p>}</p>
+          <p>An if ... else block is then used to check if the answer is right or wrong. If it's right, an alert dialog is shown saying it is correct and the score is incremented by 1, using score++. Otherwise, if the answer is wrong, an alert dialog informs the player and also lets them know the correct answer.</p>
+          <p>When the loop has finished iterating through each question in the array, it breaks out of the block and finishes by displaying another alert dialog to inform the user the game is over and telling them how many questions they answered correctly. This uses a template literal to display the score:</p>
+          <p>// At the end of the game, report the player's score</p>
+          <p>alert(`Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`);</p>
+          <p>The ternary operator is used at the end of this template literal to check if the score is not equal to 1. If this is true, the letter 's' is appended to the end of the word 'point' to make it plural.</p>
+        </li>
+        <li>
+          <a href="ch4/quiz_ninja_pt3.html" target="_blank">Quiz Ninja Project Part 3</a>
+          <p>In the latest version of the Quiz Ninja Project, code is an example of code refactoring (the process of improving the code’s structure and maintainability without changing its behavior) using functions to describe major parts of a program. The following lines of code were used, with some parts of the code replaced with functions:</p>
+          <p>const quiz = [</p>
+          <p>["What is Superman's real name?","Clark Kent"],</p>
+          <p>["What is Wonder Woman's real name?","Diana Prince"],</p>
+          <p>["What is Batman's real name?","Bruce Wayne"]</p>
+          <p>];</p>
+          <p>function start(quiz) {</p>
+          <p>let score = 0;</p>
+          <p>// main game loop</p>
+          <p>for(const [question,answer] of quiz) {</p>
+          <p>const response = ask(question);</p>
+          <p>check(response,answer);</p>
+          <p>}</p>
+          <p>// end of main game loop</p>
+          <p>gameOver();</p>
+          <p>// function declarations</p>
+          <p>function ask(question) {</p>
+          <p>return prompt(question);</p>
+          <p>}</p>
+          <p>function check(response,answer) {</p>
+          <p>if(response === answer) {</p>
+          <p>alert('Correct!');</p>
+          <p>score++;</p>
+          <p>} else {</p>
+          <p>alert(`Wrong! The correct answer was ${answer}`);</p>
+          <p>}</p>
+          <p>}</p>
+          <p>function gameOver() {</p>
+          <p>alert(`Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`);</p>
+          <p>}</p>
+          <p>}</p>
+          <p>start(quiz);</p>
+          <p>The first part of this code remains the same with a created map of questions and answers stored in the quiz variable.</p>
+          <p>The next step is to create a function called start(). This is the main game function that contains all the steps of playing the game. This function also contains a number of functions that help to describe how the game runs. It starts by initializing a variable called score to 0.</p>
+          <p>After this, it iterates over the quiz array and invokes the ask() function for each question. The code then, invokes the check() function to check if the user's response is correct. After it has looped through every question in the quiz array, the game is over, so the gameOver() function is invoked.</p>
+          <p>The ask(), check() and gameOver() functions are defined at the end of the body of the start() function and are placed inside the start() function as nested functions to give them access to any variables defined inside the start() function's scope. Because they are defined using function declarations, they are hoisted, so they can be defined after they are invoked.</p>
+          <p>The ask() function accepts a question parameter and it uses a prompt dialog and returns the text entered by the user, which is then saved in a variable called answer.</p>
+          <p>The check() function is written after the ask() function and has two parameters: response and answer. This function uses the same logic used in the previous version of Quiz Ninja Project to check if the answer entered by the user is the same as the answer stored in the map. If it is, then it increases the score by 1 and if it isn't, it shows an alert dialog to tell them what the answer should have been.</p>
+          <p>When all the questions have been asked, and all the answers have been checked, the loop terminates and the gameOver() function is invoked. This uses an alert dialog to give some feedback about how many questions were answered correctly, using the same code used earlier.</p>
+          <p>The line at the end of the code called start(quiz); invokes the start() function with the quiz variable passed to it as an argument to actually start the quiz.</p>
+          <h4>Question:</h4>
+          <ol>
+            <li>
+              Is the ternary operator often used by programmers in JavaScript code?
+            </li>
+          </ol>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <div class="footerButtonContainerW02">
+        <a href="https://rostislav-nikitin90.github.io/wdd-330-rostislav-nikitin/">Return to Home Page</a>
+      </div>
+    </footer>
   </body>
 </html>

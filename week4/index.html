@@ -8,740 +8,747 @@
     <link rel="stylesheet" href="css/week04page.css">
   </head>
   <body>
-    <h1>WDD 330 Portfolio</h1>
-    <h2>Week04</h2>
-    <h3>Readings:</h3>
-    <h3>JavaScript: Novice to Ninja 2nd Edition</h3>
-    <h4>Chapter 8: Forms</h4>
-    <p>Notes:</p>
-    <p>Forms are the primary method used to enter data into a browser. Forms are made up of a &#8249;form&#8250; element that serves as a container and contains form controls such as input fields, select menus and buttons. 
-      These input fields can be populated with information that is processed after the form is submitted, and the entered data is sent to the server where the information would be processed using a "back end" language such as PHP or Ruby. 
-      It's possible, and becoming more and more common, to process the information in a form on the "front end" before it is sent to the server using JavaScript.
-    </p>
-    <p>Each form control has an initial value that can be specified in the HTML code. This value can be changed by a user entering information or interacting with the form's interface (such as using a slider to increase or decrease a value). 
-      The value can also be changed dynamically using JavaScript. Forms have a variety of controls that are used for entering different types of information. Some common types of form control are:
-    </p>
-    <ul>
-      <li>&#8249;input&#8250; fields, including text, passwords, check boxes, radio buttons, and file uploads</li>
-      <li>&#8249;select&#8250; menus for drop-down lists of options</li>
-      <li>&#8249;textarea&#8250; elements for longer text entry such as a comment or blog post</li>
-      <li>&#8249;button&#8250; elements for submitting and resetting forms</li>
-    </ul>
-    <p>An &#8249;input&#8250; element can be displayed in many ways, depending on the type attribute. Here are some examples:
-    </p>
-    <table class="inputElementExamples">
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-      <tr>
-        <td>&#8249;input type="text"&#8250;</td>
-        <td>Displays a single-line text input field and is used for entering a short piece of text, such as a username</td>
-      </tr>
-      <tr>
-        <td>&#8249;input type="password"&#8250;</td>
-        <td>Defines a password field (characters are concealed as they are entered) to enter passwords or secret information</td>
-      </tr>
-      <tr>
-        <td>&#8249;input type="radio"&#8250;</td>
-        <td>Displays a radio button for selecting one of many choices so that only one option can be selected</td>
-      </tr>
-      <tr>
-        <td>&#8249;input type="checkbox"&#8250;</td>
-        <td>Displays a checkbox for selecting zero or more of many choices that can be checked (true) or left unchecked (false)</td>
-      </tr>
-      <tr>
-        <td>&#8249;input type="hidden"&#8250;</td>
-        <td>Defines a hidden input field and it is not displayed by the browser, but have a "value" attribute that can contain information<br> 
-          that is submitted with the form (it is used to send information such as settings or information that the user has already provided)</td>
-      </tr>
-      <tr>
-        <td>&#8249;input type="file"&#8250;</td>
-        <td>Defines a a file-select field and a "Browse" button for file uploads</td>
-      </tr>
-    </table>
-    <p class="otherInputTypes">There are also other input types such as number, date, and email. So a number field might use a slider, whereas a date field will show a calendar. They will also validate automatically, so an email input field will show an error message if there's no valid email address.</p>
-    <p>The document.forms property returns an HTML collection of all the forms in the document in the order they appear in the markup and form.elements will return an HTML collection of all the elements contained within a form.
-    </p>
-    <p>Forms trigger a number of events such as focus, blur, and change that fire as a user interacts with the form. The focus event occurs when an element is focused on. In the case of an &#8249;input&#8250; element, this is when the cursor is placed inside the element (either by clicking or tapping on it or navigating to it using the keyboard).
-      The blur event occurs when the user moves the focus away from the form element. The change event occurs when the user moves the focus away from the form element after changing it. So if a user clicks in an input field and makes no changes, and then clicks elsewhere, the change event won't fire, but the blur event will.
-    </p>
-    <p>Forms also have a submit event, occurring when the form is submitted. Usually this will send the content of the form to the server to be processed, but JavaScript can be used to intercept the form before it's sent by adding a submit event listener:</p>
-    <div class="submitEventExample">
-      <p>const form = document.forms['search'];</p>
-      <p>form.addEventListener ('submit', search, false);</p>
-      <p>function search() {</p>
-      <p>alert(' Form Submitted');</p>
-      <p>}</p>
-    </div>
-    <p>The information entered into a form can be read or updated using the value property of the form controls.</p>
-    <p>The HTML5 form validation API can be used to automatically validate a form, but only at a basic level, so a custom validation script may be required.</p>
-
-    <h4 class="chapter12">Chapter 12: Object-Oriented Programming in JavaScript</h4>
-    <p>Notes:</p>
-    <p>Object-oriented programming (OOP) is a style of programming that involves separating the code into objects that encapsulate their own properties and methods. This approach has the benefit of keeping related pieces of code encapsulated in objects that maintain state throughout the life of the program. The objects can also be reused or easily modified, as required. 
-      JavaScript supports objects so it also supports an object-oriented style of programming. Encapsulation, polymorphism and inheritance are the main concepts of OOP.
-    </p>
-    <p>The concept of encapsulation in OOP includes storing all programming logic inside an object and making methods available to implement the functionality.
-    </p>
-    <p>Polymorphism includes the notion that the same process can be used for different objects. In OOP, this means various objects can share the same method, but also have the ability to override shared methods with a more specific implementation.
-    </p>
-    <p>The concept of inheritance is to take the properties of one object and then add new properties. In OOP, this means that the programmer can take an object that already exists and inherit all its properties and methods. He can then improve on its functionality by adding new properties and methods.
-    </p>
-    <p>Many object-oriented languages, such as Java and Ruby, are known as class-based languages. This is because they use a class to define a blueprint for an object. Objects are then created as an instance of that class, and inherit all the properties and methods of the class. In the juicer example, the juicer class would represent the design of the juicer, and each juicer that’s made on the production line would be instances of that class.
-    </p>
-    <p>JavaScript didn't have classes before ES6, and used the concept of using actual objects as the blueprint for creating more objects. This is known as a prototype-based language. In the juicer example, this might involve building an actual prototype juicer then using this prototype as the basis for making all the other juicers. The juicers based on the prototype would be able to do everything the prototype could do, with some being able to do even more. Even though ES6 now supports classes, it still uses this prototypal inheritance model in the background.
-    </p>
-    <p>The constructor function is used as an alternative way to create objects. This is a function that defines the properties and methods of an object. Here is the dice example rewritten as a constructor function:
-    </p>
-    <div class="constructionFunctionExample">
-      <p>const Dice = function(sides=6){</p>
-      <p>this.sides = sides;</p>
-      <p>this.roll = function() {</p>
-      <p>return Math.floor(this.sides * Math.random() + 1)</p>
-      <p>}</p>
-      <p>}</p>
-    </div>
-    <p>The keyword this is used to represent the object that will be returned by the constructor function. In the previous example in the objects chapter earlier in the book, it was used to set the sides property to the argument that is provided to the constructor function, or 6, if no argument is provided. It also adds a method called roll(), which returns a random number from 1 up to the number of sides the dice has.
-    </p>
-    <p>Constructor function can be used to create instances of objects. An instance of the dice constructor function can now be created using the new operator:
-    </p>
-    <p>const redDice = new Dice();
-    </p>
-    <p><< Dice { sides: 6, roll: [Function] }
-    </p>
-    <p>The parentheses are not required when instantiating a new object using a constructor function. The following code would also achieve the same result:
-    </p>
-    <p>const redDice = new Dice;</p>
-    <p>The parentheses are required, however, if any default arguments need to be provided. For example, if another Dice object with four sides is created, the programmer would have to add 4 as an argument, like so:
-    </p>
-    <p>const whiteDice = new Dice(4);</p>
-    <p>This returns an object that was assigned to the variable redDice, which is said to be an instance of the Dice constructor function. This can be confirmed using the instanceof operator:
-    </p>
-    <p>redDice instanceof Dice</p>
-    <p><< true</p>
-    <p>Each new object that's created using this function will inherit the properties and methods defined in the function. This means that redDice will have a sides property and roll() method:
-    </p>
-    <p>redDice.sides</p>
-    <p class="number6"><< 6</p>
-    <p>redDice.roll()</p>
-    <p><< 4</p>
-    <p>ES6 introduced class declarations that use the class keyword. These can be used in place of constructor functions. Here is the dice example again, using a class declaration:</p>
-    <div class="classDeclarationExample">
-      <p>class Dice {</p>
-      <p>constructor(sides=6) {</p>
-      <p>this.sides = sides;</p>
-      <p>}</p>
-      <p>roll() {</p>
-      <p>return Math.floor(this.sides * Math.random() + 1)</p>
-      <p>}</p>
-      <p>}</p>
-    </div>
-    <p>By convention, the names of constructor functions or class declarations are capitalized, which is the convention used for classes in class-based programming languages.
-    </p>
-    <p>To create an instance of the Dice class, the new operator is again used:
-    </p>
-    <p>const blueDice = new Dice(20);</p>
-    <p><< Dice { sides: 20 }</p>
-    <p>The variable blueDice now contains an instance of the Dice class and behaves in exactly the same way as the redDice object:
-    </p>
-    <p>blueDice instanceof Dice</p>
-    <p class="booleanTrue"><< true</p>
-    <p>blueDice.sides</p>
-    <p class="number20"><< 20</p>
-    <p>blueDice.roll()</p>
-    <p class="number13"><< 13</p>
-    <p>JavaScript uses a prototypal inheritance model. This means that every class has a prototype property that is shared by every instance of the class. So any properties or methods of a class's prototype can be accessed by every object instantiated by that class. An example of a class for creating ninja turtles:</p>
-    <div class="classExample">
-      <p>class Turtle {</p>
-      <p>constructor(name) {</p>
-      <p>this.name = name;</p>
-      <p>this.weapon = 'hands';</p>
-      <p>}</p>
-      <p>sayHi() {</p>
-      <p>return `Hi dude, my name is ${this.name}`;</p>
-      <p>}</p>
-      <p>attack(){</p>
-      <p>return `Feel the power of my ${this.weapon}!`;</p>
-      <p>}</p>
-      <p>}</p>
-    </div>
-    <p>This can then be used to create a new turtle instance:
-    </p>
-    <p>const leo = new Turtle('Leonardo');</p>
-    <p><< Turtle { name: 'Leonardo' }</p>
-    <p>The variable leo points to an instance of the Turtle class. It has a name property and a sayHi() method that references the name property:
-    </p>
-    <p>leo.name;</p>
-    <p><< 'Leonardo'</p>
-    <p class="sayHiMethod">leo.sayHi();</p>
-    <p><< 'Hi dude, my name is Leonardo'</p>
-    <p>All classes and constructor functions have a prototype property that returns an object:
-    </p>
-    <p>Turtle.prototype;</p>
-    <p><< Turtle {}</p>
-    <p>All instances of a class or constructor function inherit all the properties and methods of its prototype (in this example, it's Turtle class). This means they can call any methods of the prototype and access any of its properties. Since the prototype is just an object, the programmer can add new properties by assignment:
-    </p>
-    <p>Turtle.prototype.weapon = 'Hands';</p>
-    <p><< 'Hands'</p>
-    <p>A method can be added to the prototype in a similar way:</p>
-    <p>Turtle.prototype.attack = function(){</p>
-    <p>return `Feel the power of my ${this.weapon}!`;</p>
-    <p>}
-    <p><< [Function]</p>
-    </p>
-    <p>Now if a new Turtle instance is created, it can be seen that it inherits the weapon property and attack() method from the Turtle.prototype object, as well as receiving the name property and sayHi() method from the class declaration:
-    </p>
-    <p class="constRaph">const raph = new Turtle('Raphael');</p>
-    <p>raph.name</p>
-    <p><< 'Raphael'</p>
-    <p class="raphSayHiMethod">raph.sayHi()</p>
-    <p><< 'Hi dude, my name is Raphael'</p>
-    <p class="raphWeapon">raph.weapon</p>
-    <p><< 'Hands'</p>
-    <p class="raphAttackMethod">raph.attack()</p>
-    <p><< 'Feel the power of my Hands!'</p>
-    <p>There's a reference to this.weapon in the prototype attack() method, and when the instance calls the attack() method, it uses the instance's weapon property. This is because this in the prototype always refers to the instance that actually calls the method.
-    </p>
-    <p>The prototype is live, so new properties and methods can be added to existing instances.
-    </p>
-    <p>The prototype chain is used to find an available method. If an object lacks a method, JavaScript will check whether its prototype has the method. If not, it will check that function’s prototype until it finds the method or reaches the Object constructor function.
-    </p>
-    <p>Private properties and methods can be created by defining variables using const and defining a function inside a constructor function. These can be made public using getter and setter functions.
-    </p>
-    <p>Monkey-patching is the process of adding methods to built-in objects by augmenting their prototypes. This should be done with caution as it can cause unexpected behavior in the way built-in objects work.
-    </p>
-    <p>A mixin method can be used to add properties and methods from other objects without creating an inheritance chain.
-    </p>
-    <p>Methods can be chained together and called in sequence if they return a reference to this.
-    </p>
-    <p>Polymorphism allows objects to override shared methods with a more specific implementation.
-    </p>
-    <p>The value of this is not retained inside nested functions, which can cause errors. This can be worked around by using that = this, using the bind(this) method and using arrow functions.
-    </p>
-    <p>Methods can be borrowed from other objects.</p>
-    <p>Composition over inheritance is a design pattern where objects are composed from 'building-block' objects, rather than inheriting all their properties and methods from a parent class.
-    </p>
-
-    <h4 class="chapter15">Chapter 15: Modern JavaScript Development</h4>
-    <p>Notes:</p>
-    <p>There are many tools available that a JavaScript programmer can use to help organize code and make it run more efficiently.
-    </p>
-    <p>JavaScript libraries is a piece of code that provides several methods  to make common tasks easier to achieve. JavaScript is an extremely flexible language that can accomplish most programming tasks – but not all undertakings are as easy to do as they should be. A library will abstract functionality into easier-to-use functions and methods. These can then be used to complete common tasks without having to use lots of repetitive code.
-    </p>
-    <p>A good example of how libraries can help save time is in DOM manipulation. The DOM API provides all the tools required to manipulate the DOM, but some can be verbose and take several lines of code to attain even the most basic of tasks. For example, if a programmer wants to add a class to a paragraph element referenced by the variable para, then append another paragraph on the end, this can be done as follows:
-    </p>
-    <p>para.classList.add('important');</p>
-    <p>const newPara = document.createElement('p');</p>
-    <p>newPara.textContent = 'Another Paragraph';</p>
-    <p>para.appendChild(newPara);</p>
-    <p class="usingJQuery">Yet by using the jQuery library, the same result can be achieved using a single line of code:
-    </p>
-    <p>$(para).addClass('important').append('&#8249;p&#8250;Another Paragraph&#8249;/p&#8250;');</p>
-    <p>This shows how using a library can reduce the amount of code a programmer has to write, as well as making common tasks easier to implement.
-    </p>
-    <p>jQuery and Lodash are two popular libraries that provide a large number of useful and well-tested functions.
-    </p>
-    <p>When to use library: It can be helpful to use a library, but you should certainly question whether it's worth the extra work. You have to learn the library's notation, which can either be similar or very different to standard JavaScript. Every library you use will add to the total file size that's downloaded so you need to assess whether the extra overhead is worth it. Having said that, browsers will cache it after the first download, and if you use a CDN, the chances are it will already be in the browser's cache.
-      It's also advisable to consider that the popularity of a particular library can be 'here today, gone tomorrow'. Some of the most popular libraries of the past have fallen out of favor and even discontinued, almost overnight. This can potentially cause problems if you've relied on one particular library in most of your projects.
-    </p>
-    <p>npm and Yarn are package managers that can be used to install JavaScript packages, as well as any dependencies that they require.
-    </p>
-    <p>A module is a self-contained piece of code that provides functions and methods that can then be used in other files and by other modules. A ES6 module file is just a normal JavaScript file, but uses the keyword export to specify any values or functions that are to be made available from the module. This highlights another important fact about modules – not everything in the module needs to be used.
-    </p>
-    <p>For example, a very simple Pi module would have the following code saved in a file called 'pi.js':
-    </p>
-    <p>export const PI = 3.1415926;</p>
-    <p>This would then be imported into your main JavaScript file, main.js using the following code:
-    </p>
-    <p>import { PI } from './pi.js';</p>
-    <p>This would then allow to use the variable PI inside the main.js file.
-    </p>
-    <p>ES6 added support for modules, allowing code to be abstracted into their own self-contained files and imported into another file.
-    </p>
-    <p>Model-View-Controller (MVC) is a design pattern that’s been used for a long time in server-side languages. It’s a common way of designing software, and used by server-side frameworks such as Ruby On Rails and Django. In recent years it has been used in JavaScript code to make it easier to organize large-scale web applications.
-    </p>
-    <p>MVC separates an application into three distinct, independent components that interact with each other:
-    </p>
-    <ul class="mvcClarification">
-      <li>Models are objects that implement the functionality for creating, reading, updating and deleting (known as CRUD tasks) specific pieces of information about the application, as well as any other associated logic and behavior. In a to-do list application, for example, there would be a task model providing methods to access all the information about the tasks such as names, due dates and completed tasks. This data will often be stored in a database or some other container.</li>
-      <li>Views provide a visual representation of the model showing all the relevant information. In a web application, this would be the HTML displayed on a web page. Views also provide a way for users to interact with an application, usually via forms. In a to-do list application, the views would display the tasks as an HTML list with checkboxes that a user could tick to say a task had been completed.</li>
-      <li>Controllers link models and views together by communicating between them. They respond to events, which are usually inputs from a user (entering some data into a form, for example), process the information, then update the model and view accordingly. In a to-do list application, the controller functions would respond to the event of a user clicking on a check box and then inform the model that a task had been completed. The model would then update the information about that task.</li>
-    </ul>
-    <p>Template files can be used to separate view code from JavaScript; they also enable dynamic code and programming logic to be used to generate markup.
-    </p>
-    <p>React and Vue.js are popular JavaScript view libraries that render components and keep track of their state.
-    </p>
-    <p>Minification is the process of removing any redundant characters from the code in order to reduce its file size. This includes all comments, whitespace, and other characters that are superfluous.
-      Tools are available to do this, known as minifiers. Some popular choices include:
-    </p>
-    <ul>
-      <li>YUI Compressor</li>
-      <li>Google's Closure</li>
-      <li>UglifyJS</li>
-    </ul>
-    <p>Files can be compressed on the server using the gzip compression tool.
-    </p>
-    <p>Webpack can be used to bundle multiple files into a single bundle, and automate common tasks such as transpiling, minifying code and running tests.</p>
-    <p>Before code is deployed, it should be concatenated into a single file, minified and compressed. The script tag should be placed just before the closing </body> tag to ensure that all elements on the page have loaded before the script runs.</p>
-
-    <ul>
-      <li class="week4Exercises">
-        Week 4 Exercises:
-      </li>
-      <li>
-        <a href="ch8/quiz_ninja_pt7.html" target="_blank">Quiz Ninja Project Part 7</a>
-        <p>This version of the Quiz Ninja Project includes the use of forms so that players can enter their answers without using prompt dialogs.</p>
-      <p>A form element with an ID of response was added between the question and result &#8249;div&#8250; elements in the html file:</p>
-      <div class="formELementInQuiz">
-        <p>&#8249;form id='response'&#8250;</p>
-        <p>&#8249;input name='answer' type='text'&#8250;</p>
-        <p>&#8249;button type='submit'&#8250;Submit Answer&#8249;/button&#8250;</p>
-        <p>&#8249;/form&#8250;</p>
-      </div>
-      <p>A reference to the form has been added in the JavaScript code as a property of the view object:</p>
-      <p>response: document.querySelector('#response')</p>
-      <p>The next task is to remove the for-of loop that was used earlier to loop through each question. This is because the prompt dialogs pause the execution of the program and wait until the player has entered the answer. This won't happen if a form is used to enter the answers, so the program would just loop through each question without giving the player a chance to answer!</p>
-      <p>Instead, the pop() method will be used to remove each question, one at a time, from the this.questions array. So the main game loop code has been removed from the game.start() method, so part of this code now looks like this:</p>
-      <div class="updatedGameStartMethodInQuiz">
-        <p>start(quiz){</p>
-        <p>this.score = 0;</p>
-        <p>this.questions = [...quiz];</p>
-        <p>this.ask();</p>
-        <p>}</p>
-      </div>
-      <p>This sets up the quiz as it did before, but it also calls the game.ask() method, which results in the first question being asked.</p>
-      <p>The next step is to change the game.ask() method, so it looks like the following:</p>
-      <div class="updatedGameAskMethodInQuiz">
-        <p>ask(name){</p>
-        <p>if(this.questions.length > 0) {</p>
-        <p>this.question = this.questions.pop();</p>
-        <p>const question = `What is ${this.question.name}'s real name?`;</p>
-        <p>view.render(view.question,question);</p>
-        <p>}</p>
-        <p>else {</p>
-        <p>this.gameOver();</p>
-        <p>}</p>
-        <p>}</p>
-      </div>
-      <p>This checks the length property of the this.questions array, to see if there are any questions left to ask. If there are, the pop() method is used to remove the last element of the array and assign it to this.question. To render the question in HTML, the same method is used as before.</p>
-      <p>The next step is to add an event handler that fires when the form is submitted by adding the following line of code to the bottom of the js file:
-      <p>view.response.addEventListener('submit', (event) => game.check(event), false);</p>
-      <p>view.hide(view.response);</p>
+    <header>
+      <h1>WDD 330 Portfolio</h1>
+    </header>
+    <main>
+      <h2>Week04</h2>
+      <h3>Readings:</h3>
+      <h3>JavaScript: Novice to Ninja 2nd Edition</h3>
+      <p>Chapter 8: Forms</p>
+      <p>Notes:</p>
+      <p>Forms are the primary method used to enter data into a browser. Forms are made up of a &#8249;form&#8250; element that serves as a container and contains form controls such as input fields, select menus and buttons. 
+        These input fields can be populated with information that is processed after the form is submitted, and the entered data is sent to the server where the information would be processed using a "back end" language such as PHP or Ruby. 
+        It's possible, and becoming more and more common, to process the information in a form on the "front end" before it is sent to the server using JavaScript.
       </p>
-      <p>This will call the game.check() method that's used to check if the answer submitted by the player is correct. It is necessary to update this method so it has an event object as a parameter. The event.preventDefault() method can then be used to stop the form from actually being submitted:</p>
-      <div class="updatedGameCheckMethodInQuiz">
-        <p>check(event){</p>
-        <p>event.preventDefault();</p>
-        <p>const response = view.response.answer.value;</p>
-        <p>const answer = this.question.realName;</p>
-        <p>if(response === answer){</p>
-        <p>view.render(view.result,'Correct!',{'class':'correct'});</p>
-        <p>this.score++;</p>
-        <p>view.render(view.score,this.score);</p>
-        <p>} else {</p>
-        <p>view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});</p>
+      <p>Each form control has an initial value that can be specified in the HTML code. This value can be changed by a user entering information or interacting with the form's interface (such as using a slider to increase or decrease a value). 
+        The value can also be changed dynamically using JavaScript. Forms have a variety of controls that are used for entering different types of information. Some common types of form control are:
+      </p>
+      <ul>
+        <li>&#8249;input&#8250; fields, including text, passwords, check boxes, radio buttons, and file uploads</li>
+        <li>&#8249;select&#8250; menus for drop-down lists of options</li>
+        <li>&#8249;textarea&#8250; elements for longer text entry such as a comment or blog post</li>
+        <li>&#8249;button&#8250; elements for submitting and resetting forms</li>
+      </ul>
+      <p>An &#8249;input&#8250; element can be displayed in many ways, depending on the type attribute. Here are some examples:
+      </p>
+      <table class="inputElementExamples">
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>&#8249;input type="text"&#8250;</td>
+          <td>Displays a single-line text input field and is used for entering a short piece of text, such as a username</td>
+        </tr>
+        <tr>
+          <td>&#8249;input type="password"&#8250;</td>
+          <td>Defines a password field (characters are concealed as they are entered) to enter passwords or secret information</td>
+        </tr>
+        <tr>
+          <td>&#8249;input type="radio"&#8250;</td>
+          <td>Displays a radio button for selecting one of many choices so that only one option can be selected</td>
+        </tr>
+        <tr>
+          <td>&#8249;input type="checkbox"&#8250;</td>
+          <td>Displays a checkbox for selecting zero or more of many choices that can be checked (true) or left unchecked (false)</td>
+        </tr>
+        <tr>
+          <td>&#8249;input type="hidden"&#8250;</td>
+          <td>Defines a hidden input field and it is not displayed by the browser, but have a "value" attribute that can contain information<br> 
+            that is submitted with the form (it is used to send information such as settings or information that the user has already provided)</td>
+        </tr>
+        <tr>
+          <td>&#8249;input type="file"&#8250;</td>
+          <td>Defines a a file-select field and a "Browse" button for file uploads</td>
+        </tr>
+      </table>
+      <p class="otherInputTypes">There are also other input types such as number, date, and email. So a number field might use a slider, whereas a date field will show a calendar. They will also validate automatically, so an email input field will show an error message if there's no valid email address.</p>
+      <p>The document.forms property returns an HTML collection of all the forms in the document in the order they appear in the markup and form.elements will return an HTML collection of all the elements contained within a form.
+      </p>
+      <p>Forms trigger a number of events such as focus, blur, and change that fire as a user interacts with the form. The focus event occurs when an element is focused on. In the case of an &#8249;input&#8250; element, this is when the cursor is placed inside the element (either by clicking or tapping on it or navigating to it using the keyboard).
+        The blur event occurs when the user moves the focus away from the form element. The change event occurs when the user moves the focus away from the form element after changing it. So if a user clicks in an input field and makes no changes, and then clicks elsewhere, the change event won't fire, but the blur event will.
+      </p>
+      <p>Forms also have a submit event, occurring when the form is submitted. Usually this will send the content of the form to the server to be processed, but JavaScript can be used to intercept the form before it's sent by adding a submit event listener:</p>
+      <div class="submitEventExample">
+        <p>const form = document.forms['search'];</p>
+        <p>form.addEventListener ('submit', search, false);</p>
+        <p>function search() {</p>
+        <p>alert(' Form Submitted');</p>
         <p>}</p>
-        <p>this.ask();</p>
-        <p>},</p>
       </div>
-      <p>The programmer can grab the answer that was submitted by querying view.response.answer.value, which is the value stored in the &#8249;input&#8250; field. He then assign this to the variable response and use exactly the same code as before to deal with the outcome of the player's answer being right or wrong.</p>
-      <p>It is also necessary to call the game.ask() function at the end of the method so the next question is asked after the current question has been answered and checked.</p>
-      <p>Players can now use the form instead of prompt dialogs to enter their answers, but a lot of the elements are displayed when they are unnecessary. For example, when the page loads, the form is displayed, even though there is no question to answer. To remedy this, a couple of helper functions can be created to update the view at the start and end of the game.</p>
-      <p>The first helper function is view.setup(), which will be used to set up the view when the game starts. The following method has been added to the view object:</p>
-      <div>
-        <p>setup(){</p>
-        <div class="setupMethodInQuiz">
-          <p>this.show(this.question);</p>
-          <p>this.show(this.response);</p>
-          <p>this.show(this.result);</p>
-          <p>this.hide(this.start);</p>
-          <p>this.render(this.score,game.score);</p>
-          <p>this.render(this.result,'');</p>
-          <p>this.render(this.info,'');</p>
-          <p>this.resetForm();</p>
+      <p>The information entered into a form can be read or updated using the value property of the form controls.</p>
+      <p>The HTML5 form validation API can be used to automatically validate a form, but only at a basic level, so a custom validation script may be required.</p>
+  
+      <p class="chapter12">Chapter 12: Object-Oriented Programming in JavaScript</p>
+      <p>Notes:</p>
+      <p>Object-oriented programming (OOP) is a style of programming that involves separating the code into objects that encapsulate their own properties and methods. This approach has the benefit of keeping related pieces of code encapsulated in objects that maintain state throughout the life of the program. The objects can also be reused or easily modified, as required. 
+        JavaScript supports objects so it also supports an object-oriented style of programming. Encapsulation, polymorphism and inheritance are the main concepts of OOP.
+      </p>
+      <p>The concept of encapsulation in OOP includes storing all programming logic inside an object and making methods available to implement the functionality.
+      </p>
+      <p>Polymorphism includes the notion that the same process can be used for different objects. In OOP, this means various objects can share the same method, but also have the ability to override shared methods with a more specific implementation.
+      </p>
+      <p>The concept of inheritance is to take the properties of one object and then add new properties. In OOP, this means that the programmer can take an object that already exists and inherit all its properties and methods. He can then improve on its functionality by adding new properties and methods.
+      </p>
+      <p>Many object-oriented languages, such as Java and Ruby, are known as class-based languages. This is because they use a class to define a blueprint for an object. Objects are then created as an instance of that class, and inherit all the properties and methods of the class. In the juicer example, the juicer class would represent the design of the juicer, and each juicer that's made on the production line would be instances of that class.
+      </p>
+      <p>JavaScript didn't have classes before ES6, and used the concept of using actual objects as the blueprint for creating more objects. This is known as a prototype-based language. In the juicer example, this might involve building an actual prototype juicer then using this prototype as the basis for making all the other juicers. The juicers based on the prototype would be able to do everything the prototype could do, with some being able to do even more. Even though ES6 now supports classes, it still uses this prototypal inheritance model in the background.
+      </p>
+      <p>The constructor function is used as an alternative way to create objects. This is a function that defines the properties and methods of an object. Here is the dice example rewritten as a constructor function:
+      </p>
+      <div class="constructionFunctionExample">
+        <p>const Dice = function(sides=6){</p>
+        <p>this.sides = sides;</p>
+        <p>this.roll = function() {</p>
+        <p>return Math.floor(this.sides * Math.random() + 1)</p>
+        <p>}</p>
+        <p>}</p>
+      </div>
+      <p>The keyword this is used to represent the object that will be returned by the constructor function. In the previous example in the objects chapter earlier in the book, it was used to set the sides property to the argument that is provided to the constructor function, or 6, if no argument is provided. It also adds a method called roll(), which returns a random number from 1 up to the number of sides the dice has.
+      </p>
+      <p>Constructor function can be used to create instances of objects. An instance of the dice constructor function can now be created using the new operator:
+      </p>
+      <p>const redDice = new Dice();
+      </p>
+      <p><< Dice { sides: 6, roll: [Function] }
+      </p>
+      <p>The parentheses are not required when instantiating a new object using a constructor function. The following code would also achieve the same result:
+      </p>
+      <p>const redDice = new Dice;</p>
+      <p>The parentheses are required, however, if any default arguments need to be provided. For example, if another Dice object with four sides is created, the programmer would have to add 4 as an argument, like so:
+      </p>
+      <p>const whiteDice = new Dice(4);</p>
+      <p>This returns an object that was assigned to the variable redDice, which is said to be an instance of the Dice constructor function. This can be confirmed using the instanceof operator:
+      </p>
+      <p>redDice instanceof Dice</p>
+      <p><< true</p>
+      <p>Each new object that's created using this function will inherit the properties and methods defined in the function. This means that redDice will have a sides property and roll() method:
+      </p>
+      <p>redDice.sides</p>
+      <p class="number6"><< 6</p>
+      <p class="redDiceRollMethod">redDice.roll()</p>
+      <p><< 4</p>
+      <p>ES6 introduced class declarations that use the class keyword. These can be used in place of constructor functions. Here is the dice example again, using a class declaration:</p>
+      <div class="classDeclarationExample">
+        <p>class Dice {</p>
+        <p>constructor(sides=6) {</p>
+        <p>this.sides = sides;</p>
+        <p>}</p>
+        <p>roll() {</p>
+        <p>return Math.floor(this.sides * Math.random() + 1)</p>
+        <p>}</p>
+        <p>}</p>
+      </div>
+      <p>By convention, the names of constructor functions or class declarations are capitalized, which is the convention used for classes in class-based programming languages.
+      </p>
+      <p>To create an instance of the Dice class, the new operator is again used:
+      </p>
+      <p>const blueDice = new Dice(20);</p>
+      <p><< Dice { sides: 20 }</p>
+      <p>The variable blueDice now contains an instance of the Dice class and behaves in exactly the same way as the redDice object:
+      </p>
+      <p>blueDice instanceof Dice</p>
+      <p class="booleanTrue"><< true</p>
+      <p class="blueDiceSides">blueDice.sides</p>
+      <p class="number20"><< 20</p>
+      <p class="blueDiceRollMethod">blueDice.roll()</p>
+      <p class="number13"><< 13</p>
+      <p>JavaScript uses a prototypal inheritance model. This means that every class has a prototype property that is shared by every instance of the class. So any properties or methods of a class's prototype can be accessed by every object instantiated by that class. An example of a class for creating ninja turtles:</p>
+      <div class="classExample">
+        <p>class Turtle {</p>
+        <p>constructor(name) {</p>
+        <p>this.name = name;</p>
+        <p>this.weapon = 'hands';</p>
+        <p>}</p>
+        <p>sayHi() {</p>
+        <p>return `Hi dude, my name is ${this.name}`;</p>
+        <p>}</p>
+        <p>attack(){</p>
+        <p>return `Feel the power of my ${this.weapon}!`;</p>
+        <p>}</p>
+        <p>}</p>
+      </div>
+      <p>This can then be used to create a new turtle instance:
+      </p>
+      <p class="constLeo">const leo = new Turtle('Leonardo');</p>
+      <p><< Turtle { name: 'Leonardo' }</p>
+      <p>The variable leo points to an instance of the Turtle class. It has a name property and a sayHi() method that references the name property:
+      </p>
+      <p>leo.name;</p>
+      <p><< 'Leonardo'</p>
+      <p class="sayHiMethod">leo.sayHi();</p>
+      <p><< 'Hi dude, my name is Leonardo'</p>
+      <p>All classes and constructor functions have a prototype property that returns an object:
+      </p>
+      <p class="turtlePrototype">Turtle.prototype;</p>
+      <p><< Turtle {}</p>
+      <p>All instances of a class or constructor function inherit all the properties and methods of its prototype (in this example, it's Turtle class). This means they can call any methods of the prototype and access any of its properties. Since the prototype is just an object, the programmer can add new properties by assignment:
+      </p>
+      <p class="turtlePrototypeWeapon">Turtle.prototype.weapon = 'Hands';</p>
+      <p><< 'Hands'</p>
+      <p>A method can be added to the prototype in a similar way:</p>
+      <p class="turtlePrototypeAttack">Turtle.prototype.attack = function(){</p>
+      <p>return `Feel the power of my ${this.weapon}!`;</p>
+      <p>}
+      <p><< [Function]</p>
+      </p>
+      <p>Now if a new Turtle instance is created, it can be seen that it inherits the weapon property and attack() method from the Turtle.prototype object, as well as receiving the name property and sayHi() method from the class declaration:
+      </p>
+      <p class="constRaph">const raph = new Turtle('Raphael');</p>
+      <p>raph.name</p>
+      <p><< 'Raphael'</p>
+      <p class="raphSayHiMethod">raph.sayHi()</p>
+      <p><< 'Hi dude, my name is Raphael'</p>
+      <p class="raphWeapon">raph.weapon</p>
+      <p><< 'Hands'</p>
+      <p class="raphAttackMethod">raph.attack()</p>
+      <p><< 'Feel the power of my Hands!'</p>
+      <p>There's a reference to this.weapon in the prototype attack() method, and when the instance calls the attack() method, it uses the instance's weapon property. This is because this in the prototype always refers to the instance that actually calls the method.
+      </p>
+      <p>The prototype is live, so new properties and methods can be added to existing instances.
+      </p>
+      <p>The prototype chain is used to find an available method. If an object lacks a method, JavaScript will check whether its prototype has the method. If not, it will check that function's prototype until it finds the method or reaches the Object constructor function.
+      </p>
+      <p>Private properties and methods can be created by defining variables using const and defining a function inside a constructor function. These can be made public using getter and setter functions.
+      </p>
+      <p>Monkey-patching is the process of adding methods to built-in objects by augmenting their prototypes. This should be done with caution as it can cause unexpected behavior in the way built-in objects work.
+      </p>
+      <p>A mixin method can be used to add properties and methods from other objects without creating an inheritance chain.
+      </p>
+      <p>Methods can be chained together and called in sequence if they return a reference to this.
+      </p>
+      <p>Polymorphism allows objects to override shared methods with a more specific implementation.
+      </p>
+      <p>The value of this is not retained inside nested functions, which can cause errors. This can be worked around by using that = this, using the bind(this) method and using arrow functions.
+      </p>
+      <p>Methods can be borrowed from other objects.</p>
+      <p>Composition over inheritance is a design pattern where objects are composed from 'building-block' objects, rather than inheriting all their properties and methods from a parent class.
+      </p>
+  
+      <p class="chapter15">Chapter 15: Modern JavaScript Development</p>
+      <p>Notes:</p>
+      <p>There are many tools available that a JavaScript programmer can use to help organize code and make it run more efficiently.
+      </p>
+      <p>JavaScript libraries is a piece of code that provides several methods  to make common tasks easier to achieve. JavaScript is an extremely flexible language that can accomplish most programming tasks - but not all undertakings are as easy to do as they should be. A library will abstract functionality into easier-to-use functions and methods. These can then be used to complete common tasks without having to use lots of repetitive code.
+      </p>
+      <p>A good example of how libraries can help save time is in DOM manipulation. The DOM API provides all the tools required to manipulate the DOM, but some can be verbose and take several lines of code to attain even the most basic of tasks. For example, if a programmer wants to add a class to a paragraph element referenced by the variable para, then append another paragraph on the end, this can be done as follows:
+      </p>
+      <p class="paraClassList">para.classList.add('important');</p>
+      <p class="constNewPara">const newPara = document.createElement('p');</p>
+      <p class="newParaTextContent">newPara.textContent = 'Another Paragraph';</p>
+      <p class="paraAppendChild">para.appendChild(newPara);</p>
+      <p class="usingJQuery">Yet by using the jQuery library, the same result can be achieved using a single line of code:
+      </p>
+      <p class="usingJQueryLibrary">$(para).addClass('important').append('&#8249;p&#8250;Another Paragraph&#8249;/p&#8250;');</p>
+      <p>This shows how using a library can reduce the amount of code a programmer has to write, as well as making common tasks easier to implement.
+      </p>
+      <p>jQuery and Lodash are two popular libraries that provide a large number of useful and well-tested functions.
+      </p>
+      <p>When to use library: It can be helpful to use a library, but you should certainly question whether it's worth the extra work. You have to learn the library's notation, which can either be similar or very different to standard JavaScript. Every library you use will add to the total file size that's downloaded so you need to assess whether the extra overhead is worth it. Having said that, browsers will cache it after the first download, and if you use a CDN, the chances are it will already be in the browser's cache.
+        It's also advisable to consider that the popularity of a particular library can be 'here today, gone tomorrow'. Some of the most popular libraries of the past have fallen out of favor and even discontinued, almost overnight. This can potentially cause problems if you've relied on one particular library in most of your projects.
+      </p>
+      <p>npm and Yarn are package managers that can be used to install JavaScript packages, as well as any dependencies that they require.
+      </p>
+      <p>A module is a self-contained piece of code that provides functions and methods that can then be used in other files and by other modules. A ES6 module file is just a normal JavaScript file, but uses the keyword export to specify any values or functions that are to be made available from the module. This highlights another important fact about modules – not everything in the module needs to be used.
+      </p>
+      <p>For example, a very simple Pi module would have the following code saved in a file called 'pi.js':
+      </p>
+      <p>export const PI = 3.1415926;</p>
+      <p>This would then be imported into your main JavaScript file, main.js using the following code:
+      </p>
+      <p>import { PI } from './pi.js';</p>
+      <p>This would then allow to use the variable PI inside the main.js file.
+      </p>
+      <p>ES6 added support for modules, allowing code to be abstracted into their own self-contained files and imported into another file.
+      </p>
+      <p>Model-View-Controller (MVC) is a design pattern that's been used for a long time in server-side languages. It’s a common way of designing software, and used by server-side frameworks such as Ruby On Rails and Django. In recent years it has been used in JavaScript code to make it easier to organize large-scale web applications.
+      </p>
+      <p>MVC separates an application into three distinct, independent components that interact with each other:
+      </p>
+      <ul class="mvcClarification">
+        <li>Models are objects that implement the functionality for creating, reading, updating and deleting (known as CRUD tasks) specific pieces of information about the application, as well as any other associated logic and behavior. In a to-do list application, for example, there would be a task model providing methods to access all the information about the tasks such as names, due dates and completed tasks. This data will often be stored in a database or some other container.</li>
+        <li>Views provide a visual representation of the model showing all the relevant information. In a web application, this would be the HTML displayed on a web page. Views also provide a way for users to interact with an application, usually via forms. In a to-do list application, the views would display the tasks as an HTML list with checkboxes that a user could tick to say a task had been completed.</li>
+        <li>Controllers link models and views together by communicating between them. They respond to events, which are usually inputs from a user (entering some data into a form, for example), process the information, then update the model and view accordingly. In a to-do list application, the controller functions would respond to the event of a user clicking on a check box and then inform the model that a task had been completed. The model would then update the information about that task.</li>
+      </ul>
+      <p>Template files can be used to separate view code from JavaScript; they also enable dynamic code and programming logic to be used to generate markup.
+      </p>
+      <p>React and Vue.js are popular JavaScript view libraries that render components and keep track of their state.
+      </p>
+      <p>Minification is the process of removing any redundant characters from the code in order to reduce its file size. This includes all comments, whitespace, and other characters that are superfluous.
+        Tools are available to do this, known as minifiers. Some popular choices include:
+      </p>
+      <ul>
+        <li>YUI Compressor</li>
+        <li>Google's Closure</li>
+        <li>UglifyJS</li>
+      </ul>
+      <p>Files can be compressed on the server using the gzip compression tool.
+      </p>
+      <p>Webpack can be used to bundle multiple files into a single bundle, and automate common tasks such as transpiling, minifying code and running tests.</p>
+      <p>Before code is deployed, it should be concatenated into a single file, minified and compressed. The script tag should be placed just before the closing </body> tag to ensure that all elements on the page have loaded before the script runs.</p>
+  
+      <ul>
+        <li class="week4Exercises">
+          Week 4 Exercises:
+        </li>
+        <li>
+          <a href="ch8/quiz_ninja_pt7.html" target="_blank">Quiz Ninja Project Part 7</a>
+          <p>This version of the Quiz Ninja Project includes the use of forms so that players can enter their answers without using prompt dialogs.</p>
+        <p>A form element with an ID of response was added between the question and result &#8249;div&#8250; elements in the html file:</p>
+        <div class="formELementInQuiz">
+          <p>&#8249;form id='response'&#8250;</p>
+          <p>&#8249;input name='answer' type='text'&#8250;</p>
+          <p>&#8249;button type='submit'&#8250;Submit Answer&#8249;/button&#8250;</p>
+          <p>&#8249;/form&#8250;</p>
         </div>
-        <p>}</p>
-      </div>
-      <p>This function makes use of the view.show() and view.hide() methods created in the last chapter to make the question, response and result<div> elements visible and hide the start button. It also uses the view.render() method to reset any HTML content in the result and info elements back to an empty string. This will stop them displaying any messages from the previous game. It also calls a view.resetForm() method. This also needs adding to the view object:</p>
-      <div class="resetFormMethodInQuiz">
-        <p>resetForm(){</p>
-        <p>this.response.answer.value = '';</p>
-        <p>this.response.answer.focus();</p>
-        <p>}</p>
-      </div>
-      <p>This method resets the input field to an empty field and gives it focus, which improves usability as it means the player is left to concentrate on just answering the next question.</p>
-      <p>This will be useful to do after every question, so a call to this method was added at the end of the game.check() method:</p>
-      <div class="callToResetFormMethodInQuiz">
-        <p>check(event){</p>
-        <p>event.preventDefault();</p>
-        <p>const response = view.response.answer.value;</p>
-        <p>const answer = this.question.realName;</p>
-        <p>if(response === answer){</p>
-        <p>view.render(view.result,'Correct!',{'class':'correct'});</p>
-        <p>this.score++;</p>
-        <p>view.render(view.score,this.score);</p>
-        <p>} else {</p>
-        <p>view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});</p>
-        <p>}</p>
-        <p>view.resetForm();</p>
-        <p>this.ask();</p>
-        <p>}</p>
-      </div>
-      <p>The view.setup() method needs calling at the beginning of every game, so it needs adding to the game.start() method:</p>
-      <div>
-        <p>start(quiz){</p>
-        <div class="callToViewSetupMethod">
+        <p>A reference to the form has been added in the JavaScript code as a property of the view object:</p>
+        <p class="querySelectorResponse">response: document.querySelector('#response')</p>
+        <p>The next task is to remove the for-of loop that was used earlier to loop through each question. This is because the prompt dialogs pause the execution of the program and wait until the player has entered the answer. This won't happen if a form is used to enter the answers, so the program would just loop through each question without giving the player a chance to answer!</p>
+        <p>Instead, the pop() method will be used to remove each question, one at a time, from the this.questions array. So the main game loop code has been removed from the game.start() method, so part of this code now looks like this:</p>
+        <div class="updatedGameStartMethodInQuiz">
+          <p>start(quiz){</p>
           <p>this.score = 0;</p>
           <p>this.questions = [...quiz];</p>
-          <p>view.setup();</p>
           <p>this.ask();</p>
+          <p>}</p>
         </div>
-        <p>}</p>
-      </div>
-      <p>The other helper method is view.teardown() method which needs to be added to the view object. This is called at the end of the game, and is responsible for hiding any elements that aren't required and making the start button visible again:</p>
-      <div>
-        <p>teardown(){</p>
-        <div class="tearDownMethodInQuiz">
-          <p>this.hide(this.question);</p>
-          <p>this.hide(this.response);</p>
-          <p>this.show(this.start);</p>
+        <p>This sets up the quiz as it did before, but it also calls the game.ask() method, which results in the first question being asked.</p>
+        <p>The next step is to change the game.ask() method, so it looks like the following:</p>
+        <div class="updatedGameAskMethodInQuiz">
+          <p>ask(name){</p>
+          <p>if (this.questions.length > 0) {</p>
+          <p>this.question = this.questions.pop();</p>
+          <p>const question = `What is ${this.question.name}'s real name?`;</p>
+          <p>view.render(view.question,question);</p>
+          <p>}</p>
+          <p>else {</p>
+          <p>this.gameOver();</p>
+          <p>}</p>
+          <p>}</p>
         </div>
-        <p>}</p>
-      </div>
-      <p>The method needs calling at the end of the game, so it needs to be placed it in the game.gameOver() method:</p>
-      <div>
-        <p>gameOver(){</p>
-        <div class="callToTearDownMethod">
-          <p>view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);</p>
-          <p>view.teardown();</p>
+        <p>This checks the length property of the this.questions array, to see if there are any questions left to ask. If there are, the pop() method is used to remove the last element of the array and assign it to this.question. To render the question in HTML, the same method is used as before.</p>
+        <p>The next step is to add an event handler that fires when the form is submitted by adding the following line of code to the bottom of the js file:
+        <p class="viewResponse1">view.response.addEventListener('submit', (event) => game.check(event), false);</p>
+        <p>view.hide(view.response);</p>
+        </p>
+        <p>This will call the game.check() method that's used to check if the answer submitted by the player is correct. It is necessary to update this method so it has an event object as a parameter. The event.preventDefault() method can then be used to stop the form from actually being submitted:</p>
+        <div class="updatedGameCheckMethodInQuiz">
+          <p>check(event){</p>
+          <p>event.preventDefault();</p>
+          <p>const response = view.response.answer.value;</p>
+          <p>const answer = this.question.realName;</p>
+          <p>if (response === answer){</p>
+          <p>view.render(view.result,'Correct!',{'class':'correct'});</p>
+          <p>this.score++;</p>
+          <p>view.render(view.score,this.score);</p>
+          <p>} else {</p>
+          <p>view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});</p>
+          <p>}</p>
+          <p>this.ask();</p>
+          <p>},</p>
         </div>
-        <p>}</p>
-      </div>
-      <p>This should make the game look a lot more polished, so only the elements that are required as part of the game are on display at the relevant time.</p>
-      </li>
-  
-      <li class="ch12Exercise">
-        <a href="ch12/quiz_ninja_pt8.html" target="_blank">Quiz Ninja Project Part 8</a>
-        <p>This version of the Quiz Ninja Project provides three options that player can choose from by simply clicking on the answer instead of using a text input to answer the question.</p>
-        <p>The first thing to do is update the index.html file, replacing the form with an empty &#8249;div&#8250; element. This will still have an ID of 'response' as it will be where the buttons containing the answers for the player to click on will be placed:</p>
-        <p>&#8249;div id='response'&#8250;</div>
-        <p>Then it is necessary to remove the form helper methods in the view object. The view.resetForm() method can be deleted, as well as the call made to it in the view.setup() method. The following code needs removing:</p>
-        <div class="removingMethodsInQuiz">
+        <p class="viewResponseAnswerValue">The programmer can grab the answer that was submitted by querying view.response.answer.value, which is the value stored in the &#8249;input&#8250; field. He then assign this to the variable response and use exactly the same code as before to deal with the outcome of the player's answer being right or wrong.</p>
+        <p>It is also necessary to call the game.ask() function at the end of the method so the next question is asked after the current question has been answered and checked.</p>
+        <p>Players can now use the form instead of prompt dialogs to enter their answers, but a lot of the elements are displayed when they are unnecessary. For example, when the page loads, the form is displayed, even though there is no question to answer. To remedy this, a couple of helper functions can be created to update the view at the start and end of the game.</p>
+        <p>The first helper function is view.setup(), which will be used to set up the view when the game starts. The following method has been added to the view object:</p>
+        <div>
+          <p>setup(){</p>
+          <div class="setupMethodInQuiz">
+            <p>this.show(this.question);</p>
+            <p>this.show(this.response);</p>
+            <p>this.show(this.result);</p>
+            <p>this.hide(this.start);</p>
+            <p>this.render(this.score,game.score);</p>
+            <p>this.render(this.result,'');</p>
+            <p>this.render(this.info,'');</p>
+            <p>this.resetForm();</p>
+          </div>
+          <p>}</p>
+        </div>
+        <p>This function makes use of the view.show() and view.hide() methods created in the last chapter to make the question, response and result<div> elements visible and hide the start button. It also uses the view.render() method to reset any HTML content in the result and info elements back to an empty string. This will stop them displaying any messages from the previous game. It also calls a view.resetForm() method. This also needs adding to the view object:</p>
+        <div class="resetFormMethodInQuiz">
           <p>resetForm(){</p>
           <p>this.response.answer.value = '';</p>
           <p>this.response.answer.focus();</p>
           <p>}</p>
-          <p>// .... inside setup()</p>
-          <p>this.resetForm();</p>
         </div>
-        <p>This line from the end of the js file can also be removed, since it is no longer necessary to hide the form at the start of the game:</p>
-        <p>view.hide(view.response);</p>
-        <p>The next step is to update the ask() function like this:</p>
-        <div>
-          <p>ask(name){</p>
-          <div class="updatedAskFunctionInQuiz">
-            <p>console.log('ask() invoked');</p>
-            <p>if(this.questions.length > 2) {</p>
-            <p>shuffle(this.questions);</p>
-            <p>this.question = this.questions.pop();</p>
-            <p>const options = [this.questions[0].realName, this.questions[1].realName, this.question.realName];</p>
-            <p>shuffle(options);</p>
-            <p>const question = `What is ${this.question.name}'s real name?`;</p>
-            <p>view.render(view.question,question);</p>
-            <p>view.render(view.response,view.buttons(options));</p>
-            <p>}</p>
-            <p>else {</p>
-            <p>this.gameOver();</p>
-            <p>}</p>
-          </div>
-          <p>}</p>
-        </div>
-        <p>First of all, this needs to check if the quiz.questions.length property is greater than 2, rather than 0, since it is necessary to have at least three options in our array of questions in order to ask a question and present three possible answers. Then it shuffles the array of questions and selects a question as before.</p>
-        <p>The next section involves selecting the three options to be presented to the player. These are placed inside an array called options. Obviously one of the options has to be the correct answer, which is this.question.realName. The other two options are simply the first and second elements in the shuffled array. The fact that it shuffled the array in order to choose a question at random means that the first two elements will also be different every time the options are selected. These options now need displaying, so the view.render() method must be used, although a helper method named view.buttons() must be used to create the HTML to be rendered. The following code is added to the view object:</p>
-        <div class="buttonsArray">
-          <p>buttons(array){</p>
-          <p>return array.map(value => `&#8249;button&#8250;${value}&#8249;/button&#8250;`).join('');</p>
-          <p>}</p>
-        </div>
-        <p>This method accepts an array as an argument, then uses the map() method to surround each value in the array with an HTML &#8249;button&#8250; tag. It then joins each element of the array together to produce a string of HTML. For example, if the array [ 'Clark Kent' , 'Bruce Wayne' , 'Diana Prince' ] was provided as an argument to the function, it would return the following string of HTML:</p>
-        <p>&#8249;button&#8250;Clark Kent&#8249;/button&#8250; &#8249;button&#8250;Bruce Wayne&#8249;/button&#8250; &#8249;button&#8250;Dianna Prince&#8249;/button&#8250;</p>
-        <p>This can then be used as an argument for the view.render() method to display a list of buttons inside the response &#8249;div&#8250;.</p>
-        <p>The answer will be submitted when the player clicks on one of these buttons. This means that the event listener needs to be changed to fire on click events instead of the submit event. The code at the bottom of the js file needs to be changed to the following:</p>
-        <p>view.response.addEventListener('click', (event) => game.check(event), false);</p>
-        <p>It still calls the game.check() method, but only when the player clicks on a button inside the 'response' &#8249;div&#8250;.</p>
-        <p>The game.check() method also needs to be updated to take into account that the response from the player comes from clicking on a button rather than submitting a form. The function definition needs to be updated to look like this:</p>
-        <div>
+        <p>This method resets the input field to an empty field and gives it focus, which improves usability as it means the player is left to concentrate on just answering the next question.</p>
+        <p>This will be useful to do after every question, so a call to this method was added at the end of the game.check() method:</p>
+        <div class="callToResetFormMethodInQuiz">
           <p>check(event){</p>
-          <div class="ModifiedGameCheckMethodInQuiz">
-            <p>console.log('check(event) invoked');</p>
-            <p>const response = event.target.textContent;</p>
-            <p>const answer = this.question.realName;</p>
-            <p>if(response === answer){</p>
-            <p>view.render(view.result,'Correct!',{'class':'correct'});</p>
-            <p>this.score++;</p>
-            <p>view.render(view.score,this.score);</p>
-            <p>} else {</p>
-            <p>view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});</p>
-            <p>}</p>
+          <p>event.preventDefault();</p>
+          <p>const response = view.response.answer.value;</p>
+          <p>const answer = this.question.realName;</p>
+          <p>if (response === answer){</p>
+          <p>view.render(view.result,'Correct!',{'class':'correct'});</p>
+          <p>this.score++;</p>
+          <p>view.render(view.score,this.score);</p>
+          <p>} else {</p>
+          <p>view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});</p>
+          <p>}</p>
+          <p>view.resetForm();</p>
+          <p>this.ask();</p>
+          <p>}</p>
+        </div>
+        <p>The view.setup() method needs calling at the beginning of every game, so it needs adding to the game.start() method:</p>
+        <div>
+          <p>start(quiz){</p>
+          <div class="callToViewSetupMethod">
+            <p>this.score = 0;</p>
+            <p>this.questions = [...quiz];</p>
+            <p>view.setup();</p>
             <p>this.ask();</p>
           </div>
           <p>}</p>
         </div>
-        <p>The event.preventDefault() line has been removed, as this is no longer needed as a form to submit the answer is not used anymore. The call to view.resetForm() at the end of the method also needs to be removed. Since a form is no longer in use, there is no need to reset it. The response variable needs to be updated to point to the text contained inside the button element, which is stored in event.target.textContent. This can then be used to compare the player's response with the actual answer.</p>
-        <p>Finally, the quiz object containing the questions probably needs to be updated to include more questions, as with only three, it can only be asked one round before the game ends:</p>
+        <p>The other helper method is view.teardown() method which needs to be added to the view object. This is called at the end of the game, and is responsible for hiding any elements that aren't required and making the start button visible again:</p>
         <div>
-          <p>const quiz = [</p>
-          <div class="quizObjectInQuiz">
-            <p>{ name: "Superman",realName: "Clark Kent" },</p>
-            <p>{ name: "Wonder Woman",realName: "Diana Prince" },</p>
-            <p>{ name: "Batman",realName: "Bruce Wayne" },</p>
-            <p>{ name: "The Hulk",realName: "Bruce Banner" },</p>
-            <p>{ name: "Spider-man",realName: "Peter Parker" },</p>
-            <p>{ name: "Cyclops",realName: "Scott Summers" }</p>
+          <p>teardown(){</p>
+          <div class="tearDownMethodInQuiz">
+            <p>this.hide(this.question);</p>
+            <p>this.hide(this.response);</p>
+            <p>this.show(this.start);</p>
           </div>
-          <p>];</p>
-        </div>
-        <p>As a result, providing options that the player can choose from makes the game much easier to play by not requiring any typing.</p>
-      </li>
-  
-      <li class="ch15Exercise">
-        <a href="ch15/quiz_ninja_pt9.html" target="_blank">Quiz Ninja Project Part 9</a>
-        <p>The code for this version of the Quiz Ninja project will be moved into separate modules by creating a module for the view object, another for the game object and one more for utility functions, random() and shuffle(). The file structure will also be updated to keep all source files in a src folder and then Webpack will be used to compile them all together into a "dist" folder.
-        </p>
-        <p>First a folder called 'quiz' (or something similar) must be created and then the next step is to navigate to it in the terminal and enter the following code:
-        </p>
-        <p>npm init</p>
-        <p>After entering the code above, the next step is to answer all the questions to create a package.json file that is similar to the one below.</p>
-        <div class="packageJson">
-          <p>{</p>
-          <p>"name": "quiz-ninja",</p>
-          <p>"version": "1.0.0",</p>
-          <p>"description": "A JavaScript quiz.",</p>
-          <p>"main": "main.js",</p>
-          <p>"scripts": {</p>
-          <p>"test": "echo \"Error: no test specified\" && exit 1"</p>
-          <p>},</p>
-          <p>"keywords": [</p>
-          <p>"quiz",</p>
-          <p>"ninja",</p>
-          <p>"javascript"</p>
-          <p>],</p>
-          <p>"author": "DAZ",</p>
-          <p>"license": "MIT"</p>
           <p>}</p>
         </div>
-        <p>Now it is necessary to create directory structure by creating a folder called 'dist' at the root of the directory and then copying the index.html and styles.css files into it.
-        </p>
-        <p>The 'dist' directory is normally only used for files that have been compiled from the src directory. In reality you would probably use some sort of pre-processors to create your HTML and CSS files. In this example, we’re just going to pretend that this has happened and index.html and styles.css have been compiled into the 'dist' directory.
-        </p>
-        <p>The next step is to make a small update to the index.html file so that it loads a JavaScript file called 'bundle.min.js' in the 'dist' directory, which is the file that Webpack will build by adding the following line of code just before the end body tag:
-        </p>
-        <p>&#8249;script src='bundle.min.js'&#8250;&#8249;/script&#8250;</p>
-        <p>Now the next step is to create Javascript modules in the src directory by creating src folder in the root directory and saving the following in a file called 'utilities.js':
-        </p>
-        <div class="utilitiesJs">
-          <p>function random(a,b=1) {</p>
-          <p>// if only 1 argument is provided, we need to swap the values of a and b</p>
-          <p>if (b === 1) {</p>
-          <p>[a,b] = [b,a];</p>
-          <p>}</p>
-          <p>return Math.floor((b-a+1) * Math.random()) + a;</p>
-          <p>}</p>
-          <p>function shuffle(array) {</p>
-          <p>for (let i = array.length; i; i--) {</p>
-          <p>let j = random(i)-1;</p>
-          <p>[array[i - 1], array[j]] = [array[j], array[i - 1]];</p>
-          <p>}</p>
-          <p>}</p>
-          <p>export {</p>
-          <p>random,</p>
-          <p>shuffle</p>
-          <p>}</p>
-        </div>
-        <p>This contains our utility functions random() and shuffle() that will be used. Separating them into their own module is a good move as it will make it easier to update and use them in future projects.
-        </p>
-        <p>The next module will include the code for the quiz itself. The following code must be saved in 'quiz.js':</p>
+        <p>The method needs calling at the end of the game, so it needs to be placed it in the game.gameOver() method:</p>
         <div>
+          <p>gameOver(){</p>
+          <div class="callToTearDownMethod">
+            <p>view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);</p>
+            <p>view.teardown();</p>
+          </div>
+          <p>}</p>
+        </div>
+        <p>This should make the game look a lot more polished, so only the elements that are required as part of the game are on display at the relevant time.</p>
+        </li>
+    
+        <li class="ch12Exercise">
+          <a href="ch12/quiz_ninja_pt8.html" target="_blank">Quiz Ninja Project Part 8</a>
+          <p>This version of the Quiz Ninja Project provides three options that player can choose from by simply clicking on the answer instead of using a text input to answer the question.</p>
+          <p>The first thing to do is update the index.html file, replacing the form with an empty &#8249;div&#8250; element. This will still have an ID of 'response' as it will be where the buttons containing the answers for the player to click on will be placed:</p>
+          <p>&#8249;div id='response'&#8250;</div>
+          <p>Then it is necessary to remove the form helper methods in the view object. The view.resetForm() method can be deleted, as well as the call made to it in the view.setup() method. The following code needs removing:</p>
+          <div class="removingMethodsInQuiz">
+            <p>resetForm(){</p>
+            <p>this.response.answer.value = '';</p>
+            <p>this.response.answer.focus();</p>
+            <p>}</p>
+            <p>// .... inside setup()</p>
+            <p>this.resetForm();</p>
+          </div>
+          <p>This line from the end of the js file can also be removed, since it is no longer necessary to hide the form at the start of the game:</p>
+          <p>view.hide(view.response);</p>
+          <p>The next step is to update the ask() function like this:</p>
           <div>
-            <p>import { random, shuffle } from './utilities.js';</p>
-            <p>const view = {</p>
-            <div class="constViewPt1">
-              <p>score: document.querySelector('#score strong'),</p>
-              <p>question: document.querySelector('#question'),</p>
-              <p>result: document.querySelector('#result'),</p>
-              <p>info: document.querySelector('#info'),</p>
-              <p>start: document.querySelector('#start'),</p>
-              <p>response: document.querySelector('#response'),</p>
-              <p>timer: document.querySelector('#timer strong'),</p>
-              <p>hiScore: document.querySelector('#hiScore strong'),</p>
-              <p>render(target,content,attributes) {</p>
+            <p>ask(name){</p>
+            <div class="updatedAskFunctionInQuiz">
+              <p>console.log('ask() invoked');</p>
+              <p>if (this.questions.length > 2) {</p>
+              <p>shuffle(this.questions);</p>
+              <p>this.question = this.questions.pop();</p>
+              <p>const options = [this.questions[0].realName, this.questions[1].realName, this.question.realName];</p>
+              <p>shuffle(options);</p>
+              <p>const question = `What is ${this.question.name}'s real name?`;</p>
+              <p>view.render(view.question,question);</p>
+              <p>view.render(view.response,view.buttons(options));</p>
+              <p>}</p>
+              <p>else {</p>
+              <p>this.gameOver();</p>
+              <p>}</p>
             </div>
-          </div>
-          <div class="forConst">
-            <p>for(const key in attributes) {</p>
-            <p>target.setAttribute(key, attributes[key]);</p>
             <p>}</p>
           </div>
-          <p class="targetInnerHtml">target.innerHTML = content;</p>
-          <p class="curlyBracketsAndComma">},</p>
-          <div class="showElement">
-            <p>show(element){</p>
-            <p>element.style.display = 'block';</p>
-            <p>},</p>
-          </div>
-          <div class="hideElement">
-            <p>hide(element){</p>
-            <p>element.style.display = 'none';</p>
-            <p>},</p>
-          </div>
-          <div>
-            <p class="setup">setup(){</p>
-            <div class="thisShowHideRender">
-              <p>this.show(this.question);</p>
-              <p>this.show(this.response);</p>
-              <p>this.show(this.result);</p>
-              <p>this.hide(this.start);</p>
-              <p>this.render(this.score,game.score);</p>
-              <p>this.render(this.result,'');</p>
-              <p>this.render(this.info,'');</p>
-              <p>this.render(this.hiScore, game.hiScore());</p>
-            </div>
-            <p class="curlyBracketsAndComma2">},</p>
-            <p class="tearDown">teardown(){</p>
-            <div class="thisHideShowRender">
-              <p>this.hide(this.question);</p>
-              <p>this.hide(this.response);</p>
-              <p>this.show(this.start);</p>
-              <p>this.render(this.hiScore, game.hiScore());</p>
-            </div>
-            <p class="curlyBracketsAndComma3">},</p>
-          </div>
-          <div class="btnArray">
+          <p>First of all, this needs to check if the quiz.questions.length property is greater than 2, rather than 0, since it is necessary to have at least three options in our array of questions in order to ask a question and present three possible answers. Then it shuffles the array of questions and selects a question as before.</p>
+          <p>The next section involves selecting the three options to be presented to the player. These are placed inside an array called options. Obviously one of the options has to be the correct answer, which is this.question.realName. The other two options are simply the first and second elements in the shuffled array. The fact that it shuffled the array in order to choose a question at random means that the first two elements will also be different every time the options are selected. These options now need displaying, so the view.render() method must be used, although a helper method named view.buttons() must be used to create the HTML to be rendered. The following code is added to the view object:</p>
+          <div class="buttonsArray">
             <p>buttons(array){</p>
             <p>return array.map(value => `&#8249;button&#8250;${value}&#8249;/button&#8250;`).join('');</p>
             <p>}</p>
           </div>
-          <p>};</p>
-          <p>const game = {</p>
-          <p class="startQuiz">start(quiz){</p>
-          <div class="consoleLogStart">
-            <p>console.log('start() invoked');</p>
-            <p>this.score = 0;</p>
-            <p>this.questions = [...quiz];</p>
-            <p>view.setup();</p>
-            <p>this.secondsRemaining = 20;</p>
-            <p>this.timer = setInterval( this.countdown , 1000 );</p>
-            <p>this.ask();</p>
-          </div>
-          <p class="curlyBracketsAndComma4">},</p>
-          <div class="countdown">
-            <p>countdown() {</p>
-            <p>game.secondsRemaining--;</p>
-            <p>view.render(view.timer,game.secondsRemaining);</p>
-            <p>if(game.secondsRemaining <= 0) {</p>
-            <p>game.gameOver();</p>
-            <p>}</p>
-            <p>},</p>
-          </div>
-          <p class="askName">ask(name){</p>
-          <div class="consoleLogAsk">
-            <p>console.log('ask() invoked');</p>
-            <p>if(this.questions.length > 2) {</p>
-            <p>shuffle(this.questions);</p>
-            <p>this.question = this.questions.pop();</p>
-            <p>const options = [this.questions[0].realName, this.questions[1].realName, this.question.realName];</p>
-            <p>shuffle(options);</p>
-            <p>const question = `What is ${this.question.name}'s real name?`;</p>
-            <p>view.render(view.question,question);</p>
-            <p>view.render(view.response,view.buttons(options));</p>
-            <p>}</p>
-            <p>else {</p>
-            <p>this.gameOver();</p>
-            <p>}</p>
-          </div>
-          <p class="curlyBracketsAndComma5">},</p>
-          <p class="checkEvent">check(event){</p>
-          <div class="consoleLogCheckEvent">
-            <p>console.log('check(event) invoked')</p>
-            <p>const response = event.target.textContent;</p>
-            <p>const answer = this.question.realName;</p>
-            <p>if(response === answer){</p>
-            <p>console.log('correct');</p>
-            <p>view.render(view.result,'Correct!',{'class':'correct'});</p>
-            <p>this.score++;</p>
-            <p>view.render(view.score,this.score);</p>
-            <p>} else {</p>
-            <p>console.log('wrong');</p>
-            <p>view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});</p>
-            <p>}</p>
-            <p>this.ask();</p>
-          </div>
-          <p class="curlyBracketsAndComma6">},</p>
-  
-          <p class="gameOverQuiz">gameOver(){</p>
-          <div class="consoleLogGameOver">
-            <p>console.log('gameOver() invoked')</p>
-            <p>view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);</p>
-            <p>view.teardown();</p>
-            <p>clearInterval(this.timer);</p>
-          </div>
-          <p class="curlyBracketsAndComma7">},</p>
-  
-          <p class="hiScoreQuiz">hiScore(){</p>
-            <div class="constHi">
-              <p>const hi = localStorage.getItem('highScore') || 0;</p>
-              <p>if(this.score > hi || hi === 0) localStorage.setItem('highScore',this.score);</p>
-              <p>return localStorage.getItem('highScore');</p>
-            </div>
-            <p class="curlyBracketsAndComma8">},</p>
-            <p>};</p>
-            <p>export {</p>
-            <div class="viewGame">
-              <p>view,</p>
-              <p>game</p>
+          <p>This method accepts an array as an argument, then uses the map() method to surround each value in the array with an HTML &#8249;button&#8250; tag. It then joins each element of the array together to produce a string of HTML. For example, if the array [ 'Clark Kent' , 'Bruce Wayne' , 'Diana Prince' ] was provided as an argument to the function, it would return the following string of HTML:</p>
+          <p>&#8249;button&#8250;Clark Kent&#8249;/button&#8250; &#8249;button&#8250;Bruce Wayne&#8249;/button&#8250; &#8249;button&#8250;Dianna Prince&#8249;/button&#8250;</p>
+          <p>This can then be used as an argument for the view.render() method to display a list of buttons inside the response &#8249;div&#8250;.</p>
+          <p>The answer will be submitted when the player clicks on one of these buttons. This means that the event listener needs to be changed to fire on click events instead of the submit event. The code at the bottom of the js file needs to be changed to the following:</p>
+          <p class="viewResponseAddEventListener">view.response.addEventListener('click', (event) => game.check(event), false);</p>
+          <p>It still calls the game.check() method, but only when the player clicks on a button inside the 'response' &#8249;div&#8250;.</p>
+          <p>The game.check() method also needs to be updated to take into account that the response from the player comes from clicking on a button rather than submitting a form. The function definition needs to be updated to look like this:</p>
+          <div>
+            <p>check(event){</p>
+            <div class="ModifiedGameCheckMethodInQuiz">
+              <p>console.log('check(event) invoked');</p>
+              <p>const response = event.target.textContent;</p>
+              <p>const answer = this.question.realName;</p>
+              <p>if (response === answer){</p>
+              <p>view.render(view.result,'Correct!',{'class':'correct'});</p>
+              <p>this.score++;</p>
+              <p>view.render(view.score,this.score);</p>
+              <p>} else {</p>
+              <p>view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});</p>
+              <p>}</p>
+              <p>this.ask();</p>
             </div>
             <p>}</p>
-        </div>
-        <p>This is the same code for the view and game objects that was used previously in the js file, but made into a module by using the export declaration at the end. The 'utilities.js' module at the start was also imported, which allows to use the random() and shuffle() functions in this module.
-        </p>
-        <p>Now the modules are in place, it is necessary to update main.js to import them:</p>
-        <div class="importModules">
-          <p>import { view, game } from './quiz.js';</p>
-          <p>const url = 'http://spbooks.github.io/questions.json';</p>
-          <p>fetch(url)</p>
-          <p>.then(res => res.json())</p>
-          <p>.then(quiz => {</p>
-          <p>view.start.addEventListener('click', () => game.start(quiz.questions), false);</p>
-          <p>view.response.addEventListener('click', (event) => game.check(event), false);</p>
-          <p>});</p>
-        </div>
-        <p>This file will serve as an 'entry' point, in that Webpack will look at this file and determine which modules to load.
-        </p>
-        <p>The next step is to use Webpack to prepare the code for deployment. This will involve transpiling the code into ES5 using Babel, and minifying the code using the Babili plugin. The minified code will then be placed inside a single file in the 'dist' directory.
-        </p>
-        <p>To do this, it is necessary to install Webpack locally, as well as Babel, some Babel modules and the Babili plugin:
-        </p>
-        <p>npm install --save-dev webpack babel-core babel-loader babel-preset-env babili-webpack-plugin</p>
-        <p>The --save-dev flag is used to install these modules as all of them are only used in development.
-        </p>
-        <p>The next step is to configure WebPack by creating a file called webpack.config.js in the root directory and adding the following code that is described in the textbook ( Javascript: Novice to Ninja) in the Chapter 15 in the "Quiz Ninja Project" section.
-        </p>
-        <p>The context and entry properties tell WebPack to take the code found in '/src/main.js', and the output property tells it to place the transpiled code in '/dist/bundle.min.js'. The rules property contains the standard rules to transpile from the latest version of ECMAScript into ES5 code. A reference to the Babili plugin has also been added in the plugins property that will minify the output.
-        </p>
-        <p>To run this as a build script, is it necessary to add the following line to the "scripts" property of package.json file:
-        </p>
-        <p>"build": "webpack --progress --colors --profile"</p>
-        <p>The flags used with the webpack command above are quite common when transpiling JavaScript. --progress will display what is happening as WebPack does its thing, and --colors will display it all in different colors. The --profile flag will make WebPack show how long each part of the build takes, which can be helpful in identifying any bottlenecks in the build process.
-        </p>
-        <p>The last task is to run the build script:
-        </p>
-        <p>npm run build</p>
-        <p>This should create a file called 'bundle.min.js' inside the 'dist' directory. This contains all the JavaScript the application needs in just one, minified file without having to load any external libraries at runtime.
-        </p>
-      </li>
+          </div>
+          <p class="eventPreventDefault">The event.preventDefault() line has been removed, as this is no longer needed as a form to submit the answer is not used anymore. The call to view.resetForm() at the end of the method also needs to be removed. Since a form is no longer in use, there is no need to reset it. The response variable needs to be updated to point to the text contained inside the button element, which is stored in event.target.textContent. This can then be used to compare the player's response with the actual answer.</p>
+          <p>Finally, the quiz object containing the questions probably needs to be updated to include more questions, as with only three, it can only be asked one round before the game ends:</p>
+          <div>
+            <p>const quiz = [</p>
+            <div class="quizObjectInQuiz">
+              <p>{ name: "Superman",realName: "Clark Kent" },</p>
+              <p>{ name: "Wonder Woman",realName: "Diana Prince" },</p>
+              <p>{ name: "Batman",realName: "Bruce Wayne" },</p>
+              <p>{ name: "The Hulk",realName: "Bruce Banner" },</p>
+              <p>{ name: "Spider-man",realName: "Peter Parker" },</p>
+              <p>{ name: "Cyclops",realName: "Scott Summers" }</p>
+            </div>
+            <p>];</p>
+          </div>
+          <p>As a result, providing options that the player can choose from makes the game much easier to play by not requiring any typing.</p>
+        </li>
     
-    </ul>
-
+        <li class="ch15Exercise">
+          <a href="ch15/quiz_ninja_pt9.html" target="_blank">Quiz Ninja Project Part 9</a>
+          <p>The code for this version of the Quiz Ninja project will be moved into separate modules by creating a module for the view object, another for the game object and one more for utility functions, random() and shuffle(). The file structure will also be updated to keep all source files in a src folder and then Webpack will be used to compile them all together into a "dist" folder.
+          </p>
+          <p>First a folder called 'quiz' (or something similar) must be created and then the next step is to navigate to it in the terminal and enter the following code:
+          </p>
+          <p>npm init</p>
+          <p>After entering the code above, the next step is to answer all the questions to create a package.json file that is similar to the one below.</p>
+          <div class="packageJson">
+            <p>{</p>
+            <p>"name": "quiz-ninja",</p>
+            <p>"version": "1.0.0",</p>
+            <p>"description": "A JavaScript quiz.",</p>
+            <p>"main": "main.js",</p>
+            <p>"scripts": {</p>
+            <p>"test": "echo \"Error: no test specified\" && exit 1"</p>
+            <p>},</p>
+            <p>"keywords": [</p>
+            <p>"quiz",</p>
+            <p>"ninja",</p>
+            <p>"javascript"</p>
+            <p>],</p>
+            <p>"author": "DAZ",</p>
+            <p>"license": "MIT"</p>
+            <p>}</p>
+          </div>
+          <p>Now it is necessary to create directory structure by creating a folder called 'dist' at the root of the directory and then copying the index.html and styles.css files into it.
+          </p>
+          <p>The 'dist' directory is normally only used for files that have been compiled from the src directory. In reality you would probably use some sort of pre-processors to create your HTML and CSS files. In this example, we’re just going to pretend that this has happened and index.html and styles.css have been compiled into the 'dist' directory.
+          </p>
+          <p>The next step is to make a small update to the index.html file so that it loads a JavaScript file called 'bundle.min.js' in the 'dist' directory, which is the file that Webpack will build by adding the following line of code just before the end body tag:
+          </p>
+          <p class="scriptSrc">&#8249;script src='bundle.min.js'&#8250;&#8249;/script&#8250;</p>
+          <p>Now the next step is to create Javascript modules in the src directory by creating src folder in the root directory and saving the following in a file called 'utilities.js':
+          </p>
+          <div class="utilitiesJs">
+            <p>function random(a,b=1) {</p>
+            <p>// if only 1 argument is provided, we need to swap the values of a and b</p>
+            <p>if (b === 1) {</p>
+            <p>[a,b] = [b,a];</p>
+            <p>}</p>
+            <p>return Math.floor((b-a+1) * Math.random()) + a;</p>
+            <p>}</p>
+            <p>function shuffle(array) {</p>
+            <p>for (let i = array.length; i; i--) {</p>
+            <p>let j = random(i)-1;</p>
+            <p>[array[i - 1], array[j]] = [array[j], array[i - 1]];</p>
+            <p>}</p>
+            <p>}</p>
+            <p>export {</p>
+            <p>random,</p>
+            <p>shuffle</p>
+            <p>}</p>
+          </div>
+          <p>This contains our utility functions random() and shuffle() that will be used. Separating them into their own module is a good move as it will make it easier to update and use them in future projects.
+          </p>
+          <p>The next module will include the code for the quiz itself. The following code must be saved in 'quiz.js':</p>
+          <div>
+            <div>
+              <p>import { random, shuffle } from './utilities.js';</p>
+              <p>const view = {</p>
+              <div class="constViewPt1">
+                <p>score: document.querySelector('#score strong'),</p>
+                <p>question: document.querySelector('#question'),</p>
+                <p>result: document.querySelector('#result'),</p>
+                <p>info: document.querySelector('#info'),</p>
+                <p>start: document.querySelector('#start'),</p>
+                <p>response: document.querySelector('#response'),</p>
+                <p>timer: document.querySelector('#timer strong'),</p>
+                <p>hiScore: document.querySelector('#hiScore strong'),</p>
+                <p>render(target,content,attributes) {</p>
+              </div>
+            </div>
+            <div class="forConst">
+              <p>for(const key in attributes) {</p>
+              <p>target.setAttribute(key, attributes[key]);</p>
+              <p>}</p>
+            </div>
+            <p class="targetInnerHtml">target.innerHTML = content;</p>
+            <p class="curlyBracketsAndComma">},</p>
+            <div class="showElement">
+              <p>show(element){</p>
+              <p>element.style.display = 'block';</p>
+              <p>},</p>
+            </div>
+            <div class="hideElement">
+              <p>hide(element){</p>
+              <p>element.style.display = 'none';</p>
+              <p>},</p>
+            </div>
+            <div>
+              <p class="setup">setup(){</p>
+              <div class="thisShowHideRender">
+                <p>this.show(this.question);</p>
+                <p>this.show(this.response);</p>
+                <p>this.show(this.result);</p>
+                <p>this.hide(this.start);</p>
+                <p>this.render(this.score,game.score);</p>
+                <p>this.render(this.result,'');</p>
+                <p>this.render(this.info,'');</p>
+                <p>this.render(this.hiScore, game.hiScore());</p>
+              </div>
+              <p class="curlyBracketsAndComma2">},</p>
+              <p class="tearDown">teardown(){</p>
+              <div class="thisHideShowRender">
+                <p>this.hide(this.question);</p>
+                <p>this.hide(this.response);</p>
+                <p>this.show(this.start);</p>
+                <p>this.render(this.hiScore, game.hiScore());</p>
+              </div>
+              <p class="curlyBracketsAndComma3">},</p>
+            </div>
+            <div class="btnArray">
+              <p>buttons(array){</p>
+              <p>return array.map(value => `&#8249;button&#8250;${value}&#8249;/button&#8250;`).join('');</p>
+              <p>}</p>
+            </div>
+            <p>};</p>
+            <p>const game = {</p>
+            <p class="startQuiz">start(quiz){</p>
+            <div class="consoleLogStart">
+              <p>console.log('start() invoked');</p>
+              <p>this.score = 0;</p>
+              <p>this.questions = [...quiz];</p>
+              <p>view.setup();</p>
+              <p>this.secondsRemaining = 20;</p>
+              <p>this.timer = setInterval( this.countdown , 1000 );</p>
+              <p>this.ask();</p>
+            </div>
+            <p class="curlyBracketsAndComma4">},</p>
+            <div class="countdown">
+              <p>countdown() {</p>
+              <p>game.secondsRemaining--;</p>
+              <p>view.render(view.timer,game.secondsRemaining);</p>
+              <p>if (game.secondsRemaining <= 0) {</p>
+              <p>game.gameOver();</p>
+              <p>}</p>
+              <p>},</p>
+            </div>
+            <p class="askName">ask(name){</p>
+            <div class="consoleLogAsk">
+              <p>console.log('ask() invoked');</p>
+              <p>if (this.questions.length > 2) {</p>
+              <p>shuffle(this.questions);</p>
+              <p>this.question = this.questions.pop();</p>
+              <p>const options = [this.questions[0].realName, this.questions[1].realName, this.question.realName];</p>
+              <p>shuffle(options);</p>
+              <p>const question = `What is ${this.question.name}'s real name?`;</p>
+              <p>view.render(view.question,question);</p>
+              <p>view.render(view.response,view.buttons(options));</p>
+              <p>}</p>
+              <p>else {</p>
+              <p>this.gameOver();</p>
+              <p>}</p>
+            </div>
+            <p class="curlyBracketsAndComma5">},</p>
+            <p class="checkEvent">check(event){</p>
+            <div class="consoleLogCheckEvent">
+              <p>console.log('check(event) invoked')</p>
+              <p>const response = event.target.textContent;</p>
+              <p>const answer = this.question.realName;</p>
+              <p>if (response === answer){</p>
+              <p>console.log('correct');</p>
+              <p>view.render(view.result,'Correct!',{'class':'correct'});</p>
+              <p>this.score++;</p>
+              <p>view.render(view.score,this.score);</p>
+              <p>} else {</p>
+              <p>console.log('wrong');</p>
+              <p>view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});</p>
+              <p>}</p>
+              <p>this.ask();</p>
+            </div>
+            <p class="curlyBracketsAndComma6">},</p>
+    
+            <p class="gameOverQuiz">gameOver(){</p>
+            <div class="consoleLogGameOver">
+              <p>console.log('gameOver() invoked')</p>
+              <p>view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);</p>
+              <p>view.teardown();</p>
+              <p>clearInterval(this.timer);</p>
+            </div>
+            <p class="curlyBracketsAndComma7">},</p>
+    
+            <p class="hiScoreQuiz">hiScore(){</p>
+              <div class="constHi">
+                <p>const hi = localStorage.getItem('highScore') || 0;</p>
+                <p>if (this.score > hi || hi === 0) localStorage.setItem('highScore',this.score);</p>
+                <p>return localStorage.getItem('highScore');</p>
+              </div>
+              <p class="curlyBracketsAndComma8">},</p>
+              <p>};</p>
+              <p>export {</p>
+              <div class="viewGame">
+                <p>view,</p>
+                <p>game</p>
+              </div>
+              <p>}</p>
+          </div>
+          <p>This is the same code for the view and game objects that was used previously in the js file, but made into a module by using the export declaration at the end. The 'utilities.js' module at the start was also imported, which allows to use the random() and shuffle() functions in this module.
+          </p>
+          <p>Now the modules are in place, it is necessary to update main.js to import them:</p>
+          <div class="importModules">
+            <p>import { view, game } from './quiz.js';</p>
+            <p>const url = 'http://spbooks.github.io/questions.json';</p>
+            <p>fetch(url)</p>
+            <p>.then(res => res.json())</p>
+            <p>.then(quiz => {</p>
+            <p>view.start.addEventListener('click', () => game.start(quiz.questions), false);</p>
+            <p>view.response.addEventListener('click', (event) => game.check(event), false);</p>
+            <p>});</p>
+          </div>
+          <p>This file will serve as an 'entry' point, in that Webpack will look at this file and determine which modules to load.
+          </p>
+          <p>The next step is to use Webpack to prepare the code for deployment. This will involve transpiling the code into ES5 using Babel, and minifying the code using the Babili plugin. The minified code will then be placed inside a single file in the 'dist' directory.
+          </p>
+          <p>To do this, it is necessary to install Webpack locally, as well as Babel, some Babel modules and the Babili plugin:
+          </p>
+          <p>npm install --save-dev webpack babel-core babel-loader babel-preset-env babili-webpack-plugin</p>
+          <p>The --save-dev flag is used to install these modules as all of them are only used in development.
+          </p>
+          <p>The next step is to configure WebPack by creating a file called webpack.config.js in the root directory and adding the following code that is described in the textbook ( Javascript: Novice to Ninja) in the Chapter 15 in the "Quiz Ninja Project" section.
+          </p>
+          <p>The context and entry properties tell WebPack to take the code found in '/src/main.js', and the output property tells it to place the transpiled code in '/dist/bundle.min.js'. The rules property contains the standard rules to transpile from the latest version of ECMAScript into ES5 code. A reference to the Babili plugin has also been added in the plugins property that will minify the output.
+          </p>
+          <p>To run this as a build script, is it necessary to add the following line to the "scripts" property of package.json file:
+          </p>
+          <p>"build": "webpack --progress --colors --profile"</p>
+          <p>The flags used with the webpack command above are quite common when transpiling JavaScript. --progress will display what is happening as WebPack does its thing, and --colors will display it all in different colors. The --profile flag will make WebPack show how long each part of the build takes, which can be helpful in identifying any bottlenecks in the build process.
+          </p>
+          <p>The last task is to run the build script:
+          </p>
+          <p>npm run build</p>
+          <p>This should create a file called 'bundle.min.js' inside the 'dist' directory. This contains all the JavaScript the application needs in just one, minified file without having to load any external libraries at runtime.
+          </p>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <div class="footerButtonContainerW04">
+        <a href="https://rostislav-nikitin90.github.io/wdd-330-rostislav-nikitin/">Return to Home Page</a>
+      </div>
+    </footer>
   </body>
 </html>

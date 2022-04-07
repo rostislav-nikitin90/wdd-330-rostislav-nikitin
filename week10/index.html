@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -7,681 +8,689 @@
     <link rel="stylesheet" href="css/week10page.css">
   </head>
   <body>
-    <h1>WDD 330 Portfolio</h1>
-    <h2>Week10</h2>
-    <h3>Readings:</h3>
-    <h3>MDN: Validating forms</h3>
-    <h4>Client-side form validation</h4>
-    <p>Notes:</p>
-    <p>Client-side form validation is the process of ensuring that user input is clean, correct, and useful. Before submitting data to the server, it is important to ensure all required form controls are filled out, in the correct format. 
-        This helps ensure data submitted matches the requirements set forth in the various form controls. There is also server side validation which is performed by the web server after the input has been sent to the server.
-    </p>
-    <p>Client-side validation is an initial check and an important feature of good user experience; by catching invalid data on the client-side, the user can fix it straight away. 
-        If it gets to the server and is then rejected, a noticeable delay is caused by a round trip to the server and then back to the client-side to tell the user to fix their data.
-    </p>
-    <p>Form validation occurs when the user enters data and the browser (client-side validation) verifies that the data is in the correct format and within the constraints set by the application. 
-        If the information is properly formatted, the application allows the data to be submitted to the server and (usually) stored in the database; if the information is not formatted correctly, the user is given an error message explaining what needs to be corrected and allows the user to try again.
-    </p>
-    <p>Form validation is necessary for its execution for three main reasons:
-    </p>
-    <ul>
-        <li>To get the right data in the right format, without which applications won't work properly</li>
-        <li>To protect user data (forcing our users to enter secure passwords makes it easier to protect their account data)</li>
-        <li>To protect the application itself (there are many ways that malicious users can misuse unprotected forms to damage the application)</li>
-    </ul>
-    <p class="client-sideValidationTypes">There are two different types of client-side validation:</p>
-    <ul>
-        <li>Built-in form validation uses HTML5 form validation features. This validation generally doesn't require much JavaScript. 
-            Built-in form validation has better performance than JavaScript, but it is not as customizable as JavaScript validation.</li>
-        <li>JavaScript validation is coded using JavaScript. This validation is completely customizable, but you need to create it all (or use a library).</li>
-    </ul>
-    <p class="built-inFormValidationDefinition">One of the most significant features of HTML5 form controls is the ability to validate most user data without relying on JavaScript. 
-        This is done by using validation attributes on form elements:</p>
-    <ul>
-        <li>required: Specifies whether a form field needs to be filled in before the form can be submitted.</li>
-        <li>minlength and maxlength: Specifies the minimum and maximum length of textual data (strings)</li>
-        <li>min and max: Specifies the minimum and maximum values of numerical input types</li>
-        <li>type: Specifies whether the data needs to be a number, an email address, or some other specific preset type.</li>
-        <li>pattern: Specifies a regular expression that defines a pattern the entered data needs to follow.</li>
-    </ul>
-    <p>If the data entered in a form field follows all of the rules specified by the above attributes, it is considered valid. If not, it is considered invalid.
-    </p>
-    <p>When an element is valid, the following things are true:</p>
-    <ul>
-        <li>The element matches the :valid CSS pseudo-class, which lets the programmer apply a specific style to valid elements.</li>
-        <li>If the user tries to send the data, the browser will submit the form, provided there is nothing else stopping it from doing so (e.g., JavaScript).</li>
-    </ul>
-    <p class="validElementDefinition">When an element is invalid, the following things are true:</p>
-    <ul>
-        <li>The element matches the :invalid CSS pseudo-class, and sometimes other UI pseudo-classes (e.g., :out-of-range) depending on the error, which lets the programmer apply a specific style to invalid elements.</li>
-        <li>If the user tries to send the data, the browser will block the form and display an error message.</li>
-    </ul>
-    <p class="simpleFormExampleDefinition">This simple example includes an input that lets a user choose whether you prefer banana or cherry, and involves a simple text &#8249;input&#8250; with an associated &#8249;label&#8250; and submit &#8249;button&#8250;.
-    </p>
-    <p>HTML:
-    </p>
-    <div class="simpleFormExample">
-        <p>&#8249;form&#8250;</p>
-        <div class="simpleFormCode">
-            <p>&#8249;label for="choose"&#8250;Would you prefer a banana or cherry?&#8249;/label&#8250;</p>
-            <p>&#8249;input id="choose" name="i_like"&#8250;</p>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+    </header>
+    <main>
+        <h2>Week10</h2>
+        <h3>Readings:</h3>
+        <h3>MDN: Validating forms</h3>
+        <p>Client-side form validation</p>
+        <p>Notes:</p>
+        <p>Client-side form validation is the process of ensuring that user input is clean, correct, and useful. Before submitting data to the server, it is important to ensure all required form controls are filled out, in the correct format. 
+            This helps ensure data submitted matches the requirements set forth in the various form controls. There is also server side validation which is performed by the web server after the input has been sent to the server.
+        </p>
+        <p>Client-side validation is an initial check and an important feature of good user experience; by catching invalid data on the client-side, the user can fix it straight away. 
+            If it gets to the server and is then rejected, a noticeable delay is caused by a round trip to the server and then back to the client-side to tell the user to fix their data.
+        </p>
+        <p>Form validation occurs when the user enters data and the browser (client-side validation) verifies that the data is in the correct format and within the constraints set by the application. 
+            If the information is properly formatted, the application allows the data to be submitted to the server and (usually) stored in the database; if the information is not formatted correctly, the user is given an error message explaining what needs to be corrected and allows the user to try again.
+        </p>
+        <p>Form validation is necessary for its execution for three main reasons:
+        </p>
+        <ul>
+            <li>To get the right data in the right format, without which applications won't work properly</li>
+            <li>To protect user data (forcing our users to enter secure passwords makes it easier to protect their account data)</li>
+            <li>To protect the application itself (there are many ways that malicious users can misuse unprotected forms to damage the application)</li>
+        </ul>
+        <p class="client-sideValidationTypes">There are two different types of client-side validation:</p>
+        <ul>
+            <li>Built-in form validation uses HTML5 form validation features. This validation generally doesn't require much JavaScript. 
+                Built-in form validation has better performance than JavaScript, but it is not as customizable as JavaScript validation.</li>
+            <li>JavaScript validation is coded using JavaScript. This validation is completely customizable, but you need to create it all (or use a library).</li>
+        </ul>
+        <p class="built-inFormValidationDefinition">One of the most significant features of HTML5 form controls is the ability to validate most user data without relying on JavaScript. 
+            This is done by using validation attributes on form elements:</p>
+        <ul>
+            <li>required: Specifies whether a form field needs to be filled in before the form can be submitted.</li>
+            <li>minlength and maxlength: Specifies the minimum and maximum length of textual data (strings)</li>
+            <li>min and max: Specifies the minimum and maximum values of numerical input types</li>
+            <li>type: Specifies whether the data needs to be a number, an email address, or some other specific preset type.</li>
+            <li>pattern: Specifies a regular expression that defines a pattern the entered data needs to follow.</li>
+        </ul>
+        <p>If the data entered in a form field follows all of the rules specified by the above attributes, it is considered valid. If not, it is considered invalid.
+        </p>
+        <p>When an element is valid, the following things are true:</p>
+        <ul>
+            <li>The element matches the :valid CSS pseudo-class, which lets the programmer apply a specific style to valid elements.</li>
+            <li>If the user tries to send the data, the browser will submit the form, provided there is nothing else stopping it from doing so (e.g., JavaScript).</li>
+        </ul>
+        <p class="validElementDefinition">When an element is invalid, the following things are true:</p>
+        <ul>
+            <li>The element matches the :invalid CSS pseudo-class, and sometimes other UI pseudo-classes (e.g., :out-of-range) depending on the error, which lets the programmer apply a specific style to invalid elements.</li>
+            <li>If the user tries to send the data, the browser will block the form and display an error message.</li>
+        </ul>
+        <p class="simpleFormExampleDefinition">This simple example includes an input that lets a user choose whether you prefer banana or cherry, and involves a simple text &#8249;input&#8250; with an associated &#8249;label&#8250; and submit &#8249;button&#8250;.
+        </p>
+        <p>HTML:
+        </p>
+        <div class="simpleFormExample">
+            <p>&#8249;form&#8250;</p>
+            <div class="simpleFormCode">
+                <p>&#8249;label for="choose"&#8250;Would you prefer a banana or cherry?&#8249;/label&#8250;</p>
+                <p>&#8249;input id="choose" name="i_like"&#8250;</p>
+                <p>&#8249;button&#8250;Submit&#8249;/button&#8250;</p>
+            </div>
+            <p>&#8249;/form&#8250;</p>
+        </div>
+        <p>CSS:
+        </p>
+        <div class="simpleFormStylingExample">
+            <p>input:invalid {</p>
+            <p>border: 2px dashed red;</p>
+            <p>}</p>
+            <p>input:valid {</p>
+            <p>border: 2px solid black;</p>
+            <p>}</p>
+        </div>
+        <p>Result:
+        </p>
+        <form>
+            <label for="choose">Would you prefer a banana or cherry?</label>
+            <input id="choose" name="i_like">
+            <button>Submit</button>
+        </form>
+        <p class="addingRequiredAttribute">The simplest HTML5 validation feature is the required attribute. To make an input mandatory, it is necessary to add this attribute to the element. 
+            When this attribute is set, the element matches the :required UI pseudo-class and the form won't submit, displaying an error message on submission when the input is empty. 
+            While empty, the input will also be considered invalid, matching the :invalid UI pseudo-class. 
+        </p>
+        <p>An example of a form with an added required input attribute:
+        </p>
+        <p>HTML:
+        </p>
+        <div class="simpleFormExample">
+            <p>&#8249;form&#8250;</p>
+            <div class="simpleFormCode">
+                <p>&#8249;label for="choose"&#8250;Would you prefer a banana or cherry? (required)&#8249;/label&#8250;</p>
+                <p>&#8249;input id="choose" name="i_like" required&#8250;</p>
+                <p>&#8249;button&#8250;Submit&#8249;/button&#8250;</p>
+            </div>
+            <p>&#8249;/form&#8250;</p>
+        </div>
+        <p>CSS:
+        </p>
+        <div class="simpleFormStylingExample">
+            <p>input:invalid {</p>
+            <p>border: 2px dashed red;</p>
+            <p>}</p>
+            <p>input:invalid:required {</p>
+            <p>background-image: linear-gradient(to right, pink, lightgreen);</p>
+            <p>}</p>
+            <p>input:valid {</p>
+            <p>border: 2px solid black;</p>
+            <p>}</p>
+        </div>
+        <p>This CSS causes the input to have a red dashed border when it is invalid and a more subtle solid black border when valid. 
+            CSS also added a background gradient when the input is required and invalid:
+        </p>
+        <form>
+            <label for="choose">Would you prefer a banana or cherry? (required)</label>
+            <input id="choose" name="i_like" required>
+            <button>Submit</button>
+        </form>
+        <p class="submittingFormWithoutValue">Try submitting the form without a value. Note how the invalid input gets focus, a default error message ("Please fill out this field") appears, and the form is prevented from being sent.
+        </p>
+        <p>The presence of the required attribute on any element that supports this attribute means the element matches the :required pseudoclass whether it has a value or not. If the &#8249;input&#8250; has no value, the input will match the :invalid pseudoclass.
+        </p>
+        <p class="patternAttribute">Another useful validation feature is the pattern attribute, which expects a Regular Expression as its value. A regular expression (regex) is a pattern that can be used to match character combinations in text strings, so regexps are ideal for form validation and serve a variety of other uses in JavaScript.
+        </p>
+        <p>Regexps are quite complex, and below are some examples to give a basic idea of how they work: 
+        </p>
+        <ul class="regexpsExamples">
+            <li>a — Matches one character that is a (not b, not aa, and so on).</li>
+            <li>abc — Matches a, followed by b, followed by c.</li>
+            <li>ab?c—Matches a, optionally followed by a single b, followed by c. ( ac or abc)</li>
+            <li>ab*c—Matches a, optionally followed by any number of bs, followed by c. ( ac , abc, abbbbbc, and so on).</li>
+            <li>a|b — Matches one character that is a or b.</li>
+            <li>abc|xyz — Matches exactly abc or exactly xyz (but not abcxyz or a or y, and so on)</li>
+        </ul>
+        <p>This is an example of the updated HTML with the added pattern attribute for the input:
+        </p>
+        <div class="simpleFormExample">
+            <p>&#8249;form&#8250;</p>
+            <div class="simpleFormCode">
+                <p>&#8249;label for="choose"&#8250;Would you prefer a banana or cherry? (required)&#8249;/label&#8250;</p>
+                <p>&#8249;input id="choose" name="i_like" required pattern="[Bb]anana|[Cc]herry"&#8250;</p>
+                <p>&#8249;button&#8250;Submit&#8249;/button&#8250;</p>
+            </div>
+            <p>&#8249;/form&#8250;</p>
+        </div>
+        <p>This gives us the following update — try it out:
+        </p>
+        <form class="formWithPatternAttributeExample">
+            <label for="choose">Would you prefer a banana or a cherry?</label>
+            <input id="choose" name="i_like" required pattern="[Bb]anana|[Cc]herry">
+            <button>Submit</button>
+        </form>
+        <p>In this example, the &#8249;input&#8250; element accepts one of four possible values: the strings "banana", "Banana", "cherry", or "Cherry". 
+            Regular expressions are case-sensitive, but it supports capitalized as well as lower-case versions using an extra "Aa" pattern nested inside square brackets.
+        </p>
+        <p>If a non-empty value of the &#8249;input&#8250; doesn't match the regular expression's pattern, the input will match the :invalid pseudoclass.
+        </p>
+        <p class="constrainingLengthOfEntries">It is possible to constrain the character length of all text fields created by &#8249;input&#8250; or &#8249;textarea&#8250; by using the minlength and maxlength attributes. 
+            A field is invalid if it has a value and that value has fewer characters than the minlength value or more than the maxlength value.
+        </p>
+        <p>Browsers often don't let the user type a longer value than expected into text fields. A better user experience than just using maxlength is to also provide character count feedback in an accessible manner and let them edit their content down to size. 
+            An example of this is the character limit seen on Twitter when Tweeting. JavaScript, including solutions using maxlength, can be used to provide this. 
+        </p>
+        <p class="ConstrainingValuesOfEntries">For number fields (i.e. &#8249;input type="number"&#8250;), the min and max attributes can be used to provide a range of valid values. 
+            If the field contains a value outside this range, it will be invalid. Example: 
+        </p>
+        <div class="formWithMinMaxLengthAndMinMaxAttributes">
+            <p>&#8249;form&#8250;</p>
+            <p>&#8249;div&#8250;</p>
+            <p>&#8249;label for="choose"&#8250;Would you prefer a banana or a cherry?&#8249;/label&#8250;</p>
+            <p>&#8249;input type="text" id="choose" name="i_like" required minlength="6" maxlength="6"&#8250;</p>
+            <p>&#8249;/div&#8250;</p>
+            <p>&#8249;div&#8250;</p>
+            <p>&#8249;label for="number"&#8250;How many would you like?&#8249;/label&#8250;</p>
+            <p>&#8249;input type="number" id="number" name="amount" value="1" min="1" max="10"&#8250;</p>
+            <p>&#8249;/div&#8250;</p>
+            <p>&#8249;div&#8250;</p>
             <p>&#8249;button&#8250;Submit&#8249;/button&#8250;</p>
+            <p>&#8249;/div&#8250;</p>
+            <p>&#8249;/form&#8250;</p>
         </div>
-        <p>&#8249;/form&#8250;</p>
-    </div>
-    <p>CSS:
-    </p>
-    <div class="simpleFormStylingExample">
-        <p>input:invalid {</p>
-        <p>border: 2px dashed red;</p>
-        <p>}</p>
-        <p>input:valid {</p>
-        <p>border: 2px solid black;</p>
-        <p>}</p>
-    </div>
-    <p>Result:
-    </p>
-    <form>
-        <label for="choose">Would you prefer a banana or cherry?</label>
-        <input id="choose" name="i_like">
-        <button>Submit</button>
-    </form>
-    <p class="addingRequiredAttribute">The simplest HTML5 validation feature is the required attribute. To make an input mandatory, it is necessary to add this attribute to the element. 
-        When this attribute is set, the element matches the :required UI pseudo-class and the form won't submit, displaying an error message on submission when the input is empty. 
-        While empty, the input will also be considered invalid, matching the :invalid UI pseudo-class. 
-    </p>
-    <p>An example of a form with an added required input attribute:
-    </p>
-    <p>HTML:
-    </p>
-    <div class="simpleFormExample">
-        <p>&#8249;form&#8250;</p>
-        <div class="simpleFormCode">
-            <p>&#8249;label for="choose"&#8250;Would you prefer a banana or cherry? (required)&#8249;/label&#8250;</p>
-            <p>&#8249;input id="choose" name="i_like" required&#8250;</p>
-            <p>&#8249;button&#8250;Submit&#8249;/button&#8250;</p>
-        </div>
-        <p>&#8249;/form&#8250;</p>
-    </div>
-    <p>CSS:
-    </p>
-    <div class="simpleFormStylingExample">
-        <p>input:invalid {</p>
-        <p>border: 2px dashed red;</p>
-        <p>}</p>
-        <p>input:invalid:required {</p>
-        <p>background-image: linear-gradient(to right, pink, lightgreen);</p>
-        <p>}</p>
-        <p>input:valid {</p>
-        <p>border: 2px solid black;</p>
-        <p>}</p>
-    </div>
-    <p>This CSS causes the input to have a red dashed border when it is invalid and a more subtle solid black border when valid. 
-        CSS also added a background gradient when the input is required and invalid:
-    </p>
-    <form>
-        <label for="choose">Would you prefer a banana or cherry? (required)</label>
-        <input id="choose" name="i_like" required>
-        <button>Submit</button>
-    </form>
-    <p class="submittingFormWithoutValue">Try submitting the form without a value. Note how the invalid input gets focus, a default error message ("Please fill out this field") appears, and the form is prevented from being sent.
-    </p>
-    <p>The presence of the required attribute on any element that supports this attribute means the element matches the :required pseudoclass whether it has a value or not. If the &#8249;input&#8250; has no value, the input will match the :invalid pseudoclass.
-    </p>
-    <p class="patternAttribute">Another useful validation feature is the pattern attribute, which expects a Regular Expression as its value. A regular expression (regex) is a pattern that can be used to match character combinations in text strings, so regexps are ideal for form validation and serve a variety of other uses in JavaScript.
-    </p>
-    <p>Regexps are quite complex, and below are some examples to give a basic idea of how they work: 
-    </p>
-    <ul class="regexpsExamples">
-        <li>a — Matches one character that is a (not b, not aa, and so on).</li>
-        <li>abc — Matches a, followed by b, followed by c.</li>
-        <li>ab?c—Matches a, optionally followed by a single b, followed by c. ( ac or abc)</li>
-        <li>ab*c—Matches a, optionally followed by any number of bs, followed by c. ( ac , abc, abbbbbc, and so on).</li>
-        <li>a|b — Matches one character that is a or b.</li>
-        <li>abc|xyz — Matches exactly abc or exactly xyz (but not abcxyz or a or y, and so on)</li>
-    </ul>
-    <p>This is an example of the updated HTML with the added pattern attribute for the input:
-    </p>
-    <div class="simpleFormExample">
-        <p>&#8249;form&#8250;</p>
-        <div class="simpleFormCode">
-            <p>&#8249;label for="choose"&#8250;Would you prefer a banana or cherry? (required)&#8249;/label&#8250;</p>
-            <p>&#8249;input id="choose" name="i_like" required pattern="[Bb]anana|[Cc]herry"&#8250;</p>
-            <p>&#8249;button&#8250;Submit&#8249;/button&#8250;</p>
-        </div>
-        <p>&#8249;/form&#8250;</p>
-    </div>
-    <p>This gives us the following update — try it out:
-    </p>
-    <form class="formWithPatternAttributeExample">
-        <label for="choose">Would you prefer a banana or a cherry?</label>
-        <input id="choose" name="i_like" required pattern="[Bb]anana|[Cc]herry">
-        <button>Submit</button>
-    </form>
-    <p>In this example, the &#8249;input&#8250; element accepts one of four possible values: the strings "banana", "Banana", "cherry", or "Cherry". 
-        Regular expressions are case-sensitive, but it supports capitalized as well as lower-case versions using an extra "Aa" pattern nested inside square brackets.
-    </p>
-    <p>If a non-empty value of the &#8249;input&#8250; doesn't match the regular expression's pattern, the input will match the :invalid pseudoclass.
-    </p>
-    <p class="constrainingLengthOfEntries">It is possible to constrain the character length of all text fields created by &#8249;input&#8250; or &#8249;textarea&#8250; by using the minlength and maxlength attributes. 
-        A field is invalid if it has a value and that value has fewer characters than the minlength value or more than the maxlength value.
-    </p>
-    <p>Browsers often don't let the user type a longer value than expected into text fields. A better user experience than just using maxlength is to also provide character count feedback in an accessible manner and let them edit their content down to size. 
-        An example of this is the character limit seen on Twitter when Tweeting. JavaScript, including solutions using maxlength, can be used to provide this. 
-    </p>
-    <p class="ConstrainingValuesOfEntries">For number fields (i.e. &#8249;input type="number"&#8250;), the min and max attributes can be used to provide a range of valid values. 
-        If the field contains a value outside this range, it will be invalid. Example: 
-    </p>
-    <div class="formWithMinMaxLengthAndMinMaxAttributes">
-        <p>&#8249;form&#8250;</p>
-        <p>&#8249;div&#8250;</p>
-        <p>&#8249;label for="choose"&#8250;Would you prefer a banana or a cherry?&#8249;/label&#8250;</p>
-        <p>&#8249;input type="text" id="choose" name="i_like" required minlength="6" maxlength="6"&#8250;</p>
-        <p>&#8249;/div&#8250;</p>
-        <p>&#8249;div&#8250;</p>
-        <p>&#8249;label for="number"&#8250;How many would you like?&#8249;/label&#8250;</p>
-        <p>&#8249;input type="number" id="number" name="amount" value="1" min="1" max="10"&#8250;</p>
-        <p>&#8249;/div&#8250;</p>
-        <p>&#8249;div&#8250;</p>
-        <p>&#8249;button&#8250;Submit&#8249;/button&#8250;</p>
-        <p>&#8249;/div&#8250;</p>
-        <p>&#8249;/form&#8250;</p>
-    </div>
-    <p>Here, the text field has been given a minlength and maxlength of six, which is the same length as banana and cherry.
-    </p>
-    <p>The number field was given a minimum value of one and a maximum value of ten. Entered numbers outside this range will show as invalid; users won't be able to use the increment/decrement arrows to move the value outside of this range. 
-        If the user manually enters a number outside of this range, the data is invalid. The number is not required, so removing the value will still result in a valid value. 
-    </p>
-    <p>Here is the example running live:
-    </p>
-    <form>
-        <div>
-          <label for="choose">Would you prefer a banana or a cherry?</label>
-          <input type="text" id="choose" name="i_like" required minlength="6" maxlength="6">
-        </div>
-        <div>
-          <label for="number">How many would you like?</label>
-          <input type="number" id="number" name="amount" value="1" min="1" max="10">
-        </div>
-        <div>
-          <button>Submit</button>
-        </div>
-      </form>
-      <p class="validatingFormsUsingJavaScript">It is necessary to use JavaScript if the programmer wants to take control over the look and feel of native error messages or to deal with legacy browsers that do not support HTML's built-in form validation.
-      </p>   
-      <p>Most browsers support the Constraint Validation API, which consists of a set of methods and properties available on the following form element DOM interfaces:
-      </p>   
-      <ul>
-          <li>HTMLButtonElement (represents a &#8249;button&#8250; element)</li>
-          <li>HTMLFieldSetElement (represents a &#8249;fieldset&#8250; element)</li>
-          <li>HTMLInputElement (represents an &#8249;input&#8250; element)</li>
-          <li>HTMLOutputElement (represents an &#8249;output&#8250; element)</li>
-          <li>HTMLSelectElement (represents a &#8249;select&#8250; element)</li>
-          <li>HTMLTextAreaElement (represents a &#8249;textarea&#8250; element)</li>
-      </ul>
-      <p>The Constraint validation API makes the following properties available on the above elements.
-      </p>
-      <ul>
-          <li>validationMessage: Returns a localized message describing the validation constraints that the control doesn't satisfy (if any). If the control is not a candidate for constraint validation (willValidate is false) or the element's value satisfies its constraints (is valid), this will return an empty string.</li>
-          <li>validity: Returns a ValidityState object that contains several properties describing the validity state of the element. Some of the more common properties are listed below:
-              <ul>
-                  <li>patternMismatch: Returns true if the value does not match the specified pattern, and false if it does match. If true, the element matches the :invalid CSS pseudo-class.</li>
-                  <li>tooLong: Returns true if the value is longer than the maximum length specified by the maxlength attribute, or false if it is shorter than or equal to the maximum. If true, the element matches the :invalid CSS pseudo-class.</li>
-                  <li>tooShort: Returns true if the value is shorter than the minimum length specified by the minlength attribute, or false if it is greater than or equal to the minimum. If true, the element matches the :invalid CSS pseudo-class.</li>
-                  <li>rangeOverflow: Returns true if the value is greater than the maximum specified by the max attribute, or false if it is less than or equal to the maximum. If true, the element matches the :invalid and :out-of-range CSS pseudo-classes.</li>
-                  <li>rangeUnderflow: Returns true if the value is less than the minimum specified by the min attribute, or false if it is greater than or equal to the minimum. If true, the element matches the :invalid and :out-of-range CSS pseudo-classes.</li>
-                  <li>typeMismatch: Returns true if the value is not in the required syntax (when type is email or url), or false if the syntax is correct. If true, the element matches the :invalid CSS pseudo-class.</li>
-                  <li>valid: Returns true if the element meets all its validation constraints, and is therefore considered to be valid, or false if it fails any constraint. If true, the element matches the :valid CSS pseudo-class; the :invalid CSS pseudo-class otherwise.</li>
-                  <li>valueMissing: Returns true if the element has a required attribute, but no value, or false otherwise. If true, the element matches the :invalid CSS pseudo-class.</li>
-              </ul>
-          </li>
-          <li>willValidate: Returns true if the element will be validated when the form is submitted; false otherwise.</li>
-      </ul>
-      <p class="ConstValidAPIMethods">The Constraint Validation API also makes the following methods available on the above elements and the form element.
-      </p>
-      <ul>
-          <li>checkValidity(): Returns true if the element's value has no validity problems; false otherwise. If the element is invalid, this method also fires an invalid event on the element.</li>
-          <li>reportValidity(): Reports invalid field(s) using events. Useful in combination with preventDefault() in an onSubmit event handler</li>
-          <li>setCustomValidity(message): Adds a custom error message to the element; if you set a custom error message, the element is considered to be invalid, and the specified error is displayed. This lets you use JavaScript code to establish a validation failure other than those offered by the standard HTML5 validation constraints. The message is shown to the user when reporting the problem.</li>
-      </ul>
-      <p>As can be seen in the HTML5 validation constraint examples earlier, each time a user tries to submit an invalid form, the browser displays an error message. The way this message is displayed depends on the browser.
-      </p>
-      <p>These automated messages have two drawbacks:
-      </p>
-      <ul>
-          <li>There is no standard way to change their look and feel with CSS.</li>
-          <li>They depend on the browser locale, which means that you can have a page in one language but an error message displayed in another language, as seen in the following Firefox screenshot.</li>
-      </ul>
-      <div>
-        <img src="images/ScreenShot-20220312200945.jpeg" alt="Error message displayed in another language">
-      </div>
-      <p>Customizing these error messages is one of the most common use cases of the constraint validation API. Here is a simple example of how to do this:
-      </p>
-      <p>HTML:</p>
-      <div class="simpleFormExample2">
-          <p>&#8249;form&#8250;</p>
-          <div class="simpleFormCode2">
-            <p>&#8249;label for="mail"&#8250;I would like you to provide me with an e-mail address:&#8249;/label&#8250;</p>
-            <p>&#8249;input type="email" id="mail" name="mail"&#8250;</p>
-            <p>&#8249;button&#8250;Submit&#8249;/button&#8250;</p>
+        <p>Here, the text field has been given a minlength and maxlength of six, which is the same length as banana and cherry.
+        </p>
+        <p>The number field was given a minimum value of one and a maximum value of ten. Entered numbers outside this range will show as invalid; users won't be able to use the increment/decrement arrows to move the value outside of this range. 
+            If the user manually enters a number outside of this range, the data is invalid. The number is not required, so removing the value will still result in a valid value. 
+        </p>
+        <p>Here is the example running live:
+        </p>
+        <form>
+            <div>
+              <label for="choose">Would you prefer a banana or a cherry?</label>
+              <input type="text" id="choose" name="i_like" required minlength="6" maxlength="6">
+            </div>
+            <div>
+              <label for="number">How many would you like?</label>
+              <input type="number" id="number" name="amount" value="1" min="1" max="10">
+            </div>
+            <div>
+              <button>Submit</button>
+            </div>
+          </form>
+          <p class="validatingFormsUsingJavaScript">It is necessary to use JavaScript if the programmer wants to take control over the look and feel of native error messages or to deal with legacy browsers that do not support HTML's built-in form validation.
+          </p>   
+          <p>Most browsers support the Constraint Validation API, which consists of a set of methods and properties available on the following form element DOM interfaces:
+          </p>   
+          <ul>
+              <li>HTMLButtonElement (represents a &#8249;button&#8250; element)</li>
+              <li>HTMLFieldSetElement (represents a &#8249;fieldset&#8250; element)</li>
+              <li>HTMLInputElement (represents an &#8249;input&#8250; element)</li>
+              <li>HTMLOutputElement (represents an &#8249;output&#8250; element)</li>
+              <li>HTMLSelectElement (represents a &#8249;select&#8250; element)</li>
+              <li>HTMLTextAreaElement (represents a &#8249;textarea&#8250; element)</li>
+          </ul>
+          <p>The Constraint validation API makes the following properties available on the above elements.
+          </p>
+          <ul>
+              <li>validationMessage: Returns a localized message describing the validation constraints that the control doesn't satisfy (if any). If the control is not a candidate for constraint validation (willValidate is false) or the element's value satisfies its constraints (is valid), this will return an empty string.</li>
+              <li>validity: Returns a ValidityState object that contains several properties describing the validity state of the element. Some of the more common properties are listed below:
+                  <ul>
+                      <li>patternMismatch: Returns true if the value does not match the specified pattern, and false if it does match. If true, the element matches the :invalid CSS pseudo-class.</li>
+                      <li>tooLong: Returns true if the value is longer than the maximum length specified by the maxlength attribute, or false if it is shorter than or equal to the maximum. If true, the element matches the :invalid CSS pseudo-class.</li>
+                      <li>tooShort: Returns true if the value is shorter than the minimum length specified by the minlength attribute, or false if it is greater than or equal to the minimum. If true, the element matches the :invalid CSS pseudo-class.</li>
+                      <li>rangeOverflow: Returns true if the value is greater than the maximum specified by the max attribute, or false if it is less than or equal to the maximum. If true, the element matches the :invalid and :out-of-range CSS pseudo-classes.</li>
+                      <li>rangeUnderflow: Returns true if the value is less than the minimum specified by the min attribute, or false if it is greater than or equal to the minimum. If true, the element matches the :invalid and :out-of-range CSS pseudo-classes.</li>
+                      <li>typeMismatch: Returns true if the value is not in the required syntax (when type is email or url), or false if the syntax is correct. If true, the element matches the :invalid CSS pseudo-class.</li>
+                      <li>valid: Returns true if the element meets all its validation constraints, and is therefore considered to be valid, or false if it fails any constraint. If true, the element matches the :valid CSS pseudo-class; the :invalid CSS pseudo-class otherwise.</li>
+                      <li>valueMissing: Returns true if the element has a required attribute, but no value, or false otherwise. If true, the element matches the :invalid CSS pseudo-class.</li>
+                  </ul>
+              </li>
+              <li>willValidate: Returns true if the element will be validated when the form is submitted; false otherwise.</li>
+          </ul>
+          <p class="ConstValidAPIMethods">The Constraint Validation API also makes the following methods available on the above elements and the form element.
+          </p>
+          <ul class="checkReportSetCustomValidity">
+              <li>checkValidity(): Returns true if the element's value has no validity problems; false otherwise. If the element is invalid, this method also fires an invalid event on the element.</li>
+              <li>reportValidity(): Reports invalid field(s) using events. Useful in combination with preventDefault() in an onSubmit event handler</li>
+              <li>setCustomValidity(message): Adds a custom error message to the element; if you set a custom error message, the element is considered to be invalid, and the specified error is displayed. This lets you use JavaScript code to establish a validation failure other than those offered by the standard HTML5 validation constraints. The message is shown to the user when reporting the problem.</li>
+          </ul>
+          <p>As can be seen in the HTML5 validation constraint examples earlier, each time a user tries to submit an invalid form, the browser displays an error message. The way this message is displayed depends on the browser.
+          </p>
+          <p>These automated messages have two drawbacks:
+          </p>
+          <ul>
+              <li>There is no standard way to change their look and feel with CSS.</li>
+              <li>They depend on the browser locale, which means that you can have a page in one language but an error message displayed in another language, as seen in the following Firefox screenshot.</li>
+          </ul>
+          <div>
+            <img src="images/ScreenShot-20220312200945.jpeg" alt="Error message displayed in another language">
           </div>
-          <p>&#8249;/form&#8250;</p>
-      </div>
-      <p>JS:</p>
-      <div class="validatingFormsUsingJavaScript">
-          <p>const email = document.getElementById("mail");</p>
-          <p>email.addEventListener("input", function (event) {</p>
-          <p>if (email.validity.typeMismatch) {</p>
-          <p>email.setCustomValidity("I am expecting an e-mail address!");</p>
-          <p>email.reportValidity();</p>
-          <p>} else {</p>
-          <p>email.setCustomValidity("");</p>
-          <p>}</p>
-          <p>});</p>
-      </div>
-      <p>This stores a reference to the email input, then adds an event listener to it that runs the contained code every time the value inside the input is changed.
-      </p>
-      <p>Inside the contained code, it checks whether the email input's validity.typeMismatch property returns true, meaning that the contained value doesn't match the pattern for a well-formed email address. If so, it calls the setCustomValidity() method with a custom message which is displayed by calling reportValidity(). This renders the input invalid, so that when you try to submit the form, submission fails and the custom error message is displayed.
-      </p>
-      <p>If the validity.typeMismatch property returns false, it calls the setCustomValidity() method an empty string. This renders the input valid, so the form will submit.
-      </p>
-      <p>You can try it out below:</p>
-      <form>
-        <label for="mail">I would like you to provide me with an e-mail address:</label>
-        <input type="email" id="mail" name="mail">
-        <button>Submit</button>
-      </form>
-      <p class="validatingFormsWithoutABuilt-inApi">In some cases, such as legacy browser support or custom controls, you won't be able to or won't want to use the Constraint Validation API.You're still able to use JavaScript to validate your form, but you'll just have to write your own.
-      </p>
-      <p>Client-side form validation sometimes requires JavaScript if you want to customize styling and error messages, but it always requires you to think carefully about the user. 
-          Always remember to help your users correct the data they provide. To that end, be sure to:
-      </p>
-      <ul>
-          <li>Display explicit error messages.</li>
-          <li>Be permissive about the input format.</li>
-          <li>Point out exactly where the error occurs, especially on large forms.</li>
-      </ul>
-
-    <h3 class="mdnArticleUsingFetch">MDN: Using Fetch</h3>
-    <h4>Using the Fetch API</h4>
-    <p>Notes:</p>
-    <p>The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses. 
-        It also provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously across the network.
-    </p>
-    <p>This kind of functionality was previously achieved using XMLHttpRequest. Fetch provides a better alternative that can be easily used by other technologies such as Service Workers. 
-        Fetch also provides a single logical place to define other HTTP-related concepts such as CORS and extensions to HTTP.
-    </p>
-    <p>The fetch specification differs from jQuery.ajax() in the following significant ways:</p>
-    <ul>
-        <li>The Promise returned from fetch() won't reject on HTTP error status even if the response is an HTTP 404 or 500. 
-            Instead, as soon as the server responds with headers, the Promise will resolve normally (with the ok property of the response set to false if the response isn't in the range 200-299), and it will only reject on network failure or if anything prevented the request from completing.
-        </li>
-        <li>fetch() won't send cross-origin cookies unless you set the credentials init option. (Since April 2018. The spec changed the default credentials policy to same-origin. Firefox changed since 61.0b13.)</li>
-    </ul>
-    <div class="fetchRequestExample">
-        <p>A basic fetch request is really simple to set up, as shown below:</p>
-        <p>fetch('http://example.com/movies.json')</p>
-        <p>.then(response => response.json())</p>
-        <p>.then(data => console.log(data));</p>
-    </div>
-    <p>Here the programmer is fetching a JSON file across the network and printing it to the console. The simplest use of fetch() takes one argument — the path to the resource you want to fetch — and does not directly return the JSON response body but instead returns a promise that resolves with a Response object.
-    </p>
-    <p>The Response object, in turn, does not directly contain the actual JSON response body but is instead a representation of the entire HTTP response. So, to extract the JSON body content from the Response object, the programmer uses the json() method, which returns a second promise that resolves with the result of parsing the response body text as JSON.</p>
-    <p>Fetch requests are controlled by the connect-src directive of Content Security Policy rather than the directive of the resources it's retrieving.
-    </p>
-    <p>The fetch() method can optionally accept a second parameter, an init object that allows you to control a number of different settings:</p>
-    <div class="fetchingMethodAcceptingInitObject">
-        <p>// Example POST method implementation:</p>
-        <p>async function postData(url = '', data = {}) {</p>
-        <p>// Default options are marked with *</p>
-        <p>const response = await fetch(url, {</p>
-        <p>method: 'POST', // *GET, POST, PUT, DELETE, etc.</p>
-        <p>mode: 'cors', // no-cors, *cors, same-origin</p>
-        <p>cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached</p>
-        <p>credentials: 'same-origin', // include, *same-origin, omit</p>
-        <p>headers: {</p>
-        <p>'Content-Type': 'application/json'</p>
-        <p>// 'Content-Type': 'application/x-www-form-urlencoded',</p>
-        <p>},</p>
-        <p>redirect: 'follow', // manual, *follow, error</p>
-        <p>referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url</p>
-        <p>body: JSON.stringify(data) // body data type must match "Content-Type" header</p>
-        <p>});</p>
-        <p>return response.json(); // parses JSON response into native JavaScript objects</p>
-        <p>}</p>
-        <p>postData('https://example.com/answer', { answer: 42 })</p>
-        <p>.then(data => {</p>
-        <p>console.log(data); // JSON data parsed by `data.json()` call</p>
-        <p>});</p>
-    </div>
-    <p>Note that mode: "no-cors" only allows a limited set of headers in the request:
-    </p>
-    <ul>
-        <li>Accept</li>
-        <li>Accept-Language</li>
-        <li>Content-Language</li>
-        <li>Content-Type with a value of application/x-www-form-urlencoded, multipart/form-data, or text/plain</li>
-    </ul>
-    <p class="addingCredentialsIncluded">To cause browsers to send a request with credentials included on both same-origin and cross-origin calls, it is necessary to add credentials: 'include' to the init object you pass to the fetch() method.
-    </p>
-    <div class="addingCredentialsIncludedCode">
-        <p>fetch('https://example.com', {</p>
-        <p>credentials: 'include'</p>
-        <p>});</p>
-    </div>
-    <p class="addingCredentialsSame-origin">If the programmer only wants to send credentials if the request URL is on the same origin as the calling script, it is necessary to add credentials: 'same-origin'.
-    </p>
-    <div class="addingCredentialsSame-originCode">
-        <p>// The calling script is on the origin 'https://example.com'</p>
-        <p>fetch('https://example.com', {</p>
-        <p>credentials: 'same-origin'</p>
-        <p>});</p>
-    </div>
-    <p>To instead ensure browsers don't include credentials in the request, it is necesaary to use credentials: 'omit'.
-    </p>
-    <div class="addingCredentialsOmitCode">
-        <p>fetch('https://example.com', {</p>
-        <p>credentials: 'omit'</p>
-        <p>});</p>
-    </div>
-    <p>When uploading JSON data, it is necessary to use fetch() to POST JSON-encoded data:
-    </p>
-    <div class="uploadingJsonDataCode">
-        <p>const data = { username: 'example' };</p>
-        <p>fetch('https://example.com/profile', {</p>
-        <p>method: 'POST', // or 'PUT'</p>
-        <p>headers: {</p>
-        <p>'Content-Type': 'application/json',</p>
-        <p>},</p>
-        <p>body: JSON.stringify(data),</p>
-        <p>})</p>
-        <p>.then(response => response.json())</p>
-        <p>.then(data => {</p>
-        <p>console.log('Success:', data);</p>
-        <p>})</p>
-        <p>.catch((error) => {</p>
-        <p>console.error('Error:', error);</p>
-        <p>});</p>
-    </div>
-    <p>Files can be uploaded using an HTML &#8249;input type="file" /&#8250; input element, FormData() and fetch().
-    </p>
-    <div class="uploadingFileCode">
-        <p>const formData = new FormData();</p>
-        <p>const fileField = document.querySelector('input[type="file"]');</p>
-        <p>formData.append('username', 'abc123');</p>
-        <p>formData.append('avatar', fileField.files[0]);</p>
-        <p>fetch('https://example.com/profile/avatar', {</p>
-        <p>method: 'PUT',</p>
-        <p>body: formData</p>
-        <p>})</p>
-        <p>.then(response => response.json())</p>
-        <p>.then(result => {</p>
-        <p>console.log('Success:', result);</p>
-        <p>})</p>
-        <p>.catch(error => {</p>
-        <p>console.error('Error:', error);</p>
-        <p>});</p>
-    </div>
-    <p>Files can be uploaded using an HTML &#8249;input type="file" multiple /&#8250; input element, FormData() and fetch().   
-    </p>
-    <div class="uploadingMultipleFilesCode">
-        <p>const formData = new FormData();</p>
-        <p>const photos = document.querySelector('input[type="file"][multiple]');</p>
-        <p>formData.append('title', 'My Vegas Vacation');</p>
-        <p>for (let i = 0; i < photos.files.length; i++) {</p>
-        <p>formData.append(`photos_${i}`, photos.files[i]);</p>
-        <p>}</p>
-        <p>fetch('https://example.com/posts', {</p>
-        <p>method: 'POST',</p>
-        <p>body: formData,</p>
-        <p>})</p>
-        <p>.then(response => response.json())</p>
-        <p>.then(result => {</p>
-        <p>console.log('Success:', result);</p>
-        <p>})</p>
-        <p>.catch(error => {</p>
-        <p>console.error('Error:', error);</p>
-        <p>});</p>
-    </div>
-    <p>The chunks that are read from a response are not broken neatly at line boundaries and are Uint8Arrays, not strings. 
-        If the programmer wants to fetch a text file and process it line by line, it is up to him to handle these complications. 
-        The following example shows one way to do this by creating a line iterator (for simplicity, it assumes the text is UTF-8, and doesn't handle fetch errors).
-    </p>
-    <div class="processingATextFileLineByLine">
-        <p>async function* makeTextFileLineIterator(fileURL) {</p>
-        <div class="processingATextFileLineByLineCodePt1">
-            <p>const utf8Decoder = new TextDecoder('utf-8');</p>
-            <p>const response = await fetch(fileURL);</p>
-            <p>const reader = response.body.getReader();</p>
-            <p>let { value: chunk, done: readerDone } = await reader.read();</p>
-            <p>chunk = chunk ? utf8Decoder.decode(chunk) : '';</p>
-            <p>const re = /\n|\r|\r\n/gm;</p>
-            <p>let startIndex = 0;</p>
-            <p>let result;</p>
+          <p>Customizing these error messages is one of the most common use cases of the constraint validation API. Here is a simple example of how to do this:
+          </p>
+          <p>HTML:</p>
+          <div class="simpleFormExample2">
+              <p>&#8249;form&#8250;</p>
+              <div class="simpleFormCode2">
+                <p>&#8249;label for="mail"&#8250;I would like you to provide me with an e-mail address:&#8249;/label&#8250;</p>
+                <p>&#8249;input type="email" id="mail" name="mail"&#8250;</p>
+                <p>&#8249;button&#8250;Submit&#8249;/button&#8250;</p>
+              </div>
+              <p>&#8249;/form&#8250;</p>
+          </div>
+          <p>JS:</p>
+          <div class="validatingFormsUsingJavaScript">
+              <p>const email = document.getElementById("mail");</p>
+              <p>email.addEventListener("input", function (event) {</p>
+              <p>if (email.validity.typeMismatch) {</p>
+              <p>email.setCustomValidity("I am expecting an e-mail address!");</p>
+              <p>email.reportValidity();</p>
+              <p>} else {</p>
+              <p>email.setCustomValidity("");</p>
+              <p>}</p>
+              <p>});</p>
+          </div>
+          <p>This stores a reference to the email input, then adds an event listener to it that runs the contained code every time the value inside the input is changed.
+          </p>
+          <p>Inside the contained code, it checks whether the email input's validity.typeMismatch property returns true, meaning that the contained value doesn't match the pattern for a well-formed email address. If so, it calls the setCustomValidity() method with a custom message which is displayed by calling reportValidity(). This renders the input invalid, so that when you try to submit the form, submission fails and the custom error message is displayed.
+          </p>
+          <p>If the validity.typeMismatch property returns false, it calls the setCustomValidity() method an empty string. This renders the input valid, so the form will submit.
+          </p>
+          <p>You can try it out below:</p>
+          <form>
+            <label for="mail">I would like you to provide me with an e-mail address:</label>
+            <input type="email" id="mail" name="mail">
+            <button>Submit</button>
+          </form>
+          <p class="validatingFormsWithoutABuilt-inApi">In some cases, such as legacy browser support or custom controls, you won't be able to or won't want to use the Constraint Validation API.You're still able to use JavaScript to validate your form, but you'll just have to write your own.
+          </p>
+          <p>Client-side form validation sometimes requires JavaScript if you want to customize styling and error messages, but it always requires you to think carefully about the user. 
+              Always remember to help your users correct the data they provide. To that end, be sure to:
+          </p>
+          <ul>
+              <li>Display explicit error messages.</li>
+              <li>Be permissive about the input format.</li>
+              <li>Point out exactly where the error occurs, especially on large forms.</li>
+          </ul>
+    
+        <h3 class="mdnArticleUsingFetch">MDN: Using Fetch</h3>
+        <p>Using the Fetch API</p>
+        <p>Notes:</p>
+        <p>The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses. 
+            It also provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously across the network.
+        </p>
+        <p>This kind of functionality was previously achieved using XMLHttpRequest. Fetch provides a better alternative that can be easily used by other technologies such as Service Workers. 
+            Fetch also provides a single logical place to define other HTTP-related concepts such as CORS and extensions to HTTP.
+        </p>
+        <p>The fetch specification differs from jQuery.ajax() in the following significant ways:</p>
+        <ul>
+            <li>The Promise returned from fetch() won't reject on HTTP error status even if the response is an HTTP 404 or 500. 
+                Instead, as soon as the server responds with headers, the Promise will resolve normally (with the ok property of the response set to false if the response isn't in the range 200-299), and it will only reject on network failure or if anything prevented the request from completing.
+            </li>
+            <li>fetch() won't send cross-origin cookies unless you set the credentials init option. (Since April 2018. The spec changed the default credentials policy to same-origin. Firefox changed since 61.0b13.)</li>
+        </ul>
+        <div class="fetchRequestExample">
+            <p>A basic fetch request is really simple to set up, as shown below:</p>
+            <p>fetch('http://example.com/movies.json')</p>
+            <p>.then(response => response.json())</p>
+            <p>.then(data => console.log(data));</p>
         </div>
-        <div class="processingATextFileLineByLineCodePt2">
-            <p>for (;;) {</p>
-            <p>let result = re.exec(chunk);</p>
-            <p>if (!result) {</p>
-            <p>if (readerDone) {</p>
-            <p>break;</p>
+        <p>Here the programmer is fetching a JSON file across the network and printing it to the console. The simplest use of fetch() takes one argument — the path to the resource you want to fetch — and does not directly return the JSON response body but instead returns a promise that resolves with a Response object.
+        </p>
+        <p>The Response object, in turn, does not directly contain the actual JSON response body but is instead a representation of the entire HTTP response. So, to extract the JSON body content from the Response object, the programmer uses the json() method, which returns a second promise that resolves with the result of parsing the response body text as JSON.</p>
+        <p>Fetch requests are controlled by the connect-src directive of Content Security Policy rather than the directive of the resources it's retrieving.
+        </p>
+        <p>The fetch() method can optionally accept a second parameter, an init object that allows you to control a number of different settings:</p>
+        <div class="fetchingMethodAcceptingInitObject">
+            <p>// Example POST method implementation:</p>
+            <p>async function postData(url = '', data = {}) {</p>
+            <p>// Default options are marked with *</p>
+            <p>const response = await fetch(url, {</p>
+            <p>method: 'POST', // *GET, POST, PUT, DELETE, etc.</p>
+            <p>mode: 'cors', // no-cors, *cors, same-origin</p>
+            <p>cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached</p>
+            <p>credentials: 'same-origin', // include, *same-origin, omit</p>
+            <p>headers: {</p>
+            <p>'Content-Type': 'application/json'</p>
+            <p>// 'Content-Type': 'application/x-www-form-urlencoded',</p>
+            <p>},</p>
+            <p>redirect: 'follow', // manual, *follow, error</p>
+            <p>referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url</p>
+            <p>body: JSON.stringify(data) // body data type must match "Content-Type" header</p>
+            <p>});</p>
+            <p>return response.json(); // parses JSON response into native JavaScript objects</p>
             <p>}</p>
-            <p>let remainder = chunk.substr(startIndex);</p>
-            <p>({ value: chunk, done: readerDone } = await reader.read());</p>
-            <p>chunk = remainder + (chunk ? utf8Decoder.decode(chunk) : '');</p>
-            <p>startIndex = re.lastIndex = 0;</p>
-            <p>continue;</p>
-            <p>}</p>
-            <p>yield chunk.substring(startIndex, result.index);</p>
-            <p>startIndex = re.lastIndex;</p>
-            <p>}</p>
-            <p>if (startIndex < chunk.length) {</p>
-            <p>// last line didn't end in a newline char</p>
-            <p>yield chunk.substr(startIndex);</p>
-            <p>}</p>
-        </div>
-        <p>}</p>
-        <div class="processingATextFileLineByLineCodePt3">
-            <p>async function run() {</p>
-            <p>for await (let line of makeTextFileLineIterator(urlOfFile)) {</p>
-            <p>processLine(line);</p>
-            <p>}</p>
-            <p>}</p>
-            <p>run();</p>
-        </div>
-    </div>
-    <p>A fetch() promise will reject with a TypeError when a network error is encountered or CORS is misconfigured on the server-side, although this usually means permission issues or similar — a 404 does not constitute a network error, for example. 
-        An accurate check for a successful fetch() would include checking that the promise resolved, then checking that the Response.ok property has a value of true. The code would look something like this:
-    </p>
-    <div class="checkingThatTheFetchWasSuccessful">
-        <p>fetch('flowers.jpg')</p>
-        <p>.then(response => {</p>
-        <p>if (!response.ok) {</p>
-        <p>throw new Error('Network response was not OK');</p>
-        <p>}</p>
-        <p>return response.blob();</p>
-        <p>})</p>
-        <p>.then(myBlob => {</p>
-        <p>myImage.src = URL.createObjectURL(myBlob);</p>
-        <p>})</p>
-        <p>.catch(error => {</p>
-        <p>console.error('There has been a problem with your fetch operation:', error);</p>
-        <p>});</p>
-    </div>
-    <p>Instead of passing a path to the resource the programmer wants to request into the fetch() call, he can create a request object using the Request() constructor, and pass that in as a fetch() method argument:
-    </p>
-    <div class="supplyingYourOwnRequestObject">
-        <p>const myHeaders = new Headers();</p>
-        <p>const myRequest = new Request('flowers.jpg', {</p>
-        <div>
-            <p>method: 'GET',</p>
-            <p>headers: myHeaders,</p>
-            <p>mode: 'cors',</p>
-            <p>cache: 'default',</p>
-        </div>
-        <p>});</p>
-        <p>fetch(myRequest)</p>
-        <div class="supplyingYourOwnRequestObjectCodeLastPt">
-            <p>.then(response => response.blob())</p>
-            <p>.then(myBlob => {</p>
-            <p>myImage.src = URL.createObjectURL(myBlob);</p>
+            <p>postData('https://example.com/answer', { answer: 42 })</p>
+            <p>.then(data => {</p>
+            <p>console.log(data); // JSON data parsed by `data.json()` call</p>
             <p>});</p>
         </div>
-    </div>
-    <p>Request() accepts exactly the same parameters as the fetch() method. 
-        You can even pass in an existing request object to create a copy of it:
-    </p>
-    <p>const anotherRequest = new Request(myRequest, myInit);
-    </p>
-    <p>This is pretty useful, as request and response bodies are one use only. Making a copy like this allows the programmer to make use of the request/response again while varying the init options if desired. 
-        The copy must be made before the body is read, and reading the body in the copy will also mark it as read in the original request.
-    </p>
-    <p class="headersDefinition">The Headers interface allows the programmer to create his own headers object via the Headers() constructor. 
-        A headers object is a simple multi-map of names to values:
-    </p>
-    <div class="headersObjectExample">
-        <p>const content = 'Hello World';</p>
-        <p>const myHeaders = new Headers();</p>
-        <p>myHeaders.append('Content-Type', 'text/plain');</p>
-        <p>myHeaders.append('Content-Length', content.length.toString());</p>
-        <p>myHeaders.append('X-Custom-Header', 'ProcessThisImmediately');</p>
-    </div>
-    <p>The same can be achieved by passing an array of arrays or an object literal to the constructor:      
-    </p>
-    <div class="passingObjectLiteralToConstructor">
-        <p>const myHeaders = new Headers({</p>
-        <p>'Content-Type': 'text/plain',</p>
-        <p>'Content-Length': content.length.toString(),</p>
-        <p>'X-Custom-Header': 'ProcessThisImmediately'</p>
-        <p>});</p>
-    </div>
-    <p>The contents can be queried and retrieved:
-    </p>
-    <div class="queriedAndRetrievedContents">
-        <p>console.log(myHeaders.has('Content-Type')); // true</p>
-        <p>console.log(myHeaders.has('Set-Cookie')); // false</p>
-        <p>myHeaders.set('Content-Type', 'text/html');</p>
-        <p>myHeaders.append('X-Custom-Header', 'AnotherValue');</p>
-        <p>console.log(myHeaders.get('Content-Length')); // 11</p>
-        <p>console.log(myHeaders.get('X-Custom-Header')); // ['ProcessThisImmediately', 'AnotherValue']</p>
-        <p>myHeaders.delete('X-Custom-Header');</p>
-        <p>console.log(myHeaders.get('X-Custom-Header')); // null</p>
-    </div>
-    <p>Some of these operations are only useful in ServiceWorkers, but they provide a much nicer API for manipulating headers.
-    </p>
-    <p>All of the Headers methods throw a TypeError if a header name is used that is not a valid HTTP Header name. 
-        The mutation operations will throw a TypeError if there is an immutable guard. Otherwise, they fail silently. 
-        For example:
-    </p>
-    <div class="throwingTypeError">
-        <p>const myResponse = Response.error();</p>
-        <p>try {</p>
-        <p>myResponse.headers.set('Origin', 'http://mybank.com');</p>
-        <p>} catch (e) {</p>
-        <p>console.log('Cannot pretend to be a bank!');</p>
-        <p>}</p>
-    </div>
-    <p>A good use case for headers is checking whether the content type is correct before you process it further. For example:
-    </p>
-    <div class="checkingifContentTypeIsCorrect">
-        <p>fetch(myRequest)</p>
-        <p>.then(response => {</p>
-        <p>const contentType = response.headers.get('content-type');</p>
-        <p>if (!contentType || !contentType.includes('application/json')) {</p>
-        <p>throw new TypeError("Oops, we haven't got JSON!");</p>
-        <p>}</p>
-        <p>return response.json();</p>
-        <p>})</p>
-        <p>.then(data => {</p>
-        <p>/* process your data further */</p>
-        <p>})</p>
-        <p>.catch(error => console.error(error));</p>
-    </div>
-    <p>Since headers can be sent in requests and received in responses, and have various limitations about what information can and should be mutable, headers' objects have a guard property. 
-        This is not exposed to the Web, but it affects which mutation operations are allowed on the headers object.
-    </p>
-    <p>Possible guard values are:
-    </p>
-    <ul>
-        <li>none: default.</li>
-        <li>request: guard for a headers object obtained from a request (Request.headers).</li>
-        <li>request-no-cors: guard for a headers object obtained from a request created with Request.mode no-cors.</li>
-        <li>response: guard for a headers object obtained from a response (Response.headers).</li>
-        <li>immutable: guard that renders a headers object read-only; mostly used for ServiceWorkers.</li>
-    </ul>
-    <p class="note">Note: You may not append or set the Content-Length header on a guarded headers object for a response. 
-        Similarly, inserting Set-Cookie into a response header is not allowed: ServiceWorkers are not allowed to set cookies via synthesized responses.
-    </p>
-    <p>As seen above, Response instances are returned when fetch() promises are resolved.
-    </p>
-    <p>The most common response properties are:
-    </p>
-    <ul>
-        <li>Response.status — An integer (default value 200) containing the response status code.</li>
-        <li>Response.statusText — A string (default value ""), which corresponds to the HTTP status code message. Note that HTTP/2 does not support status messages.</li>
-        <li>Response.ok — seen in use above, this is a shorthand for checking that status is in the range 200-299 inclusive. This returns a boolean value.</li>
-    </ul>
-    <p>They can also be created programmatically via JavaScript, but this is only really useful in ServiceWorkers, when the programmer is providing a custom response to a received request using a respondWith() method:
-    </p>
-    <div class="createdViaJavaScript">
-        <p>const myBody = new Blob();</p>
-        <p>addEventListener('fetch', function(event) {</p>
-        <p>// ServiceWorker intercepting a fetch</p>
-        <p>event.respondWith(</p>
-        <p>new Response(myBody, {</p>
-        <p>headers: { 'Content-Type': 'text/plain' }</p>
-        <p>})</p>
-        <p>);</p>
-        <p>});</p>
-    </div>
-    <p>The Response() constructor takes two optional arguments — a body for the response, and an init object (similar to the one that Request() accepts.)
-    </p>
-    <p class="bodyDefinition">Both requests and responses may contain body data. 
-        A body is an instance of any of the following types:
-    </p>
-    <ul>
-        <li>ArrayBuffer</li>
-        <li>ArrayBufferView (Uint8Array and friends)</li>
-        <li>Blob/File</li>
-        <li>string</li>
-        <li>URLSearchParams</li>
-        <li>FormData</li>
-    </ul>
-    <p>The Request and Response interfaces share the following methods to extract a body. 
-        These all return a promise that is eventually resolved with the actual content.
-    </p>
-    <ul>
-        <li>Request.arrayBuffer() / Response.arrayBuffer()</li>
-        <li>Request.blob() / Response.blob()</li>
-        <li>Request.formData() / Response.formData()</li>
-        <li>Request.json() / Response.json()</li>
-        <li>Request.text() / Response.text()</li>
-    </ul>
-    <p>This makes usage of non-textual data much easier than it was with XHR.
-    </p>
-    <p class="requestBodies">Request bodies can be set by passing body parameters:
-    </p>
-    <div class="requestBodiesCode">
-        <p>const form = new FormData(document.getElementById('login-form'));</p>
-        <p>fetch('/login', {</p>
-        <p>method: 'POST',</p>
-        <p>body: form</p>
-        <p>});</p>
-    </div>
-    <p>Both request and response (and by extension the fetch() function), will try to intelligently determine the content type. 
-        A request will also automatically set a Content-Type header if none is set in the dictionary.
-    </p>
-    <p class="featureDetection">Fetch API support can be detected by checking for the existence of Headers, Request, Response or fetch() on the Window or Worker scope. 
-        For example:
-    </p>
-    <div class="featureDetectionCode">
-        <p>if (window.fetch) {</p>
-        <p>// run my fetch request here</p>
-        <p>} else {</p>
-        <p>// do something with XMLHttpRequest?</p>
-        <p>}</p>
-    </div>
-   
+        <p>Note that mode: "no-cors" only allows a limited set of headers in the request:
+        </p>
+        <ul>
+            <li>Accept</li>
+            <li>Accept-Language</li>
+            <li>Content-Language</li>
+            <li>Content-Type with a value of application/x-www-form-urlencoded, multipart/form-data, or text/plain</li>
+        </ul>
+        <p class="addingCredentialsIncluded">To cause browsers to send a request with credentials included on both same-origin and cross-origin calls, it is necessary to add credentials: 'include' to the init object you pass to the fetch() method.
+        </p>
+        <div class="addingCredentialsIncludedCode">
+            <p>fetch('https://example.com', {</p>
+            <p>credentials: 'include'</p>
+            <p>});</p>
+        </div>
+        <p class="addingCredentialsSame-origin">If the programmer only wants to send credentials if the request URL is on the same origin as the calling script, it is necessary to add credentials: 'same-origin'.
+        </p>
+        <div class="addingCredentialsSame-originCode">
+            <p>// The calling script is on the origin 'https://example.com'</p>
+            <p>fetch('https://example.com', {</p>
+            <p>credentials: 'same-origin'</p>
+            <p>});</p>
+        </div>
+        <p>To instead ensure browsers don't include credentials in the request, it is necessary to use credentials: 'omit'.
+        </p>
+        <div class="addingCredentialsOmitCode">
+            <p>fetch('https://example.com', {</p>
+            <p>credentials: 'omit'</p>
+            <p>});</p>
+        </div>
+        <p>When uploading JSON data, it is necessary to use fetch() to POST JSON-encoded data:
+        </p>
+        <div class="uploadingJsonDataCode">
+            <p>const data = { username: 'example' };</p>
+            <p>fetch('https://example.com/profile', {</p>
+            <p>method: 'POST', // or 'PUT'</p>
+            <p>headers: {</p>
+            <p>'Content-Type': 'application/json',</p>
+            <p>},</p>
+            <p>body: JSON.stringify(data),</p>
+            <p>})</p>
+            <p>.then(response => response.json())</p>
+            <p>.then(data => {</p>
+            <p>console.log('Success:', data);</p>
+            <p>})</p>
+            <p>.catch((error) => {</p>
+            <p>console.error('Error:', error);</p>
+            <p>});</p>
+        </div>
+        <p>Files can be uploaded using an HTML &#8249;input type="file" /&#8250; input element, FormData() and fetch().
+        </p>
+        <div class="uploadingFileCode">
+            <p>const formData = new FormData();</p>
+            <p>const fileField = document.querySelector('input[type="file"]');</p>
+            <p>formData.append('username', 'abc123');</p>
+            <p>formData.append('avatar', fileField.files[0]);</p>
+            <p>fetch('https://example.com/profile/avatar', {</p>
+            <p>method: 'PUT',</p>
+            <p>body: formData</p>
+            <p>})</p>
+            <p>.then(response => response.json())</p>
+            <p>.then(result => {</p>
+            <p>console.log('Success:', result);</p>
+            <p>})</p>
+            <p>.catch(error => {</p>
+            <p>console.error('Error:', error);</p>
+            <p>});</p>
+        </div>
+        <p>Files can be uploaded using an HTML &#8249;input type="file" multiple /&#8250; input element, FormData() and fetch().   
+        </p>
+        <div class="uploadingMultipleFilesCode">
+            <p>const formData = new FormData();</p>
+            <p>const photos = document.querySelector('input[type="file"][multiple]');</p>
+            <p>formData.append('title', 'My Vegas Vacation');</p>
+            <p>for (let i = 0; i < photos.files.length; i++) {</p>
+            <p>formData.append(`photos_${i}`, photos.files[i]);</p>
+            <p>}</p>
+            <p>fetch('https://example.com/posts', {</p>
+            <p>method: 'POST',</p>
+            <p>body: formData,</p>
+            <p>})</p>
+            <p>.then(response => response.json())</p>
+            <p>.then(result => {</p>
+            <p>console.log('Success:', result);</p>
+            <p>})</p>
+            <p>.catch(error => {</p>
+            <p>console.error('Error:', error);</p>
+            <p>});</p>
+        </div>
+        <p>The chunks that are read from a response are not broken neatly at line boundaries and are Uint8Arrays, not strings. 
+            If the programmer wants to fetch a text file and process it line by line, it is up to him to handle these complications. 
+            The following example shows one way to do this by creating a line iterator (for simplicity, it assumes the text is UTF-8, and doesn't handle fetch errors).
+        </p>
+        <div class="processingATextFileLineByLine">
+            <p>async function* makeTextFileLineIterator(fileURL) {</p>
+            <div class="processingATextFileLineByLineCodePt1">
+                <p>const utf8Decoder = new TextDecoder('utf-8');</p>
+                <p>const response = await fetch(fileURL);</p>
+                <p>const reader = response.body.getReader();</p>
+                <p>let { value: chunk, done: readerDone } = await reader.read();</p>
+                <p>chunk = chunk ? utf8Decoder.decode(chunk) : '';</p>
+                <p>const re = /\n|\r|\r\n/gm;</p>
+                <p>let startIndex = 0;</p>
+                <p>let result;</p>
+            </div>
+            <div class="processingATextFileLineByLineCodePt2">
+                <p>for (;;) {</p>
+                <p>let result = re.exec(chunk);</p>
+                <p>if (!result) {</p>
+                <p>if (readerDone) {</p>
+                <p>break;</p>
+                <p>}</p>
+                <p>let remainder = chunk.substr(startIndex);</p>
+                <p>({ value: chunk, done: readerDone } = await reader.read());</p>
+                <p>chunk = remainder + (chunk ? utf8Decoder.decode(chunk) : '');</p>
+                <p>startIndex = re.lastIndex = 0;</p>
+                <p>continue;</p>
+                <p>}</p>
+                <p>yield chunk.substring(startIndex, result.index);</p>
+                <p>startIndex = re.lastIndex;</p>
+                <p>}</p>
+                <p>if (startIndex < chunk.length) {</p>
+                <p>// last line didn't end in a newline char</p>
+                <p>yield chunk.substr(startIndex);</p>
+                <p>}</p>
+            </div>
+            <p>}</p>
+            <div class="processingATextFileLineByLineCodePt3">
+                <p>async function run() {</p>
+                <p>for await (let line of makeTextFileLineIterator(urlOfFile)) {</p>
+                <p>processLine(line);</p>
+                <p>}</p>
+                <p>}</p>
+                <p>run();</p>
+            </div>
+        </div>
+        <p>A fetch() promise will reject with a TypeError when a network error is encountered or CORS is misconfigured on the server-side, although this usually means permission issues or similar — a 404 does not constitute a network error, for example. 
+            An accurate check for a successful fetch() would include checking that the promise resolved, then checking that the Response.ok property has a value of true. The code would look something like this:
+        </p>
+        <div class="checkingThatTheFetchWasSuccessful">
+            <p>fetch('flowers.jpg')</p>
+            <p>.then(response => {</p>
+            <p>if (!response.ok) {</p>
+            <p>throw new Error('Network response was not OK');</p>
+            <p>}</p>
+            <p>return response.blob();</p>
+            <p>})</p>
+            <p>.then(myBlob => {</p>
+            <p>myImage.src = URL.createObjectURL(myBlob);</p>
+            <p>})</p>
+            <p>.catch(error => {</p>
+            <p>console.error('There has been a problem with your fetch operation:', error);</p>
+            <p>});</p>
+        </div>
+        <p>Instead of passing a path to the resource the programmer wants to request into the fetch() call, he can create a request object using the Request() constructor, and pass that in as a fetch() method argument:
+        </p>
+        <div class="supplyingYourOwnRequestObject">
+            <p>const myHeaders = new Headers();</p>
+            <p>const myRequest = new Request('flowers.jpg', {</p>
+            <div class="getMyHeadersCorsDefault">
+                <p>method: 'GET',</p>
+                <p>headers: myHeaders,</p>
+                <p>mode: 'cors',</p>
+                <p>cache: 'default',</p>
+            </div>
+            <p>});</p>
+            <p>fetch(myRequest)</p>
+            <div class="supplyingYourOwnRequestObjectCodeLastPt">
+                <p>.then(response => response.blob())</p>
+                <p>.then(myBlob => {</p>
+                <p>myImage.src = URL.createObjectURL(myBlob);</p>
+                <p>});</p>
+            </div>
+        </div>
+        <p>Request() accepts exactly the same parameters as the fetch() method. 
+            You can even pass in an existing request object to create a copy of it:
+        </p>
+        <p>const anotherRequest = new Request(myRequest, myInit);
+        </p>
+        <p>This is pretty useful, as request and response bodies are one use only. Making a copy like this allows the programmer to make use of the request/response again while varying the init options if desired. 
+            The copy must be made before the body is read, and reading the body in the copy will also mark it as read in the original request.
+        </p>
+        <p class="headersDefinition">The Headers interface allows the programmer to create his own headers object via the Headers() constructor. 
+            A headers object is a simple multi-map of names to values:
+        </p>
+        <div class="headersObjectExample">
+            <p>const content = 'Hello World';</p>
+            <p>const myHeaders = new Headers();</p>
+            <p>myHeaders.append('Content-Type', 'text/plain');</p>
+            <p>myHeaders.append('Content-Length', content.length.toString());</p>
+            <p>myHeaders.append('X-Custom-Header', 'ProcessThisImmediately');</p>
+        </div>
+        <p>The same can be achieved by passing an array of arrays or an object literal to the constructor:      
+        </p>
+        <div class="passingObjectLiteralToConstructor">
+            <p>const myHeaders = new Headers({</p>
+            <p>'Content-Type': 'text/plain',</p>
+            <p>'Content-Length': content.length.toString(),</p>
+            <p>'X-Custom-Header': 'ProcessThisImmediately'</p>
+            <p>});</p>
+        </div>
+        <p>The contents can be queried and retrieved:
+        </p>
+        <div class="queriedAndRetrievedContents">
+            <p>console.log(myHeaders.has('Content-Type')); // true</p>
+            <p>console.log(myHeaders.has('Set-Cookie')); // false</p>
+            <p>myHeaders.set('Content-Type', 'text/html');</p>
+            <p>myHeaders.append('X-Custom-Header', 'AnotherValue');</p>
+            <p>console.log(myHeaders.get('Content-Length')); // 11</p>
+            <p>console.log(myHeaders.get('X-Custom-Header')); // ['ProcessThisImmediately', 'AnotherValue']</p>
+            <p>myHeaders.delete('X-Custom-Header');</p>
+            <p>console.log(myHeaders.get('X-Custom-Header')); // null</p>
+        </div>
+        <p>Some of these operations are only useful in ServiceWorkers, but they provide a much nicer API for manipulating headers.
+        </p>
+        <p>All of the Headers methods throw a TypeError if a header name is used that is not a valid HTTP Header name. 
+            The mutation operations will throw a TypeError if there is an immutable guard. Otherwise, they fail silently. 
+            For example:
+        </p>
+        <div class="throwingTypeError">
+            <p>const myResponse = Response.error();</p>
+            <p>try {</p>
+            <p>myResponse.headers.set('Origin', 'http://mybank.com');</p>
+            <p>} catch (e) {</p>
+            <p>console.log('Cannot pretend to be a bank!');</p>
+            <p>}</p>
+        </div>
+        <p>A good use case for headers is checking whether the content type is correct before you process it further. For example:
+        </p>
+        <div class="checkingifContentTypeIsCorrect">
+            <p>fetch(myRequest)</p>
+            <p>.then(response => {</p>
+            <p>const contentType = response.headers.get('content-type');</p>
+            <p>if (!contentType || !contentType.includes('application/json')) {</p>
+            <p>throw new TypeError("Oops, we haven't got JSON!");</p>
+            <p>}</p>
+            <p>return response.json();</p>
+            <p>})</p>
+            <p>.then(data => {</p>
+            <p>/* process your data further */</p>
+            <p>})</p>
+            <p>.catch(error => console.error(error));</p>
+        </div>
+        <p>Since headers can be sent in requests and received in responses, and have various limitations about what information can and should be mutable, headers' objects have a guard property. 
+            This is not exposed to the Web, but it affects which mutation operations are allowed on the headers object.
+        </p>
+        <p>Possible guard values are:
+        </p>
+        <ul>
+            <li>none: default.</li>
+            <li>request: guard for a headers object obtained from a request (Request.headers).</li>
+            <li>request-no-cors: guard for a headers object obtained from a request created with Request.mode no-cors.</li>
+            <li>response: guard for a headers object obtained from a response (Response.headers).</li>
+            <li>immutable: guard that renders a headers object read-only; mostly used for ServiceWorkers.</li>
+        </ul>
+        <p class="note">Note: You may not append or set the Content-Length header on a guarded headers object for a response. 
+            Similarly, inserting Set-Cookie into a response header is not allowed: ServiceWorkers are not allowed to set cookies via synthesized responses.
+        </p>
+        <p>As seen above, Response instances are returned when fetch() promises are resolved.
+        </p>
+        <p>The most common response properties are:
+        </p>
+        <ul>
+            <li>Response.status — An integer (default value 200) containing the response status code.</li>
+            <li>Response.statusText — A string (default value ""), which corresponds to the HTTP status code message. Note that HTTP/2 does not support status messages.</li>
+            <li>Response.ok — seen in use above, this is a shorthand for checking that status is in the range 200-299 inclusive. This returns a boolean value.</li>
+        </ul>
+        <p>They can also be created programmatically via JavaScript, but this is only really useful in ServiceWorkers, when the programmer is providing a custom response to a received request using a respondWith() method:
+        </p>
+        <div class="createdViaJavaScript">
+            <p>const myBody = new Blob();</p>
+            <p>addEventListener('fetch', function(event) {</p>
+            <p>// ServiceWorker intercepting a fetch</p>
+            <p>event.respondWith(</p>
+            <p>new Response(myBody, {</p>
+            <p>headers: { 'Content-Type': 'text/plain' }</p>
+            <p>})</p>
+            <p>);</p>
+            <p>});</p>
+        </div>
+        <p>The Response() constructor takes two optional arguments — a body for the response, and an init object (similar to the one that Request() accepts.)
+        </p>
+        <p class="bodyDefinition">Both requests and responses may contain body data. 
+            A body is an instance of any of the following types:
+        </p>
+        <ul>
+            <li>ArrayBuffer</li>
+            <li>ArrayBufferView (Uint8Array and friends)</li>
+            <li>Blob/File</li>
+            <li>string</li>
+            <li>URLSearchParams</li>
+            <li>FormData</li>
+        </ul>
+        <p>The Request and Response interfaces share the following methods to extract a body. 
+            These all return a promise that is eventually resolved with the actual content.
+        </p>
+        <ul>
+            <li>Request.arrayBuffer() / Response.arrayBuffer()</li>
+            <li>Request.blob() / Response.blob()</li>
+            <li>Request.formData() / Response.formData()</li>
+            <li>Request.json() / Response.json()</li>
+            <li>Request.text() / Response.text()</li>
+        </ul>
+        <p>This makes usage of non-textual data much easier than it was with XHR.
+        </p>
+        <p class="requestBodies">Request bodies can be set by passing body parameters:
+        </p>
+        <div class="requestBodiesCode">
+            <p>const form = new FormData(document.getElementById('login-form'));</p>
+            <p>fetch('/login', {</p>
+            <p>method: 'POST',</p>
+            <p>body: form</p>
+            <p>});</p>
+        </div>
+        <p>Both request and response (and by extension the fetch() function), will try to intelligently determine the content type. 
+            A request will also automatically set a Content-Type header if none is set in the dictionary.
+        </p>
+        <p class="featureDetection">Fetch API support can be detected by checking for the existence of Headers, Request, Response or fetch() on the Window or Worker scope. 
+            For example:
+        </p>
+        <div class="featureDetectionCode">
+            <p>if (window.fetch) {</p>
+            <p>// run my fetch request here</p>
+            <p>} else {</p>
+            <p>// do something with XMLHttpRequest?</p>
+            <p>}</p>
+        </div>
+    </main>
+    <footer>
+        <div class="footerButtonContainerW10">
+          <a href="https://rostislav-nikitin90.github.io/wdd-330-rostislav-nikitin/">Return to Home Page</a>
+        </div>
+    </footer>
     <script src="js/week10page.js"></script>
   </body>
 </html>

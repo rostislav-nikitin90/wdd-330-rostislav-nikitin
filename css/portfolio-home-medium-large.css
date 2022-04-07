@@ -1,0 +1,48 @@
+/* This is the CSS styling for the tablet and desktop versions */
+@media only screen and (min-width: 768px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    li {
+        margin: 0 0 20px 0;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 35% 1fr 1fr 35%;
+        grid-template-rows: auto;
+    }
+
+    .bodyContainer1 {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        margin: 0 auto;
+    }
+
+    .bodyContainer2 {
+        grid-column: 3/4;
+        grid-row: 1/2;
+        margin: 0 auto;
+    }
+    
+    ul li a:link {
+        font-size: 22px;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 35% 1fr 35%;
+        grid-template-rows: auto;
+    }
+
+    .footerContainer {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        text-align: center;
+    }
+}
