@@ -11,17 +11,17 @@ function retrieve(e){
     // Prevent form from submitting
     e.preventDefault();
 
-    const apiKey = '65144933375e42b38368cc23312e723a';
+    const apiKey = 'LSbbkRu8GJvpcGqHRFwBTWSSI425QzG5qH1Vlgk7';
     let topic = input.value;
 
-    let url = `https://newsapi.org/v2/everything?q=${topic}&apiKey=${apiKey}`;
+    let url = `https://api.thenewsapi.com/v1/news/all?api_token=${apiKey}&search=${topic}`;
 
 
     fetch(url).then((res)=>{
         return res.json();
     }).then((data)=>{
         console.log(data);
-        data.articles.forEach(article =>{
+        data.data.forEach(data =>{
             // Create li
             const li = document.createElement('li');
             li.classList.add('newsListItem');
@@ -38,20 +38,20 @@ function retrieve(e){
             // Create news article link
             const a = document.createElement('a');
             a.classList.add('newsArticleLink');
-            a.setAttribute('href', article.url);
+            a.setAttribute('href', data.url);
             a.setAttribute('target', '_blank');
-            a.textContent = article.title;
+            a.textContent = data.title;
             newsDiv1.appendChild(a);
 
             const imgLink = document.createElement('a');
-            imgLink.setAttribute('href', article.url);
+            imgLink.setAttribute('href', data.url);
             imgLink.setAttribute('target', '_blank');
             imgLink.textContent = '';
             newsDiv2.appendChild(imgLink);
 
             const img = document.createElement('img');
             img.classList.add('newsArticleImg');
-            img.setAttribute('src', article.urlToImage);
+            img.setAttribute('src', data.image_url);
             imgLink.appendChild(img);
 
             newsList.appendChild(li);
